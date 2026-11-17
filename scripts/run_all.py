@@ -46,6 +46,10 @@ def main(update_manifest: bool) -> int:
     rows_s5b = s5b.run_benchmark()
     s5b.print_summary(rows_s5b)
 
+    import subticket_5c_full_catalog_sweep as s5c
+    rows_s5c = s5c.run_benchmark()
+    s5c.print_summary(rows_s5c)
+
     print("\n2. Manifest Verification")
     if update_manifest:
         count = gm.generate_manifest()
