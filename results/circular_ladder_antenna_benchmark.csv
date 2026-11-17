@@ -1,0 +1,6 @@
+transition,upper_state,lower_state,predicted_A_s,nist_observed_A_s,residual_pct,state_lifetime_ns,overlap_integral_a_mu
+2p -> 1s (Lyman-alpha),2(l=1),1(l=0),6.2649e+08,6.2648e+08,+0.0016 %,1.596,1.290266
+3d -> 2p (Balmer-alpha),3(l=2),2(l=1),6.4651e+07,6.4652e+07,-0.0015 %,15.468,4.747992
+4f -> 3d (Paschen-alpha),4(l=3),3(l=2),1.3788e+07,1.3788e+07,-0.0003 %,72.527,10.230303
+5g -> 4f (Brackett-alpha),5(l=4),4(l=3),4.2542e+06,4.2542e+06,-0.0006 %,235.063,17.720606
+6h -> 5g (Pfund-alpha),6(l=5),5(l=4),1.6448e+06,1.6448e+06,+0.0019 %,607.965,27.214490

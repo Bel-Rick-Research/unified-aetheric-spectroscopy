@@ -38,6 +38,10 @@ def main(update_manifest: bool) -> int:
     rows_gms = gms.run_benchmark()
     gms.print_summary(rows_gms)
 
+    import subticket_5a_circular_antenna as s5a
+    rows_s5a = s5a.run_benchmark()
+    s5a.print_summary(rows_s5a)
+
     print("\n2. Manifest Verification")
     if update_manifest:
         count = gm.generate_manifest()
