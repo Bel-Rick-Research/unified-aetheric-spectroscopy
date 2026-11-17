@@ -42,6 +42,10 @@ def main(update_manifest: bool) -> int:
     rows_s5a = s5a.run_benchmark()
     s5a.print_summary(rows_s5a)
 
+    import subticket_5b_radial_ripples as s5b
+    rows_s5b = s5b.run_benchmark()
+    s5b.print_summary(rows_s5b)
+
     print("\n2. Manifest Verification")
     if update_manifest:
         count = gm.generate_manifest()

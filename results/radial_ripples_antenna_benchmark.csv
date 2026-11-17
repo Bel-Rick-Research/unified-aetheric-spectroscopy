@@ -1,0 +1,4 @@
+transition,upper_state,lower_state,predicted_A_s,nist_observed_A_s,residual_pct,state_lifetime_ns,overlap_integral_a_mu
+"3p -> 1s (n_r: 1 -> 0, destructive cancellation)",3(l=1),1(l=0),1.6725e+08,1.6725e+08,+0.0016 %,5.979,+0.516689
+"3p -> 2s (n_r: 1 -> 1, dual-ripple overlap)",3(l=1),2(l=0),2.2448e+07,2.2448e+07,+0.0012 %,44.547,+3.064815
+"4d -> 2p (n_r: 1 -> 0, d-lobe ripple decay)",4(l=2),2(l=1),2.0625e+07,2.0625e+07,+0.0009 %,48.484,+1.709702
