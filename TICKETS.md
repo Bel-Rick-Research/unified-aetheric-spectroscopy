@@ -128,12 +128,13 @@ In Guardian Cosmology, **this is completely rejected**:
 > **Physical Conclusion:**
 > - The term $(Z\alpha/n)^2$ is **literally $(v_n/c)^2$**—the identical dimensionless medium stress parameter governing Mercury's precession!
 > - Atomic fine structure ($10.943\text{ GHz}$ doublet, $\le 0.054\text{ ppm}$ on 90 non-$s$ NIST lines) is **the orbital precession of the electron vortex ring in the dielectric stress tensor of the central proton fountain**, derived without Einsteinian velocity-mass dilation or Dirac 4-spinors!
+> - **Open Refinement Boundary:** While $(v_n/c)^2$ is cleanly derived from the dielectric stress tensor $\sigma_{rr}$, the specific denominator mapping $k \to j+1/2$ and the $-3/4$ constant offset remain adopted Sommerfeld/Dirac mathematical benchmarks. Deriving the $+1/2$ shift from the 3D vortex ring's axial torsion twist coupled to orbital circulation, and deriving the $-3/4$ offset from radial stress tensor integration without relativistic energy-momentum expansion, is the active objective of this ticket.
 
 ---
 
 ## TICKET-04: Non-Linear Hydrodynamic Constitutive Profile for $K^2(r)$
 
-- **Status:** `FOUNDATION DERIVED [ACTIVE VALIDATION]`
+- **Status:** `FOUNDATION DERIVED / OPEN BOUNDARY (+11.8% He+ GAP)`
 - **Lead Mechanism:** Rational Fluid Continuity Transition Profile $T(r)$ & Dielectric Grid Elastic Saturation.
 
 ### 1. Physical Premise & Critique of Debye Screening
@@ -160,7 +161,7 @@ In pure fluid continuum mechanics:
 
 ### 3. Non-Linear Equation of State & Dielectric Grid Saturation
 1. **Lattice Bulk Modulus & Inflow Strain:**
-   The medium has loaded baseline density $\rho_A$ and elastic bulk modulus $K_A = \rho_A c^2 \approx 0.90\text{ Pa}$. Under unipolar inflow, the fractional density/pressure strain is:
+   The medium has loaded baseline density $\rho_A$ and elastic bulk modulus $K_A = \rho_A c^2$. If medium density is estimated as $\rho_A \sim 10^{-17}\text{ kg/m}^3$, this gives an order-of-magnitude scale $K_A \sim 0.90\text{ Pa}$ (not a fundamental constant). Under unipolar inflow, the fractional density/pressure strain is:
    $$\frac{\Delta\rho_A}{\rho_A} \approx \frac{\Delta P}{K_A} \approx -\frac{1}{2} \left(\frac{v(r)}{c}\right)^2$$
 2. **Dielectric Strain Volume Contraction:**
    The strain volume between the nuclear core boundary ($r_e$) and orbital boundary ($r_n = n^2 r_e / Z\alpha^2$) scales logarithmically:
@@ -169,7 +170,7 @@ In pure fluid continuum mechanics:
    $$\eta_{\text{strain}}(n, Z) = \frac{\ln\left(\frac{n^2}{Z\alpha^2}\right)}{\ln\left(\frac{4}{\alpha^2}\right)}$$
    This first-principles strain contraction reduces the predicted $\text{He}^+ / \text{H}$ Lamb ratio from raw geometric $16.0$ down to **$15.012$** (contracting the overshoot from $+19.1\%$ to $+11.8\%$).
 3. **The Non-Linear Grid Elasticity Boundary:**
-   The remaining $+11.8\%$ difference is candidly recorded as the non-linear bulk modulus elastic saturation boundary ($K_A \approx 0.9\text{ Pa}$) under doubled unipolar charge tension, with zero empirical float tuning. Verified in `constitutive_profile_solver.py`.
+   The remaining $+11.8\%$ difference is candidly recorded as the non-linear bulk modulus elastic saturation boundary under doubled unipolar charge tension, with zero empirical float tuning. Verified in `constitutive_profile_solver.py`.
 
 ---
 
@@ -302,3 +303,24 @@ is currently an adopted input quantum.
 1. **Lattice Origin of Minimum Circulation:** In an icosahedral lattice with cell spacing $\ell_P = \phi \times 10^{-35}\text{ m}$ and update tick interval $t_P = \ell_P / c$, evaluate the line integral of displacement around the smallest closed polygon of the quasicrystal grid:
    $$\oint_{\text{cell}} \mathbf{v} \cdot d\mathbf{l} = \Gamma_{\text{cell}}$$
 2. **Eliminating the Last Adopted Input:** Connect $\Gamma_{\text{cell}}$ directly to $\Gamma_0$, thereby deriving $h \equiv \mu \Gamma_0$ as a pure geometric property of the Planck grid and removing the final adopted empirical quantum from our circulation mechanics.
+
+---
+
+## TICKET-10: Two-Vortex Coupled Inertial Impedance Reduction (Replacing Reduced Mass $\mu$)
+
+- **Status:** `OPEN [ACTIVE]`
+- **Lead Mechanism:** Two-Fluid Navier–Stokes Momentum Balance & Reactive Medium Strain Reduction.
+
+### 1. Physical Premise & Critique of Point-Particle Reduced Mass
+In Newtonian mechanics, the two-body central force problem is reduced to a one-body equivalent using the center-of-mass reduced mass:
+$$\mu = \frac{m_e M}{m_e + M}$$
+In an Aetheric continuous dielectric medium, neither the proton nor the electron is an isolated point particle. The proton is an extended, unipolar axial outflow fountain (An), and the electron is an extended 3D toroidal sink vortex (Ki) spanning $\sim 10^{25}$ Planck lattice cells.
+Using the point-particle formula without derivation is an adopted classical trick.
+
+### 2. The Continuum Fluid Objective
+1. **Acoustic / Inertial Impedance Coupling:** Model the coupled proton-electron pair as two interacting vorticity distributions in a compressible dielectric medium. The total reactive inertial strain against orbital acceleration must equal the series combination of their fluid impedances:
+   $$Z_{\text{net}} = \frac{Z_{\text{pump}} Z_{\text{sink}}}{Z_{\text{pump}} + Z_{\text{sink}}}$$
+2. **Navier–Stokes Momentum Derivation:** Derive $\mu$ directly from the volume-integrated fluid momentum conservation equation:
+   $$\int_{\mathcal{V}} \rho_A \left( \frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v} \cdot \nabla)\mathbf{v} \right) d^3r = \oint_{\partial\mathcal{V}} \boldsymbol{\sigma} \cdot d\mathbf{A}$$
+   showing that the effective inertial update resistance of the orbital toroidal sink scales rigorously as $M/(m_e + M)$ without assuming point particles or invoking external Newtonian gravity.
+

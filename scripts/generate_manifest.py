@@ -17,8 +17,8 @@ def sha256_file(path: Path) -> str:
 
 
 def tracked_files() -> list[Path]:
-    return sorted((ROOT / "data").glob("*.tsv")) + sorted((ROOT / "scripts").glob("*.py")) \
-        + sorted((ROOT / "results").glob("*.csv"))
+    return sorted((ROOT / "data").glob("*.tsv")) + sorted((ROOT / "data").glob("*.csv")) \
+        + sorted((ROOT / "scripts").glob("*.py")) + sorted((ROOT / "results").glob("*.csv"))
 
 
 def generate_manifest() -> int:

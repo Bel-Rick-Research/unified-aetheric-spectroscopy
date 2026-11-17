@@ -143,8 +143,11 @@ def compute_oscillator_strength(
 
 
 def load_nist_reference() -> Dict[Tuple[str, str], float]:
-    """Load NIST ASD reference decay rates from the existing verified dataset."""
-    ref_path = HERE.parent.parent / "cavity-wave-spectroscopy" / "paper" / "results" / "hydrogen_A_and_wavelength_vs_nist.csv"
+    """Load NIST ASD reference decay rates from the self-contained data directory."""
+    ref_path = HERE.parent / "data" / "hydrogen_A_and_wavelength_vs_nist.csv"
+    if not ref_path.exists():
+        # Fallback to monorepo sibling location if present
+        ref_path = HERE.parent.parent / "cavity-wave-spectroscopy" / "paper" / "results" / "hydrogen_A_and_wavelength_vs_nist.csv"
     nist_data = {}
     if ref_path.exists():
         with ref_path.open("r", encoding="utf-8") as f:
