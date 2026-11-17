@@ -34,6 +34,10 @@ def main(update_manifest: bool) -> int:
     rows_cps = cps.run_benchmark()
     cps.print_summary(rows_cps)
 
+    import gear_meshing_exclusion_solver as gms
+    rows_gms = gms.run_benchmark()
+    gms.print_summary(rows_gms)
+
     print("\n2. Manifest Verification")
     if update_manifest:
         count = gm.generate_manifest()

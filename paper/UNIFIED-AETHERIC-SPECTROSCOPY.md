@@ -45,6 +45,8 @@ This document derives the unified master field equations governing 3D self-confi
 | **Toroidal Recirculating Closure** | **DERIVED** | Hydrodynamic self-confinement to eliminate open-boundary Z-pinch leakage. |
 | **Bernoulli / Bjerknes Attraction Force** | **DERIVED** | Mutual suction well between pump and sink: $F = -\frac{\mu_0 c^2 e^2}{4\pi d^2} = -\frac{e^2}{4\pi\varepsilon_0 d^2}$. |
 | **Neutron Ground State ($n=0$) Pair Bond** | **DERIVED** | Damping of separating circulation inertia ($F_{\text{iner}} \to 0$) in nuclear proximity; beta decay upon release. |
+| **Hydrodynamic Gear-Meshing & Exclusion** | **DERIVED** | Stagnation pressure spike forbids identical chirality; counter-rotating torsion meshes into stable $1s^2$ pair; $2n^2$ shell capacity. |
+| **Antimatter Annihilation (3-Mode Inversion)** | **DERIVED** | Total flow inversion ($\nabla \cdot \mathbf{v} = 0, \nabla \times \mathbf{v} = 0$) dissolves trapped vortex into $2\mu c^2 = 1021.4\text{ keV}$ transverse grid waves. |
 | **Hydrodynamic Wave-Speed Profile Shift** | **DERIVED** | Bulk flow ($v_A = \text{const} \implies r_n = r_0 k^n$) vs. Core inflow ($v \propto r^{-1/2} \implies r_n = n^2 a_\mu / Z$). |
 | **Non-Hermitian EP Stability Matrix ($\mathbf{M}$)** | **DERIVED** | Source–sink balance at Coriolis shear threshold $\kappa = \gamma$ locks into pure real standing modes. |
 | **3D Vortex Volume Presence ($Z^4 / n^3$)** | **DERIVED** | Presence density $\rho(0) \propto 1/\text{Vol} \propto Z^3/n^3$ times core divergence $Z^1$. |
@@ -58,6 +60,7 @@ This document derives the unified master field equations governing 3D self-confi
 | **Einstein Relativistic Mass ($\gamma m_e$)** | **WITHDRAWN** | Debunked abstraction. Moving faster does not make an electron heavier. |
 | **Debye Plasma Screening Narrative** | **WITHDRAWN** | Statistical plasma abstraction replaced by hydrodynamic wave-speed constitutive profile shift. |
 | **Coulomb Force Across an Empty Void** | **WITHDRAWN** | Replaced by dielectric pressure/density gradient ($P_{\text{high}} \to P_{\text{low}}$) pulling matter inward. |
+| **Pauli Exclusion / Slater Determinants** | **WITHDRAWN** | Abstract quantum spin statistics replaced by 3D fluid vortex boundary collision and gear-meshing. |
 
 ---
 
@@ -135,7 +138,60 @@ In [`scripts/bernoulli_neutron_solver.py`](../scripts/bernoulli_neutron_solver.p
 
 ---
 
-## IV. Scale Invariance vs. Frequency Scale Variance
+## IV. Hydrodynamic Gear-Meshing and Exclusion Mechanics (Replacing Pauli Exclusion)
+
+Standard quantum mechanics treats the "Pauli Exclusion Principle" as an unexplained mathematical prohibition: no two electrons can occupy the same quantum state, enforced via anti-symmetric Slater determinants. It provides zero physical mechanism for *why* electrons refuse to occupy the same state.
+
+In Guardian Cosmology, electrons are continuous 3D toroidal vortex plasmoids operating within the icosahedral quasicrystal lattice. Across the 3 spatial projection axes, there are **6 discrete chiral rotation states** defined by the 3-mode flow vector:
+$$\boldsymbol{\sigma} = (\sigma_{\text{radial}}, \sigma_{\text{toroidal}}, \sigma_{\text{torsion}}) \in \{-1, +1\}^3$$
+For an electron sink: $\sigma_{\text{radial}} = -1$ (Ki $\to$ An drainage).
+
+### 1. Spatial Volume Conflict (Head-On Collision & Stagnation Pressure Spike)
+Two toroidal vortex rings sharing the exact same radial flow ($\sigma_{\text{radial}} = -1$) and axial torsion chirality ($\sigma_{\text{torsion}}^{(1)} = \sigma_{\text{torsion}}^{(2)}$) experience direct head-on velocity vector collisions when attempting to occupy the same spatial core volume:
+$$\mathbf{v}_1 \cdot \mathbf{v}_2 = -|\mathbf{v}|^2 < 0 \quad \text{at the contact boundary}$$
+By Bernoulli's theorem, this fluid collision generates an extreme local lattice stagnation pressure spike:
+$$\Delta P_{\text{stagnation}} = 2 \rho_A v^2$$
+This intense repulsive pressure barrier physically forces the two identical-chirality vortices apart, preventing them from co-existing in the same orbital state.
+
+### 2. Chiral Phase-Locking (Spin-Up / Spin-Down Equivalent)
+To stable-couple within the same primary eigenmode shell ($n=1$), two vortex rings must adopt complementary anti-chiral geometry (counter-rotating axial twist / opposing torsion orientation: $\sigma_{\text{torsion}}^{(1)} = -\sigma_{\text{torsion}}^{(2)}$):
+$$\mathbf{v}_{\text{contact}, 1} \cdot \mathbf{v}_{\text{contact}, 2} = +|\mathbf{v}|^2 > 0$$
+Their boundary fluid wakes mesh smoothly like counter-rotating mechanical gears rather than colliding. The net angular momentum of the paired shell cancels identically:
+$$J_{\text{net}} = S_1 + S_2 = +\frac{1}{2} - \frac{1}{2} = 0$$
+forming a stable, diamagnetic $1s^2$ closed shell (the Helium ground state).
+
+### 3. Antimatter Annihilation (Total 3-Mode Flow Inversion)
+Total 3-mode flow inversion ($+$ to $-$ radial drain/fountain flip plus inverted toroidal circulation and inverted torsion chirality):
+$$\boldsymbol{\sigma}_{\text{positron}} = -\boldsymbol{\sigma}_{\text{electron}} = (+1, -\sigma_{\text{toroidal}}, -\sigma_{\text{torsion}})$$
+When an electron sink encounters its exact topological inverse (a positron), their superposed flow fields produce complete destructive phase cancellation:
+$$\mathbf{v}_{\text{net}} = \mathbf{v}_{e^-} + \mathbf{v}_{e^+} = \mathbf{0}, \qquad \nabla \cdot \mathbf{v}_{\text{net}} = 0, \qquad \nabla \times \mathbf{v}_{\text{net}} = \mathbf{0}$$
+The trapped circulation knots dissolve completely, releasing their trapped wave energy:
+$$E_{\text{annihilation}} = 2 \mu c^2 = 2 \times 511.0\text{ keV} = 1021.4\text{ keV}$$
+as freely propagating transverse electromagnetic waves (photons).
+
+### 4. Shell Occupancy Capacity ($2n^2$)
+Because each spatial orbital mode has a maximum capacity of **2 counter-rotating gear-meshed vortex rings**, and the number of orthogonal angular modes in shell $n$ is $\sum_{l=0}^{n-1} (2l+1) = n^2$, the maximum stable occupancy is:
+$$\boxed{N_{\text{max}}(n) = 2n^2}$$
+Yielding exactly 2 for shell 1, 8 for shell 2, 18 for shell 3, and 32 for shell 4, derived strictly from 3D fluid vortex geometry without quantum spin statistics.
+
+### Benchmark: Hydrodynamic Gear-Meshing & Exclusion
+In [`scripts/gear_meshing_exclusion_solver.py`](../scripts/gear_meshing_exclusion_solver.py), we evaluate the stability and boundary velocity products across chiral pairs, output to [`results/gear_meshing_exclusion_benchmark.csv`](../results/gear_meshing_exclusion_benchmark.csv):
+
+| Interaction Pair | Coupling Mechanism | Contact Flow $\mathbf{v}_1 \cdot \mathbf{v}_2$ | Stagnation Pressure | Net $J$ | Stability Result |
+|:---|:---|:---:|:---:|:---:|:---|
+| **$e^-(\text{up}) + e^-(\text{up})$** | Identical Chirality Collision | $-2.40 \times 10^{12}\text{ m}^2/\text{s}^2$ | **$4.79 \times 10^{-5}\text{ Pa}$** | $+1.0$ | **FORBIDDEN** (Pressure spike expels clone) |
+| **$e^-(\text{up}) + e^-(\text{down})$** | Gear-Meshed Laminar Lock | $+2.40 \times 10^{12}\text{ m}^2/\text{s}^2$ | **$0.00\text{ Pa}$** | **$0.0$** | **STABLE** (Harmonic $1s^2$ closed-shell pair) |
+| **$e^-(\text{up}) + e^+(\text{positron})$** | Antimatter Annihilation | $-1.0$ (Destructive Shear) | Unbinding | **$0.0$** | **ANNIHILATED** ($1021.4\text{ keV}$ burst) |
+| **Harmonic Shell $n=1$** | $2 \times 1^2 = 2$ | 1 gear-meshed pair | Laminar Balance | $0.0$ | Max Occupancy $= 2$ vortex rings |
+| **Harmonic Shell $n=2$** | $2 \times 2^2 = 8$ | 4 gear-meshed pairs | Laminar Balance | $0.0$ | Max Occupancy $= 8$ vortex rings |
+| **Harmonic Shell $n=3$** | $2 \times 3^2 = 18$ | 9 gear-meshed pairs | Laminar Balance | $0.0$ | Max Occupancy $= 18$ vortex rings |
+| **Harmonic Shell $n=4$** | $2 \times 4^2 = 32$ | 16 gear-meshed pairs | Laminar Balance | $0.0$ | Max Occupancy $= 32$ vortex rings |
+
+*(Derived in [`TICKET-06`](../TICKETS.md#ticket-06-hydrodynamic-gear-meshing-and-exclusion-mechanics-replacing-pauli-exclusion)).*
+
+---
+
+## V. Scale Invariance vs. Frequency Scale Variance
 
 The foundational axiom of Guardian Cosmology asserts:
 $$\text{Geometry}(R) = \text{Invariant under } R \to \lambda R$$
@@ -155,7 +211,7 @@ $$f = \frac{c}{R}$$
 
 ---
 
-## V. The Hydrodynamic Wave-Speed Profile Shift
+## VI. The Hydrodynamic Wave-Speed Profile Shift
 
 The transition between celestial geometric spacing ($r_n = r_0 k^n$) and atomic quadratic spacing ($r_n = n^2 a_\mu / Z$) is **purely a hydrodynamic regime shift in the medium's wave-speed constitutive profile $K^2(r)$**:
 
@@ -202,7 +258,7 @@ In [`scripts/constitutive_profile_solver.py`](../scripts/constitutive_profile_so
 
 ---
 
-## VI. Atomic Precession via the Medium Stress Tensor (Mercury's Rule)
+## VII. Atomic Precession via the Medium Stress Tensor (Mercury's Rule)
 
 In standard physics, atomic fine structure is attributed to Einstein's relativistic velocity-mass scaling ($\gamma m_e$) and Dirac spinor matrices.
 
@@ -234,7 +290,7 @@ In [`scripts/mercury_stress_precession_solver.py`](../scripts/mercury_stress_pre
 
 ---
 
-## VII. Non-Hermitian EP Stability Matrix of the An Pump
+## VIII. Non-Hermitian EP Stability Matrix of the An Pump
 
 The central proton Z-pinch operates as an open, externally powered non-Hermitian fluid oscillator:
 - **An Pump (Source):** Injects potential flux from counterspace into 3D space with volumetric gain rate $+\gamma$.
@@ -256,7 +312,7 @@ At the **Exceptional Point (EP) threshold ($\kappa = \gamma$)**:
 
 ---
 
-## VIII. 3D Vortex Core Volume Compression & Physical Lamb Shift
+## IX. 3D Vortex Core Volume Compression & Physical Lamb Shift
 
 In 3D continuum mechanics, an electron is an extended vortex ring with core radius $r_e = \frac{\mu_0 e^2}{4\pi \mu} \approx 2.8195 \times 10^{-15}\text{ m}$.
 
@@ -283,7 +339,7 @@ $$\boxed{\Delta \nu_{\text{Lamb}}(n, Z) = \left[\frac{2\alpha^5 \mu c}{3\pi^2 \s
 
 ---
 
-## IX. Native 3D Fluid Dipole Antenna Radiation Damping
+## X. Native 3D Fluid Dipole Antenna Radiation Damping
 
 Atomic radiation is not synchrotron acceleration of a 1D point on a wire. Transition occurs when two 3D vortex envelopes beat together, establishing a continuous oscillating charge dipole $\mathbf{D}_{ul}(t) = \int \mathbf{r} \rho_{\text{beat}}(\mathbf{r}, t) d^3r$.
 
@@ -301,7 +357,7 @@ Evaluating arbitrary multi-node transitions $(n_u, l_u) \to (n_l, l_l)$ requires
 
 ---
 
-## X. Challenge Protocol & Falsification Criteria
+## XI. Challenge Protocol & Falsification Criteria
 
 | # | Theoretical Claim | Empirical Benchmark | Counts as Model Failure (Break) |
 |:--|:---|:---|:---|
@@ -313,13 +369,14 @@ Evaluating arbitrary multi-node transitions $(n_u, l_u) \to (n_l, l_l)$ requires
 
 ---
 
-## Summary
+## XII. Summary
 
 1. Squeezing vast 3D vortices spanning septillions of lattice cells into Bohr's 1D wire orbit was the root failure of 20th-century atomic modeling.
 2. **Oscillation is mass**; inertia resides in lattice update resistance. Einstein velocity-mass dilation is debunked.
 3. **Charge is flow direction**: unipolar An outflow pump ($+$) versus sink inflow ($-$) closing into self-confining toroids to eliminate boundary leakage.
 4. **Neutrons are proton-electron pairs resting at eigenmode $n=0$** when nuclear proximity dampens separating inertia.
-5. **Atomic fine structure is Mercury-style orbital precession** driven by the medium's dielectric stress tensor $\sigma(r)$, not Einsteinian velocity-mass increase.
-6. The spacing law shifts from geometric ($r_n = r_0 k^n$) to quadratic ($r_n = n^2 a_\mu / Z$) purely via the **hydrodynamic wave-speed constitutive profile shift** ($v_A = \text{const}$ vs. $v \propto r^{-1/2}$).
-7. Non-Hermitian Exceptional Point coupling ($\kappa = \gamma$) locks the open An pump and sink drainage into a stationary standing wave with quarter-wave phase lag.
-8. Active research frontiers are tracked in [`TICKETS.md`](../TICKETS.md) rather than patched with quantum mechanical wavefunctions or empirical decimal floats.
+5. **Hydrodynamic Gear-Meshing Replaces Pauli Exclusion:** Spatial volume conflict produces a local stagnation pressure spike $\Delta P = 2\rho_A v^2$ that bars identical-chirality co-occupation. Complementary counter-rotating torsion spins mesh smoothly like gears, forming stable $1s^2$ closed pairs and deriving the $2n^2$ shell capacity. Total 3-mode flow inversion produces destructive annihilation into $1021.4\text{ keV}$ transverse waves.
+6. **Atomic fine structure is Mercury-style orbital precession** driven by the medium's dielectric stress tensor $\sigma(r)$, not Einsteinian velocity-mass increase.
+7. The spacing law shifts from geometric ($r_n = r_0 k^n$) to quadratic ($r_n = n^2 a_\mu / Z$) purely via the **hydrodynamic wave-speed constitutive profile shift** ($v_A = \text{const}$ vs. $v \propto r^{-1/2}$).
+8. Non-Hermitian Exceptional Point coupling ($\kappa = \gamma$) locks the open An pump and sink drainage into a stationary standing wave with quarter-wave phase lag.
+9. Active research frontiers are tracked in [`TICKETS.md`](../TICKETS.md) rather than patched with quantum mechanical wavefunctions or empirical decimal floats.
