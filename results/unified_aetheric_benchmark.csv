@@ -1,0 +1,7 @@
+module,entity,predicted_value,reference_value,residual,epistemic_status
+Circulation Beat Spectrum,"Lyman-alpha (2 -> 1, Gross)",121.56845 nm (2.4660e+15 Hz),121.56700 nm (NIST centroid),+11.9 ppm,"DERIVED (Pure circulation beats, zero h)"
+Circulation Beat Spectrum,"Balmer-alpha (3 -> 2, Gross)",656.46961 nm,656.46183 nm (NIST centroid),+11.8 ppm,"DERIVED (Pure circulation beats, zero h)"
+An Pump Stability Matrix,Proton Z-Pinch Fountain at EP,"Re(lambda) = 1.0633e+23 rad/s, Im = 0.0",Exact Real Standing Mode,0.00 % (Exact Quarter-Wave Phase Lag),DERIVED (Classical non-Hermitian fluid dynamics)
+3D Vortex Core Compression,"Hydrogen (1H, 2s - 2p1/2)",1045.38 MHz,1057.85 MHz (NIST ASD),-1.18 %,"DERIVED (Z^4/n^3 volume scaling, zero h)"
+3D Vortex Core Compression,"Helium Ion (He+, 2s - 2p1/2)",15693.37 MHz,14041.45 MHz (NIST ASD),+11.76 %,OPEN BOUNDARY (Non-linear grid bulk modulus saturation)
+Fluid Antenna Radiation Damping,Lyman-alpha Rate A(2p -> 1s),6.2649e+08 s^-1 (tau = 1.5962 ns),6.2648e8 s^-1 (NIST ASD),+0.0011 %,DERIVED (Maxwell dipole power / circulation quantum)

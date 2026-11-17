@@ -1,0 +1,6 @@
+state,orbital_radius_m,bernoulli_suction_N,lattice_inertia_N,net_force_N,physical_condition
+Hydrogen Ground State (n=1),5.2947e-11,-8.2298e-08,8.2298e-08,-1.3235e-23,Stable Free-Space Equilibrium (|F_bern| == F_iner)
+"Sub-Orbital Compression (d = 0.5 a_mu, n=1)",2.6473e-11,-3.2919e-07,6.5838e-07,3.2919e-07,Repulsive Barrier (F_net > 0 pushes electron back out to n=1)
+"Super-Orbital Extension (d = 2.0 a_mu, n=1)",1.0589e-10,-2.0574e-08,1.0287e-08,-1.0287e-08,Attractive Pull (F_net < 0 pulls electron back in to n=1)
+"Neutron Pair Bond (n=0, v_theta damped to 0)",2.8195e-15,-2.9022e+01,0.0000e+00,-2.9022e+01,Damped Collapse to n=0 Core (Inertia=0; suction pulls sink into pump throat)
+Neutron Exterior Electric Flux Divergence,1.0000e-10 (Exterior r >> d),—,—,0.0,Strict Electric Neutrality (div v = +Q - Q = 0)
