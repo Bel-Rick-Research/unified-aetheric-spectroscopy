@@ -82,7 +82,7 @@ def evaluate_vortex_coupling(v1: ChiralVortexState, v2: ChiralVortexState, n: in
     if (v1.sigma_radial == -v2.sigma_radial and
         v1.sigma_toroidal == -v2.sigma_toroidal and
         v1.sigma_torsion == -v2.sigma_torsion):
-        e_annihilation_J = 2.0 * MU_H * C**2
+        e_annihilation_J = 2.0 * M_E * C**2
         e_annihilation_keV = e_annihilation_J / (E_CHARGE * 1e3)
         return {
             "pair": f"{v1.name} + {v2.name}",
@@ -103,7 +103,7 @@ def evaluate_vortex_coupling(v1: ChiralVortexState, v2: ChiralVortexState, n: in
             "pair": f"{v1.name} + {v2.name}",
             "coupling_type": "IDENTICAL_CHIRALITY_COLLISION",
             "contact_dot_product": f"-{v_orb**2:.2e} m^2/s^2 (< 0, Head-on collision)",
-            "stagnation_pressure_Pa": f"{delta_p:.4e}",
+            "stagnation_pressure_Pa": f"{delta_p:.2e} Pa [adopts rho_A ~ 1e-17 kg/m^3]",
             "net_angular_momentum": f"{v1.sigma_torsion:+.1f}",
             "stability_status": "FORBIDDEN (Stagnation pressure spike forces vortices apart)",
             "is_stable": False,

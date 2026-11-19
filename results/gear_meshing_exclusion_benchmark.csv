@@ -1,7 +1,7 @@
 interaction_pair,coupling_mechanism,contact_flow_dot_product,stagnation_pressure_Pa,net_angular_momentum,stability_result
-e-(spin_up) + e-(spin_up_clone),IDENTICAL_CHIRALITY_COLLISION,"-4.79e+12 m^2/s^2 (< 0, Head-on collision)",9.5720e-05,+1.0,FORBIDDEN (Stagnation pressure spike forces vortices apart)
+e-(spin_up) + e-(spin_up_clone),IDENTICAL_CHIRALITY_COLLISION,"-4.79e+12 m^2/s^2 (< 0, Head-on collision)",9.57e-05 Pa [adopts rho_A ~ 1e-17 kg/m^3],+1.0,FORBIDDEN (Stagnation pressure spike forces vortices apart)
 e-(spin_up) + e-(spin_down),GEAR_MESHED_LAMINAR_LOCK,"+1.91e+13 m^2/s^2 (> 0, Parallel contact flow)",0.0000 (Laminar meshing),0.0 (J_net = +1/2 - 1/2 = 0),STABLE (Harmonic 1s^2 closed-shell pair)
-e-(spin_up) + e+(positron),ANTIMATTER_ANNIHILATION,-1.0 (Opposing Destructive Shear),Unbinding Dissolution,0.0,ANNIHILATED (Releases 1021.4 keV transverse grid waves)
+e-(spin_up) + e+(positron),ANTIMATTER_ANNIHILATION,-1.0 (Opposing Destructive Shear),Unbinding Dissolution,0.0,ANNIHILATED (Releases 1022.0 keV transverse grid waves)
 Harmonic Shell n=1,2 * n^2 = 2 * 1,1 gear-meshed pairs,Laminar Hydrodynamic Balance,0.0 (Closed Shell),Max Occupancy = 2 vortex rings
 Harmonic Shell n=2,2 * n^2 = 2 * 4,4 gear-meshed pairs,Laminar Hydrodynamic Balance,0.0 (Closed Shell),Max Occupancy = 8 vortex rings
 Harmonic Shell n=3,2 * n^2 = 2 * 9,9 gear-meshed pairs,Laminar Hydrodynamic Balance,0.0 (Closed Shell),Max Occupancy = 18 vortex rings

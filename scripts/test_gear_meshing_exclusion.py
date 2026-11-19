@@ -26,7 +26,7 @@ class GearMeshingExclusionTests(unittest.TestCase):
         self.assertFalse(res["is_stable"])
         self.assertEqual(res["coupling_type"], "IDENTICAL_CHIRALITY_COLLISION")
         self.assertIn("FORBIDDEN", res["stability_status"])
-        p_val = float(res["stagnation_pressure_Pa"])
+        p_val = float(res["stagnation_pressure_Pa"].split()[0])
         self.assertGreater(p_val, 0.0)
 
     def test_complementary_torsion_produces_laminar_gear_meshing(self) -> None:
@@ -41,14 +41,14 @@ class GearMeshingExclusionTests(unittest.TestCase):
         self.assertIn("0.0", res["net_angular_momentum"])
 
     def test_total_3mode_inversion_annihilates_and_releases_1022_kev(self) -> None:
-        """Verify total inversion across radial, toroidal, and torsion modes triggers annihilation releasing 2*mu*c^2."""
+        """Verify total inversion across radial, toroidal, and torsion modes triggers annihilation releasing 2*m_e*c^2."""
         e_minus = gms.ChiralVortexState("e-", -1, +1, +1)
         e_plus = gms.ChiralVortexState("e+", +1, -1, -1)
         res = gms.evaluate_vortex_coupling(e_minus, e_plus, n=1, Z=1)
         self.assertFalse(res["is_stable"])
         self.assertEqual(res["coupling_type"], "ANTIMATTER_ANNIHILATION")
         self.assertIn("ANNIHILATED", res["stability_status"])
-        self.assertIn("1021.4 keV", res["stability_status"])
+        self.assertIn("1022.0 keV", res["stability_status"])
 
     def test_shell_capacity_formula_2n_squared(self) -> None:
         """Verify shell capacity N_max(n) = 2 * n^2 gives 2, 8, 18, 32 for shells n=1, 2, 3, 4."""
