@@ -1,0 +1,9 @@
+aspect,predicted_val,reference_val,discrepancy,epistemic_status,physical_mechanism
+Lyman-alpha (2p -> 1s) Unperturbed Decay,tau_0 = 1.595 ns,x_decay = 4.79 um,Delta_lambda = 0.000 nm (exact),DERIVED FROM AXIOMS,Free-space dipole antenna damping in baseline grid impedance Z_0
+Balmer-alpha (3d -> 2p) Unperturbed Decay,tau_0 = 15.468 ns,x_decay = 46.40 um,Delta_lambda = 0.000 nm (exact),DERIVED FROM AXIOMS,Antenna damping for 3d state with orthogonal Stark-mixing isolation
+Balmer-alpha (3s -> 2p) Unperturbed Decay,tau_0 = 158.403 ns,x_decay = 475.21 um,Delta_lambda = 0.000 nm (exact),DERIVED FROM AXIOMS,Antenna damping for 3s state; sensitive to Stark quenching
+Sensitivity at E = 1.0e+04 V/m (Weak Lab Field (100 V / cm)),Delta_tau / tau_0 = -0.0246 %,QED Prediction = 0.0000 %,Shift = -0.0246 % (K_A=0.9 Pa),OPEN BOUNDARY [PARAMETRIC],Dielectric impedance stress modulation: Delta_tau/tau = -0.25*(eps_0*E^2/K_A)
+Sensitivity at E = 4.5e+04 V/m (Nominal Low-Strain Field (450 V / cm)),Delta_tau / tau_0 = -0.4980 %,QED Prediction = 0.0000 %,Shift = -0.4980 % (K_A=0.9 Pa),OPEN BOUNDARY [PARAMETRIC],Dielectric impedance stress modulation: Delta_tau/tau = -0.25*(eps_0*E^2/K_A)
+Sensitivity at E = 1.0e+05 V/m (Moderate Lab Field (1.0 kV / cm)),Delta_tau / tau_0 = -2.4595 %,QED Prediction = 0.0000 %,Shift = -2.4595 % (K_A=0.9 Pa),OPEN BOUNDARY [PARAMETRIC],Dielectric impedance stress modulation: Delta_tau/tau = -0.25*(eps_0*E^2/K_A)
+Sensitivity at E = 1.0e+06 V/m (High-Gradient Lab Field (10 kV / cm)),Delta_tau / tau_0 = -245.9497 %,QED Prediction = 0.0000 %,Shift = -245.9497 % (K_A=0.9 Pa),OPEN BOUNDARY [PARAMETRIC],Dielectric impedance stress modulation: Delta_tau/tau = -0.25*(eps_0*E^2/K_A)
+Decoupling Prediction: Delta_lambda vs Delta_tau,Delta_lambda = 0.00 (invariant),Delta_tau / tau != 0,BLOCKED: K_A un-derived,BLOCKED: REQUIRES EXTERNAL INPUT [K_A],Deriving exact voltage threshold requires non-linear lattice bulk modulus

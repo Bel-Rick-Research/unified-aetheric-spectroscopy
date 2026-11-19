@@ -62,6 +62,14 @@ def main(update_manifest: bool) -> int:
     rows_nfc = nfc.run_benchmark()
     nfc.print_summary(rows_nfc)
 
+    import dielectric_lifetime_decoupling_solver as dlds
+    rows_dlds = dlds.run_benchmark()
+    dlds.print_summary(rows_dlds)
+
+    import circulation_quantum_geometry_solver as cqgs
+    rows_cqgs = cqgs.run_benchmark()
+    cqgs.print_summary(rows_cqgs)
+
     print("\n2. Manifest Verification")
     if update_manifest:
         count = gm.generate_manifest()

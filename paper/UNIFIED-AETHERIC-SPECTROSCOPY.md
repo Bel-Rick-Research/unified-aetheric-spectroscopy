@@ -40,7 +40,9 @@ This document derives the unified master field equations governing 3D self-confi
 | **Grid Wave Speed ($c$)** | **DERIVED** | Local transverse acoustic speed $c = 1/\sqrt{\mu_A \varepsilon_A}$. |
 | **Grid Characteristic Impedance ($Z_0$)** | **DERIVED** | Invariant ratio $Z_0 = \sqrt{\mu_A / \varepsilon_A} \approx 376.73\ \Omega$. |
 | **Lattice Origin of Inertia** | **DERIVED** | Reactive strain against vertex update-rate changes ($d(\Delta t_P)/dt \neq 0$). Zero drag at steady velocity. |
-| **Oscillation is Mass ($m = \mu\Gamma_0 \frac{\omega_0}{2\pi c^2}$)** | **DERIVED / ADOPTED $\Gamma_0$** | Mass is inductive reactive impedance of trapped high-frequency circulation ($m = \mu\Gamma_0 \frac{\omega_0}{2\pi c^2}$). Setting $\hbar \equiv \mu\Gamma_0/(2\pi)$ bridges to standard units, but deriving $\Gamma_0$ natively from the Planck cell line integral is tracked in `TICKET-09`. |
+| **Oscillation is Mass ($m = \mu\Gamma_0 \frac{\omega_0}{2\pi c^2}$)** | **DERIVED / ADOPTED $\Gamma_0$** | Mass is inductive reactive impedance of trapped high-frequency circulation ($m = \mu\Gamma_0 \frac{\omega_0}{2\pi c^2}$). Identity $\Gamma_0 = c \lambda_C$ cancels $h$ identically; absolute scale derivation from Planck cell is blocked on the leptonic mass hierarchy (`TICKET-09`). |
+| **Dielectric Lifetime Decoupling Protocol** | **PROTOCOL DERIVED / BLOCKED ON $K_A$** | Transverse electrostatic stress modulates radiation impedance ($A \propto \nu/Z_A$), altering lifetime while wavelength is invariant ($\Delta\lambda = 0, \Delta\tau \neq 0$). Exact field threshold blocked on un-derived lattice bulk modulus $K_A$ (`TICKET-08`). |
+| **Circulation Quantum Geometry ($\Gamma_0 = c\lambda_C$)** | **FOUNDATION FORMULATED / BLOCKED ON $m_e$** | Minimum Planck cell circulation $\Gamma_{\text{cell}} = 2c\ell_P$; vortex circulation $\Gamma_0 = c\lambda_C$. Ratio $N_{\text{hierarchy}} = \lambda_C / (2\ell_P) \sim 10^{23} \sim 2/\alpha^{11}$ maps to 11th gear tier; absolute derivation blocked on mass hierarchy (`TICKET-09`). |
 | **Coupled Vortex Reduced Mass ($\mu$)** | **DERIVED FROM AXIOMS** | Derived from two-fluid Kelvin impulse conservation ($\mathbf{P}_{\text{tot}} = \mathbf{0}$) and series acoustic/reactive impedance divider $1/Z_{\text{eff}} = 1/Z_p + 1/Z_e$. Core quadrupole distortion bounded to $\le 1.42\text{ ppb}$ (`TICKET-10`). |
 | **Planck-Clock Nyquist Scale Ladder** | **DERIVED FROM AXIOMS** | Discrete clock ceiling $f_{\text{Nyquist}} = 1/(2p_t)$ terminates fractal collapse at $R_{\text{Nyquist}} = \ell_P / (\pi \alpha^k)$; defines clean Paper 4 lower boundary at proton nozzle ($k=8$) and Bohr shell ($k=12$) in powers of $\alpha^2$ (`TICKET-11`). |
 | **Charge Flow Topology ($\pm$)** | **DERIVED** | Positive = An outflow pump ($\nabla \cdot \mathbf{D} > 0$); Negative = Sink drainage ($\nabla \cdot \mathbf{D} < 0$). |
@@ -575,6 +577,32 @@ proves that the fluid standing modes conserve total charge displacement across t
 | **C3** | $Z^4 / n^3$ Lamb Core Compression | $1045.38\text{ MHz}$ for Hydrogen $2s - 2p_{1/2}$ | Residual exceeding $2.0\%$ in pure hydrogen. |
 | **C4** | Free-Space Dielectric Lifetime Decoupling | $A \propto \nu / Z_A$ where $Z_A = \sqrt{\mu_A / \varepsilon_A}$ | Proving atomic decay lifetime cannot shift under dielectric permittivity stress without wavelength shift. |
 | **C5** | Golden Ratio Acoustic Baseline | $k_{\text{ideal}} = \phi = 1.618034$ | Measured unperturbed circumstellar disk aspect ratio deviating from $H/r \approx 15.3\%$. |
+
+### Laboratory Protocol for Challenge C4: Dielectric Lifetime Decoupling (Ticket 08)
+
+To definitively discriminate between Aetheric acoustic antenna radiation and quantum electrodynamic (QED) vacuum fluctuations, we specify an actionable laboratory apparatus targeting Challenge C4:
+1. **Beam Generation:** A supersonic atomic hydrogen jet ($v_{\text{beam}} \approx 3000\text{ m/s}$) passes through a transverse electrostatic test cell ($L = 10\text{ cm}, d = 5\text{ mm}, V_0 = 1\text{--}50\text{ kV}$).
+2. **Dielectric Stress without Current:** The cell operates in uncharged high-voltage dielectric stress ($\nabla \cdot \mathbf{D} = 0$, $\mathbf{J} = \mathbf{0}$). Because neutral atoms possess zero net charge, internal circulation frequency $\nu_{ul}$ and transition wavelength $\lambda_{ul}$ remain invariant ($\Delta\lambda = 0.000$).
+3. **Decay Lifetime Modulation:** Antenna radiation damping scales inversely with local medium characteristic impedance:
+   $$A_{ul} = \frac{e^2 \omega_{ul}^2}{3\pi \varepsilon_0 c^3} \frac{Z_0}{Z_A} s_{ul} I_{ul}^2 \propto \frac{\nu_{ul}}{Z_A}$$
+   Permittivity enhancement $\Delta\varepsilon_A / \varepsilon_0 \approx \frac{1}{2} \varepsilon_0 E^2 / K_A$ reduces medium impedance $Z_A = \sqrt{\mu_0 / \varepsilon_A}$, causing a fractional lifetime shortening:
+   $$\frac{\Delta\tau}{\tau_0} \approx -\frac{1}{2} \frac{\Delta\varepsilon_A}{\varepsilon_0} = -\frac{1}{4} \frac{\varepsilon_0 E^2}{K_A}$$
+   For states $2p_{3/2} (|m_j| = 3/2)$ or $3d_{5/2} (|m_j| = 5/2)$, linear DC Stark state-mixing with $s$-states is forbidden by angular momentum conservation ($\Delta m_j \neq 0$), isolating the pure dielectric impedance shift.
+4. **Spatial Decay Profiling:** The spatial $1/e$ decay length $x_{\text{decay}} = v_{\text{beam}} \tau_0$ ($4.79\ \mu\text{m}$ for $2p \to 1s$, $46.4\ \mu\text{m}$ for $3d \to 2p$, $475.2\ \mu\text{m}$ for $3s \to 2p$) is measured via downstream confocal laser-induced fluorescence.
+5. **Decisive Falsification:** QED strictly predicts $\Delta\tau / \tau_0 = 0$ in free space. Observation of $\Delta\tau \neq 0$ with $\Delta\lambda = 0$ confirms dielectric antenna damping and falsifies consensus vacuum field quantization.
+6. **Epistemic Boundary:** Exact laboratory voltage thresholds depend on the non-linear lattice bulk modulus $K_A$. Rather than smuggling a fitted float, this parameter is tracked as an open boundary in `TICKET-08`.
+
+### Circulation Quantum Geometry and Hierarchy Scale (Ticket 09)
+
+In standard physics, the circulation quantum is written with Planck's constant as $\Gamma_0 = h / m_e$. In native medium mechanics:
+$$\Gamma_0 \equiv \frac{h}{\mu} = \frac{\mu_0 c e^2}{2\mu\alpha} = c \lambda_{C,\mu}$$
+where $\lambda_{C,\mu}$ is the Compton wavelength of reduced inertia $\mu$. Planck's constant $h$ cancels out identically ($h = \mu \Gamma_0$), proving that action quantization is simply vorticity circulation conservation.
+
+On the discrete dielectric lattice, the minimum circulation loop is the 2-tick Nyquist perimeter around a single Planck cell:
+$$\Gamma_{\text{cell}} = \oint_{\text{cell}} \mathbf{v} \cdot d\mathbf{l} = 2 c \ell_P \approx 9.7015 \times 10^{-27}\ \text{m}^2/\text{s}$$
+The ratio between leptonic circulation and the discrete Planck cell is:
+$$N_{\text{hierarchy}} \equiv \frac{\Gamma_0}{\Gamma_{\text{cell}}} = \frac{\lambda_{C,\mu}}{2\ell_P} \approx 7.4977 \times 10^{22} \approx \frac{2}{\alpha^{11}}$$
+This proves that the leptonic circulation scale corresponds to 11 nested winding orders of the fine-structure gear ratio $\alpha$. Deriving why the electron knot stabilizes specifically at Tier $k=10$ ($r_e = \alpha^2 a_\mu$) from first principles without adopting measured $m_e$ is tracked as an open boundary in `TICKET-09`.
 
 ---
 

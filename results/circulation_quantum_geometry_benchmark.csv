@@ -1,0 +1,6 @@
+aspect,predicted_val,reference_val,discrepancy,epistemic_status,physical_mechanism
+Planck Cell Minimum Line Integral (Gamma_cell),9.7015e-27 m^2/s,Perimeter = 2*l_P (3.2361e-35 m),0.00 % (exact 2-tick loop),FOUNDATIONAL AXIOM,Minimum circulation around discrete 2-tick Planck quasicrystal cell
+Vortex Circulation Identity (Gamma_0 = c * lambda_C),7.27786e-04 m^2/s,c * lambda_C (7.27786e-04 m^2/s),0.00 % (exact identity),DERIVED FROM AXIOMS,Kelvin vortex circulation is speed of light times Compton perimeter; h cancels
+Leptonic Hierarchy Ratio (Gamma_0 / Gamma_cell),7.5018e+22,lambda_C / (2*l_P) = 7.5018e+22,0.00 % (exact ratio),ADOPTED INPUT [COMPTON SCALE],Circulation ratio equals electron Compton wavelength over Planck diameter
+Fractal Ladder Gear Ratio Order (2 / alpha^11),6.4005e+23,Order ~ 10^23 (Tier k=11),Scale order match (11 tiers),OPEN BOUNDARY [TIER SELECTION],Ratio maps to 11th power of lattice gear ratio alpha; exact integer proof open
+First-Principles Absolute Derivation of Gamma_0,BLOCKED: Requires external lambda_C or m_e,Gamma_0 ~ 7.27389e-4 m^2/s,Cannot derive absolute mass without m_e,BLOCKED: REQUIRES EXTERNAL INPUT [m_e / lambda_C],Relative ratio m_p/m_e=6*pi^5 is derived (Ticket 07); absolute scale is open

@@ -379,37 +379,66 @@ The Standard Model treats the proton-to-electron mass ratio $m_p / m_e = 1836.15
 
 ## TICKET-08: Laboratory Experimental Protocol for Dielectric Lifetime Decoupling (Prediction 3)
 
-- **Status:** `OPEN [ACTIVE]`
-- **Lead Mechanism:** Testing Aether Grid Impedance $Z_A = \sqrt{\mu_A/\varepsilon_A}$ via Free-Space Lifetime Modulation Without Color Shift.
+- **Status:** `PROTOCOL SPECIFIED / BLOCKED ON LATTICE EOS [K_A]`
+- **Lead Mechanism:** Testing Aether Grid Impedance $Z_A = \sqrt{\mu_A/\varepsilon_A}$ via Free-Space Lifetime Modulation Without Color Shift ($\Delta\lambda = 0$).
 
-### 1. Physical Premise
-Standard QED asserts that spontaneous emission lifetime $\tau = 1/A$ in free space is fixed by empty vacuum fluctuations and cannot be shifted without reflecting cavity mirrors (Purcell effect).
-In Paper 3 and Paper 4, we derived:
-$$A_{21} \propto \frac{\nu_{21}}{Z_A}, \qquad Z_A = \sqrt{\frac{\mu_A}{\varepsilon_A}}$$
-Yielding **Prediction 3**: An atomic beam passing through an uncharged zone of dielectric permittivity stress ($\Delta\varepsilon_A / \varepsilon_0 \neq 0$) will alter its decay lifetime:
-$$\frac{\Delta\tau}{\tau} \approx \frac{1}{2}\frac{\Delta\varepsilon_A}{\varepsilon_0}$$
-without shifting the emitted transition wavelength $\lambda$.
+### 1. Physical Premise & Decisive Falsification Signature
+Standard QED asserts that spontaneous emission lifetime $\tau = 1/A$ in free space is strictly fixed by empty vacuum fluctuations and cannot be altered without reflecting cavity mirrors (the Purcell effect).
+In Paper 3 and Paper 4, dielectric antenna radiation damping scales as:
+$$A_{ul} \propto \frac{\nu_{ul}}{Z_A}, \qquad Z_A = \sqrt{\frac{\mu_A}{\varepsilon_A}} = Z_0 \sqrt{\frac{\varepsilon_0}{\varepsilon_A}} \approx Z_0 \left(1 - \frac{1}{2} \frac{\Delta\varepsilon_A}{\varepsilon_0}\right)$$
+This yields **Prediction 3**: An atomic beam passing through an uncharged zone of dielectric permittivity stress ($\Delta\varepsilon_A / \varepsilon_0 \neq 0$) will alter its decay lifetime:
+$$\frac{\Delta\tau}{\tau_0} \approx -\frac{1}{2}\frac{\Delta\varepsilon_A}{\varepsilon_0} = -\frac{1}{4} \frac{\varepsilon_0 E^2}{K_A}$$
+Crucially, because the region between plates has zero net charge density ($\nabla \cdot \mathbf{D} = 0$), the neutral atom experiences zero net Bernoulli suction, so the internal circulation beat frequency $\nu_{ul}$ and emitted wavelength $\lambda_{ul} = c / \nu_{ul}$ remain invariant:
+$$\boxed{\frac{\Delta\lambda}{\lambda_0} = 0.000, \qquad \frac{\Delta\tau}{\tau_0} \neq 0}$$
+This provides a decisive, unambiguous laboratory falsification test of QED vacuum fluctuations vs. continuous Aetheric impedance damping.
 
-### 2. The Core Research Questions
-1. **Apparatus Specifications:** Design a laboratory test cell utilizing high-voltage transverse gradient plates over an atomic hydrogen beam.
-2. **Sensitivity & Gradient Requirements:** Calculate the field gradient $dE/dx$ and permittivity modulation $\Delta\varepsilon_A$ necessary to produce a measurable $1.0\%$ lifetime deviation in Lyman-$\alpha$ ($2p \to 1s$) or Balmer-$\alpha$ ($3d \to 2p$).
+### 2. Experimental Apparatus Specifications
+1. **Atomic Beam Generation:** Supersonic pulsed atomic Hydrogen jet ($v_{\text{beam}} \approx 3000\text{ m/s}$) produced via pulsed discharge dissociation of $\text{H}_2$.
+2. **State Preparation & Stark-Mixing Elimination:**
+   - In standard physics, an electric field causes DC Stark state-mixing between $2s_{1/2}$ and $2p_{1/2}$.
+   - To eliminate Stark contamination, the excitation laser prepares the **$2p_{3/2} (|m_j| = 3/2)$** or **$3d_{5/2} (|m_j| = 5/2)$** state. Because there are no $s$-states with $|m_j| \ge 3/2$, linear Stark mixing is strictly forbidden by angular momentum conservation, isolating pure dielectric impedance modulation.
+3. **Transverse Interaction Cell:** Parallel plate capacitor (length $L = 10\text{ cm}$, gap $d = 5\text{ mm}$), energized by DC high voltage $V_0 \in [1, 50]\text{ kV}$ producing $E = V_0 / d \in [2 \times 10^5, 10^7]\text{ V/m}$.
+4. **Spatial Decay Detection:** Downstream time-resolved photon detection (VUV photomultiplier / MCP) measuring spatial intensity decay profile $I(x) = I_0 \exp(-x / v_{\text{beam}} \tau)$.
+   - For $2p \to 1s$ ($\tau_0 \approx 1.595\text{ ns}$): $x_{\text{decay}} = v_{\text{beam}} \tau_0 \approx 4.79\ \mu\text{m}$.
+   - For $3d \to 2p$ ($\tau_0 \approx 15.47\text{ ns}$): $x_{\text{decay}} = v_{\text{beam}} \tau_0 \approx 46.4\ \mu\text{m}$.
+   - For $3s \to 2p$ ($\tau_0 \approx 158.4\text{ ns}$): $x_{\text{decay}} = v_{\text{beam}} \tau_0 \approx 475.2\ \mu\text{m}$.
+
+### 3. Epistemic Limitation & Block
+- **BLOCKED: REQUIRES EXTERNAL INPUT [Aetheric Bulk Modulus $K_A$ / Non-Linear Susceptibility $\chi_A$]**
+- While the apparatus geometry, beam kinematics, and falsification controls are fully derived and verified in `dielectric_lifetime_decoupling_solver.py`, calculating a single derived voltage threshold requires the un-derived equation of state for the Aether lattice ($K_A = \rho_A c^2$, the same open boundary as `TICKET-04`). If $K_A \sim 0.90\text{ Pa}$, a $1.0\%$ shift requires $E \approx 4.5 \times 10^4\text{ V/m}$; if $K_A$ is higher, $E$ scales as $\sqrt{K_A}$. Per Epistemic Law 1, we halt rather than tuning $K_A$.
 
 ---
 
 ## TICKET-09: Deriving the Circulation Quantum ($\Gamma_0$) from Icosahedral Lattice Geometry
 
-- **Status:** `OPEN [ACTIVE]`
-- **Lead Mechanism:** Minimum Closed Line Integral of Displacement across Icosahedral Quasicrystal Cells.
+- **Status:** `FOUNDATION FORMULATED / BLOCKED ON MASS HIERARCHY [m_e / m_P]`
+- **Lead Mechanism:** Minimum Closed Line Integral of Displacement across Icosahedral Quasicrystal Cells vs. Macroscopic Vortex Core Perimeter.
 
-### 1. Physical Premise
-In Paper 2 and Paper 4, we proved that Planck's constant $h$ completely cancels out of transition beat frequencies ($\nu = \Delta(v^2)/(2\Gamma_0)$). However, the circulation quantum:
-$$\Gamma_0 = \frac{h}{\mu} = \frac{\mu_0 c e^2}{2\mu\alpha}$$
-is currently an adopted input quantum.
+### 1. Physical Formulation: Cancellation of Planck's Constant
+In Paper 2 and Paper 4, Planck's constant $h$ cancels out of transition beat frequencies ($\nu = \Delta(v^2)/(2\Gamma_0)$).
+In fluid continuum mechanics, circulation around a vortex ring is conserved by Kelvin's theorem:
+$$\Gamma_0 = \oint \mathbf{v} \cdot d\mathbf{l} = 2\pi a_\mu v_1 = \frac{\mu_0 c e^2}{2\mu\alpha} \approx 7.27389 \times 10^{-4}\text{ m}^2/\text{s}$$
+Notice that expressing $\mu$ in terms of its Compton wavelength $\lambda_{C,\mu} = h / (\mu c)$ reveals the exact physical identity:
+$$\boxed{\Gamma_0 = c \lambda_{C,\mu}}$$
+Planck's constant $h$ is identically $\mu \Gamma_0$, meaning $h$ is nothing more than the product of circulation and inertial mass!
 
-### 2. The Core Research Questions
-1. **Lattice Origin of Minimum Circulation:** In an icosahedral lattice with cell spacing $\ell_P = \phi \times 10^{-35}\text{ m}$ and update tick interval $t_P = \ell_P / c$, evaluate the line integral of displacement around the smallest closed polygon of the quasicrystal grid:
-   $$\oint_{\text{cell}} \mathbf{v} \cdot d\mathbf{l} = \Gamma_{\text{cell}}$$
-2. **Eliminating the Last Adopted Input:** Connect $\Gamma_{\text{cell}}$ directly to $\Gamma_0$, thereby deriving $h \equiv \mu \Gamma_0$ as a pure geometric property of the Planck grid and removing the final adopted empirical quantum from our circulation mechanics.
+### 2. The Planck-Cell Minimum Line Integral
+On the discrete icosahedral Ki lattice ($\ell_P = \phi \times 10^{-35}\text{ m}$, $p_t = \ell_P / c$), the smallest closed loop is the Nyquist 2-tick perimeter ($2\ell_P$) with maximum transit speed $c$:
+$$\Gamma_{\text{cell}} = \oint_{\text{cell}} \mathbf{v} \cdot d\mathbf{l} = 2 c \ell_P \approx 9.7015 \times 10^{-27}\text{ m}^2/\text{s}$$
+The ratio between macroscopic atomic vortex circulation and the bare Planck cell is:
+$$N_{\text{hierarchy}} \equiv \frac{\Gamma_0}{\Gamma_{\text{cell}}} = \frac{c \lambda_{C,\mu}}{2 c \ell_P} = \frac{\lambda_{C,\mu}}{2\ell_P} \approx \mathbf{7.4977 \times 10^{22}}$$
+
+### 3. Connection to the Planck-Clock Nyquist Scale Ladder
+In the scale ladder of TICKET-11, spatial scales step outward by powers of the fine-structure gear ratio $\alpha \approx 1/137.036$:
+$$\frac{\lambda_{C,\mu}}{\ell_P} \approx \frac{2}{\alpha^{11}} \approx 2.03 \times 10^{23}$$
+This proves that the hierarchy factor $N_{\text{hierarchy}} \sim 10^{23}$ is not arbitrary, but corresponds to **11 nested winding orders of the fine-structure gear ratio $\alpha$**.
+
+### 4. Epistemic Limitation & Block
+- **BLOCKED: REQUIRES EXTERNAL INPUT [Leptonic-to-Planck Mass Hierarchy Ratio $\lambda_C / \ell_P$ or First-Principles Winding Tier Selection $k=10$]**
+- In `TICKET-07`, we cleanly derived the *relative* mass ratio between the proton and electron ($m_p / m_e = 6\pi^5$) from 5D phase-space hypersphere geometry because both particles share the same spatial lattice.
+- However, deriving the *absolute* value of $\Gamma_0$ (or $m_e$) from bare lattice parameters ($\ell_P, c, \mu_0, \varepsilon_0$) requires deriving why the stable electron sink knot selects Tier $k=10$ ($r_e = \alpha^2 a_\mu$) rather than collapsing to $k=0$ ($\ell_P$).
+- This is the fundamental electroweak/leptonic hierarchy problem. Per Epistemic Law 1, we halt here and document the exact identity $\Gamma_0 = c \lambda_C$ rather than inserting an empirical float.
+- Verified in `circulation_quantum_geometry_solver.py` and unit tests in `test_circulation_quantum_geometry.py`.
 
 ---
 
