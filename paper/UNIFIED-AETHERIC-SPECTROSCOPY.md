@@ -45,7 +45,7 @@ This document derives the unified master field equations governing 3D self-confi
 | **Circulation Quantum Geometry ($\Gamma_0 = c\lambda_C$)** | **FOUNDATION FORMULATED / BLOCKED ON $m_e$** | Minimum Planck cell circulation $\Gamma_{\text{cell}} = 2c\ell_P$; vortex circulation $\Gamma_0 = c\lambda_C$. Ratio $N_{\text{hierarchy}} = \lambda_C / (2\ell_P) \sim 10^{23} \sim 2/\alpha^{11}$ maps to 11th gear tier; absolute derivation blocked on mass hierarchy (`TICKET-09`). |
 | **Coupled Vortex Reduced Mass ($\mu$)** | **DERIVED FROM AXIOMS** | Derived from two-fluid Kelvin impulse conservation ($\mathbf{P}_{\text{tot}} = \mathbf{0}$) and series acoustic/reactive impedance divider $1/Z_{\text{eff}} = 1/Z_p + 1/Z_e$. Core quadrupole distortion bounded to $\le 1.42\text{ ppb}$ (`TICKET-10`). |
 | **Planck-Clock Nyquist Scale Ladder** | **DERIVED FROM AXIOMS** | Discrete clock ceiling $f_{\text{Nyquist}} = 1/(2p_t)$ terminates fractal collapse at $R_{\text{Nyquist}} = \ell_P / (\pi \alpha^k)$; defines clean Paper 4 lower boundary at proton nozzle ($k=8$) and Bohr shell ($k=12$) in powers of $\alpha^2$ (`TICKET-11`). |
-| **Charge Flow Topology ($\pm$)** | **DERIVED** | Positive = An outflow pump ($\nabla \cdot \mathbf{D} > 0$); Negative = Sink drainage ($\nabla \cdot \mathbf{D} < 0$). |
+| **Charge Flow Topology ($\pm$)** | **DERIVED** | Positive = An outflow pump ($\text{div }\mathbf{D} = \nabla \cdot \mathbf{D} > 0$); Negative = Sink drainage ($\text{div }\mathbf{D} = \nabla \cdot \mathbf{D} < 0$). |
 | **Proton-to-Electron Mass Ratio ($m_p/m_e = 6\pi^5$)** | **DERIVED FROM AXIOMS (18.82 ppm)** | Bounded 5D phase-space volume across 6 chiral octahedral channels yields $(m_p/m_e)_{\text{geom}} = 6\pi^5 = 1836.1181$, agreeing with CODATA ($1836.1527$) to $+18.82\text{ ppm}$ ($+0.0019\%$). Residual is acoustic wake drag (`TICKET-07`). |
 | **Toroidal Recirculating Closure** | **DERIVED** | Hydrodynamic self-confinement to eliminate open-boundary Z-pinch leakage. |
 | **Bernoulli / Bjerknes Attraction Force** | **DERIVED** | Mutual suction well between pump and sink: $F = -\frac{\mu_0 c^2 e^2}{4\pi d^2} = -\frac{e^2}{4\pi\varepsilon_0 d^2}$. |
@@ -56,7 +56,7 @@ This document derives the unified master field equations governing 3D self-confi
 | **Non-Hermitian EP Stability Matrix ($\mathbf{M}$)** | **DERIVED** | Source–sink balance at Coriolis shear threshold $\kappa = \gamma$ locks into pure real standing modes. |
 | **3D Vortex Volume Presence ($Z^4 / n^3$)** | **DERIVED** | Presence density $\rho(0) \propto 1/\text{Vol} \propto Z^3/n^3$ times core divergence $Z^1$. |
 | **Dielectric Strain Volume Contraction** | **DERIVED** | Logarithmic strain $S = \ln(n^2 / Z\alpha^2)$, reducing Helium+ overshoot from +19.1% to +11.8%. |
-| **Native 3D Dipole Antenna Rate ($2p \to 1s$)** | **DERIVED (NUMERICAL)** | Maxwell dipole damping: $A = \frac{4}{3}\alpha \frac{\omega^3}{c^2} s I_{21}^2$, matching NIST to 0.0016% via numerical quadrature ($I_{21} = 1.2903\ a_\mu$). Closed-form $(2/3)^8$ is an adopted historical Schrödinger benchmark (`TICKET-05`). |
+| **Native 3D Dipole Antenna Rate ($2p \to 1s$)** | **DERIVED (NUMERICAL)** | Maxwell dipole damping: $A = \frac{4}{3}\alpha \frac{\omega^3}{c^2} s_{\text{line}} \cdot I_{21}^2$ ($s_{\text{line}} = 1/3$), matching NIST to 0.0016% via numerical quadrature ($I_{21} = 1.2903\ a_\mu$). Closed-form $(2/3)^8$ is an adopted historical Schrödinger benchmark (`TICKET-05`). |
 | **Mercury Precession Rule in Atoms** | **DERIVED FROM AXIOMS** | Both scaling $(v_n/c)^2 \equiv (Z\alpha/n)^2$, the exact $-3/4$ Virial Theorem ratio, and the $j+1/2$ Thomas precession torsion coupling are derived from continuum fluid/wave mechanics without Einsteinian mass dilation or Dirac spinors (`TICKET-03`). |
 | **Rational Continuity Transition Profile** | **DERIVED** | Geometric fluid continuity $T(r) = R_{\text{trans}}/(R_{\text{trans}}+r)$, naturally converting $1/r$ core gradient to $1/r^2$ scale-free bulk flow. |
 | **High-$Z$ Grid Elasticity Saturation** | **OPEN BOUNDARY / FAILED** | Logarithmic strain volume contraction reduces He+ overshoot to +11.8%; remaining gap is an unresolved boundary representing non-linear lattice bulk modulus saturation under doubled unipolar charge tension. Any numerical estimate $K_A \sim 0.9\text{ Pa}$ is an empirical estimate from assumed density ($\rho_A \sim 10^{-17}\text{ kg/m}^3$), not a derived constant (`TICKET-04`). |
@@ -79,13 +79,13 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
         AN (Counterspace / Potential Source)
                       │
                       ▼ (Outflow: Positive Charge +)
-       [ Central Proton Z-Pinch Fountain ] ───► Poloidal Outflow (∇·D > 0)
+       [ Central Proton Z-Pinch Fountain ] ───► Poloidal Outflow (div D > 0)
                       ▲                               │
                       │ (Recirculating Líl)           ▼
          [ Toroidal Recirculating Sheath ] ◄─── (P_high -> P_low)
                       │                               ▲
                       ▼ (Inflow: Negative Charge -)   │
-       [ Orbiting Electron Sink Drainage ] ───► Equatorial Return (∇·D < 0)
+       [ Orbiting Electron Sink Drainage ] ───► Equatorial Return (div D < 0)
                       │
                       ▼
         AN (Counterspace / Dielectric Ground)
@@ -107,7 +107,7 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
    In native grid parameters, $\rho_A Q^2 = \mu_0 c^2 e^2 = e^2 / \varepsilon_0$. Therefore:
    $$\boxed{\mathbf{F}_{\text{attraction}}(d) = -\frac{\mu_0 c^2 e^2}{4\pi d^2} \hat{\mathbf{d}} = -\frac{e^2}{4\pi \varepsilon_0 d^2} \hat{\mathbf{d}}}$$
 
-5. **The Proton-to-Electron Mass Ratio from Vortex Topologies ($m_p/m_e = 6\pi^5$):**
+5. **The Proton-to-Electron Mass Ratio from Vortex Topologies ($m_p/m_e = 6\pi^5 = 1836.12$):**
    The Standard Model treats the proton-to-electron mass ratio $m_p / m_e = 1836.15267344$ as an unexplained, arbitrary empirical parameter inserted by hand into equations. In Guardian Cosmology, mass is the inductive reactive impedance of trapped wave circulation:
    $$m = \frac{\mu\Gamma_0}{2\pi c^2} \omega_0 \implies \frac{m_p}{m_e} = \frac{\omega_p}{\omega_e} = \frac{\bar{\lambda}_{C,e}}{\bar{\lambda}_{C,p}}$$
    where $\bar{\lambda}_C = \Gamma_0 / (2\pi c)$ is the reduced Compton circulation wavelength.
@@ -131,7 +131,7 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
      proving that 1836 is the geometric packing capacity of 12 spatial vortex channels arrayed in triangular 17-step nodal circulation.
    - **Open Boundary ($+18.82\text{ ppm}$ Acoustic Wake Drag):** The remaining $+0.034565$ residual corresponds to the boundary-layer acoustic wake drag of the electron toroidal ring circulating through the background strain field of the central fountain ($\sim \alpha^2$ radiation reaction impedance correction, tracked in `TICKET-07`).
 
-### Benchmark: Proton-to-Electron Mass Ratio ($6\pi^5$)
+### Benchmark: Proton-to-Electron Mass Ratio ($6\pi^5 \approx 1836.12$)
 
 | Metric / Aspect | Predicted (Aetheric) | CODATA 2022 Reference | Residual / Discrepancy | Epistemic Status | Physical Mechanism |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -206,18 +206,29 @@ A major mystery of standard physics is why the neutron exists as an apparently s
 $$n^0 \to p^+ + e^- + \bar{\nu}_e$$
 
 In our wave topology framework, **the neutron is the default ground state of a proton-electron pair**:
-1. **The Inward Bernoulli Suction:** $F_{\text{Bernoulli}}(r) = -\frac{\mu_0 c^2 e^2}{4\pi r^2} \propto -\frac{1}{r^2}$.
-2. **The Outward Lattice Inertial Barrier:** When the electron has earned azimuthal circulation velocity $v_\theta = \frac{n \Gamma_0}{2\pi r}$, the icosahedral lattice resists update-rate acceleration with centrifugal inertial impedance:
+
+1. **The Inward Bernoulli Suction:**
+   $$F_{\text{Bernoulli}}(r) = -\frac{\mu_0 c^2 e^2}{4\pi r^2} \propto -\frac{1}{r^2}$$
+
+2. **The Outward Lattice Inertial Barrier:**
+   When the electron has earned azimuthal circulation velocity $v_\theta = \frac{n \Gamma_0}{2\pi r}$, the icosahedral lattice resists update-rate acceleration with centrifugal inertial impedance:
    $$F_{\text{inertia}}(r, n) = +\mu \frac{v_\theta^2}{r} = +\mu \left(\frac{n\Gamma_0}{2\pi}\right)^2 \frac{1}{r^3} \propto +\frac{1}{r^3}$$
+
 3. **The Effective Potential Well:**
    $$V_{\text{eff}}(r, n) = -\frac{\mu_0 c^2 e^2}{4\pi r} + \frac{\mu n^2 \Gamma_0^2}{8\pi^2 r^2}$$
    Because $1/r^3$ beats $1/r^2$ at close range ($r < a_\mu$), a steep repulsive inertial wall prevents the electron from falling into the proton in free space. The stable balance occurs at $r_n = \frac{n^2 a_\mu}{Z}$ ($n = 1, 2, 3\dots$). **Inertia is the ONLY force keeping the proton and electron apart.**
-4. **Nuclear Proximity Inertia Damping $\implies$ Collapse to $n=0$:** Inside a multi-nucleon cluster ($r \sim 10^{-15}\text{ m}$), dense overlapping wave interference robs the electron sink of its coherent azimuthal circulation:
+
+4. **Nuclear Proximity Inertia Damping $\implies$ Collapse to $n=0$:**
+   Inside a multi-nucleon cluster ($r \sim 10^{-15}\text{ m}$), dense overlapping wave interference robs the electron sink of its coherent azimuthal circulation:
    $$v_\theta \to 0 \implies F_{\text{inertia}} \to 0$$
    Without the $1/r^3$ centrifugal inertial barrier, Bernoulli suction pulls the sink directly into the throat of the proton pump ($r \to r_e$), resting at **eigenmode $n=0$ (the neutron pair bond)**.
-5. **Electric Neutrality:** Coaxial superposition of the $+Q$ outflow and $-Q$ inflow produces zero net exterior divergence:
+
+5. **Electric Neutrality:**
+   Coaxial superposition of the $+Q$ outflow and $-Q$ inflow produces zero net exterior divergence:
    $$\nabla \cdot \mathbf{v}_{\text{net}} = \nabla \cdot (\mathbf{v}_{\text{pump}} + \mathbf{v}_{\text{sink}}) = +Q - Q = \mathbf{0}$$
-6. **Free Neutron Beta Decay:** When knocked out of the nucleus into free space, the external damping field vanishes. The unshielded, compressed dielectric wave energy spins up transverse circulation. Separating lattice inertia returns ($F_{\text{inertia}} \propto 1/r^3$), driving the pump and sink violently apart after their characteristic half-life ($\tau_{1/2} \approx 14.7\text{ min}$) and releasing a transverse helical radiation pulse ($\bar{\nu}_e$).
+
+6. **Free Neutron Beta Decay:**
+   When knocked out of the nucleus into free space, the external damping field vanishes. The unshielded, compressed dielectric wave energy spins up transverse circulation. Separating lattice inertia returns ($F_{\text{inertia}} \propto 1/r^3$), driving the pump and sink violently apart after their characteristic half-life ($\tau_{1/2} \approx 14.7\text{ min}$) and releasing a transverse helical radiation pulse ($\bar{\nu}_e$).
 
 ### Benchmark of Bernoulli Suction & Neutron $n=0$ Ground State
 In [`scripts/bernoulli_neutron_solver.py`](../scripts/bernoulli_neutron_solver.py), we evaluate the force balance and neutrality across orbital radii, output to [`results/bernoulli_neutron_benchmark.csv`](../results/bernoulli_neutron_benchmark.csv):
@@ -319,7 +330,7 @@ $$\rho(r) \propto r^{-2}, \quad B(r) \propto r^{-1} \implies v_A = \frac{B}{\sqr
 Because $v_A$ is independent of $r$, the restoring term has scale-free inverse-square stiffness:
 $$K^2(r) = \frac{g_0}{r^2} \implies r^2 K^2(r) = g_0 = \text{constant}$$
 The wave equation reduces to the scale-invariant **Euler–Cauchy ODE**, forcing planetary nodes into **geometric intervals**:
-$$\boxed{r_n = r_0 \cdot k^n, \qquad k = \exp\left[\pi \left(\frac{H}{r}\right)\sqrt{\frac{2}{\gamma\beta}}\right]}$$
+$$\boxed{r_n = r_0 \, k^n, \qquad k = \exp\left[\pi \left(\frac{H}{r}\right)\sqrt{\frac{2}{\gamma\beta}}\right]}$$
 The unperturbed natural lattice baseline is $k = \phi \approx 1.618034$ ($H/r \approx 15.3\%$).
 
 ### 2. Micro Atomic Regime (Steep Central Core Gradient Dominance)
@@ -442,9 +453,9 @@ In [`scripts/mercury_stress_precession_solver.py`](../scripts/mercury_stress_pre
 ## VIII. Non-Hermitian EP Stability Matrix of the An Pump
 
 The central proton Z-pinch operates as an open, externally powered non-Hermitian fluid oscillator:
-- **An Pump (Source):** Injects potential flux from counterspace into 3D space with volumetric gain rate $+\gamma$.
-- **Drainage (Sink):** Removes circulating dielectric flux with loss rate $-\gamma$.
-- **Coriolis Shear Coupling ($\kappa$):** Transverse coupling between axial inflow and azimuthal circulation.
+- **An Pump (Source):** Injects potential flux from counterspace into 3D space with volumetric gain rate $+\gamma$ (gain parameter).
+- **Drainage (Sink):** Removes circulating dielectric flux with loss rate $-\gamma$ (loss parameter).
+- **Coriolis Shear Coupling ($\kappa$, shear parameter):** Transverse coupling between axial inflow and azimuthal circulation.
 
 In classical open-system continuum mechanics, the dynamic operator matrix is:
 $$\mathbf{M} = \begin{pmatrix} \omega_0 + i\gamma & \kappa \\ \kappa & \omega_0 - i\gamma \end{pmatrix}$$
@@ -474,10 +485,10 @@ The transverse circulation beat frequency quantum stored per core passage is:
 $$\nu_{\text{twist}} = \frac{\alpha^2 \mu c}{\pi \mu_0 e^2} \approx 1.4342 \times 10^{17}\text{ Hz}$$
 
 ### 3. Dielectric Strain Volume Contraction
-The dielectric strain volume between the core $r_e$ and orbital boundary $r_n$ scales as:
+The dielectric strain volume between the core $r_e$ and orbital boundary $r_n$ scales logarithmically with the lattice gear ratio $\alpha^2$:
 $$S(n, Z) = \ln\left(\frac{r_n}{r_e}\right) = \ln\left(\frac{n^2}{Z \alpha^2}\right)$$
 Normalized to the Hydrogen ($n=2, Z=1$) baseline:
-$$\eta_{\text{strain}}(n, Z) = \frac{\ln\left(\frac{n^2}{Z\alpha^2}\right)}{\ln\left(\frac{4}{\alpha^2}\right)}$$
+$$\eta_{\text{strain}}(n, Z) = \frac{\ln\left(\frac{n^2}{Z\alpha^2}\right)}{\ln\left(\frac{4}{\alpha^2}\right)} \qquad (\alpha \approx 1/137.036)$$
 
 The strain-saturated Lamb beat frequency in native grid parameters is:
 $$\boxed{\Delta \nu_{\text{Lamb}}(n, Z) = \left[\frac{2\alpha^5 \mu c}{3\pi^2 \sqrt{2} \mu_0 e^2}\right] \frac{Z^4}{n^3} \cdot \frac{\ln\left(\frac{n^2}{Z\alpha^2}\right)}{\ln\left(\frac{4}{\alpha^2}\right)}}$$
@@ -496,7 +507,7 @@ Atomic radiation is not synchrotron acceleration of a 1D point on a wire. Transi
 By classical Maxwell electrodynamics, a beating dipole radiating into the dielectric medium of permeability $\mu_0$ and wave speed $c$ emits power:
 $$P = \frac{\mu_0 \omega_{ul}^4 |\mathbf{D}_0|^2}{12\pi c}$$
 Dividing antenna power by beat circulation quantum $\Delta E = \mu \Gamma_0 \nu_{ul}$ yields the native antenna damping rate:
-$$\Gamma_{\text{antenna}} = \frac{P}{\Delta E} = \frac{4}{3} \alpha \frac{\omega_{ul}^3}{c^2} s I_{ul}^2, \qquad s = \frac{\max(l_u, l_l)}{2l_u + 1}$$
+$$\Gamma_{\text{antenna}} = \frac{P}{\Delta E} = \frac{4}{3} \alpha \frac{\omega_{ul}^3}{c^2} s_{\text{line}} \cdot I_{ul}^2, \qquad s_{\text{line}} = \frac{\max(l_u, l_l)}{2l_u + 1}$$
 where $I_{ul} = \int_0^\infty r^3 \mathcal{R}_u(r) \mathcal{R}_l(r) dr$ is the spatial overlap integral evaluated by 1D numerical quadrature of the acoustic Sturm–Liouville envelopes.
 
 For Lyman-$\alpha$ ($2p \to 1s$):

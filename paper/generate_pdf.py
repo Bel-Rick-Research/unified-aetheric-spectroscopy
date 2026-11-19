@@ -110,6 +110,19 @@ def build_pdf():
         margin-bottom: 8px;
         text-align: justify;
     }}
+    ol li, ul li {{
+        margin-bottom: 6px;
+    }}
+    pre {{
+        font-family: 'Liberation Mono', monospace;
+        font-size: 8.5pt;
+        background-color: #f8f8f8;
+        padding: 6px 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        line-height: 1.3;
+        white-space: pre-wrap;
+    }}
     table {{
         width: 100%;
         border-collapse: collapse;
