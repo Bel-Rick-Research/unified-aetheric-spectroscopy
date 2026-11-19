@@ -40,11 +40,33 @@ class MercuryStressPrecessionTests(unittest.TestCase):
             self.assertAlmostEqual(stress_calc / expected, 1.0, places=12)
 
     def test_hydrogen_2p_doublet_matches_10_943_ghz(self) -> None:
-        """Verify medium stress precession produces the exact 10.9433 GHz hydrogen 2p doublet."""
+        """Verify medium stress precession produces the exact 10.9433 GHz hydrogen 2p doublet natively without h."""
         split_hz = msps.hydrogen_2p_doublet_split_hz(Z=1)
-        expected_hz = (1.0 / 32.0) * msps.MU_H * msps.C**2 * msps.ALPHA**4 / msps.H_PLANCK
-        self.assertAlmostEqual(split_hz / expected_hz, 1.0, places=12)
+        expected_native_hz = (1.0 / 32.0) * (msps.C**2 * msps.ALPHA**4) / msps.GAMMA_0
+        self.assertAlmostEqual(split_hz / expected_native_hz, 1.0, places=12)
         self.assertAlmostEqual(split_hz / 1e9, 10.9433, places=3)
+
+    def test_virial_theorem_stress_offset_ratio_is_exact_minus_three_quarters(self) -> None:
+        """Verify Virial Theorem <V> = 2*E derives identically -3/4 (-0.75) from (E^2 - 4*E^2) / (4*E^2)."""
+        ratio = msps.virial_theorem_stress_offset_ratio()
+        self.assertEqual(ratio, -0.75)
+
+    def test_torsion_orbit_cancellation_identity(self) -> None:
+        """Verify algebraic identity combining dispersion and Thomas spin-orbit coupling into 1/(j + 1/2)."""
+        for l in range(1, 6):
+            res_par, res_anti = msps.verify_torsion_orbit_cancellation(l)
+            self.assertLess(res_par, 1e-15, f"Parallel cancellation failed at l={l}")
+            self.assertLess(res_anti, 1e-15, f"Anti-parallel cancellation failed at l={l}")
+
+    def test_dispersion_plus_thomas_so_equals_total_fine_structure(self) -> None:
+        """Verify Delta nu_disp + Delta nu_SO identically equals Delta nu_stress for all n <= 6."""
+        for n in range(2, 7):
+            for l in range(1, n):
+                for j in (l - 0.5, l + 0.5):
+                    disp = msps.atomic_dispersion_precession_beat_hz(n, l, Z=1)
+                    so = msps.atomic_thomas_spin_orbit_beat_hz(n, l, j, Z=1)
+                    total = msps.atomic_total_stress_precession_beat_hz(n, l, j, Z=1)
+                    self.assertAlmostEqual((disp + so) / total, 1.0, places=12)
 
     def test_benchmark_csv_output_integrity(self) -> None:
         """Verify CSV benchmark table is generated with 3 rows and correct headers."""
