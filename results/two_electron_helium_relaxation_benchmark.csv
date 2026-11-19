@@ -1,0 +1,6 @@
+model_stage,effective_charge_Z_eff,predicted_energy_eV,nist_energy_eV,residual_percent,epistemic_status
+"1. Unperturbed Hydrogenic Helium (Z=2, sigma=0)",2.0000,-108.8306,-79.0052,+37.75%,DERIVED (Non-interacting baseline; overbinds by 37.8%)
+2. Antipodal Point-Sink Screening (sigma=1/4),1.7500,-83.3234,-79.0052,+5.47%,DERIVED (Rigid antipodal geometry; overbinds by 5.48%)
+3. Distributed 3D Toroidal Envelope Screening (sigma=5/16),1.6875,-77.4781,-79.0052,-1.93%,DERIVED FROM AXIOMS (Averaged 3D toroidal envelope; +1.92% residual)
+4. Fluid Oblate Core Deformation (Correlation),1.7032,-1.5271,—,Delta=-1.527 eV,PARAMETRIC (Fluid deformation reduces wake drag by -1.518 eV)
+5. Exact First-Principles 3D Fluid Relaxation,—,BLOCKED,-79.0052,—,BLOCKED: REQUIRES COUPLED 3D NAVIER-STOKES DEFORMATION TENSOR

@@ -1,0 +1,8 @@
+configuration,coordinates_m,velocity_m_s,streamfunction_m3_s,bernoulli_pressure_Pa,physical_condition
+"Dipolar Coaxial Midpoint (z=0, varpi=r_e)","z=0.0, varpi=2.82e-15",3.8667e+15,-2.7099e-06,0.0000e+00,Deep Bernoulli suction tube connecting pump and sink
+Pump Outflow Throat (z = +d/2 - r_e),"z=2.65e-11, varpi=2.82e-15",4.4068e+22,-2.1372e-06,0.0000e+00,High-velocity unipolar An outflow fountain (+Q)
+Sink Inflow Throat (z = -d/2 + r_e),"z=-2.65e-11, varpi=2.82e-15",4.4068e+22,-2.1372e-06,0.0000e+00,High-velocity unipolar Ki sink drainage (-Q)
+"Exterior Transverse Flank (varpi = 3*a_mu, z=0)","z=0.0, varpi=1.59e-10",1.7181e+13,-4.4551e-07,-1.4759e+09,Near-static background pressure P_0 confines flow tube
+"Toroidal Ring Core Centerline (varpi = a_mu, z=0)","z=0.0, varpi=5.29e-11",4.1082e+10,0.0000e+00,0.0000e+00,Deepest toroidal pressure suction well; self-confining Kelvin core
+Toroidal Geometry Aspect Ratio (R_0 / r_0 = 1 / alpha^2),"R_0=5.29e-11, r_0=2.82e-15",alpha=0.007297,ratio=18778.87,—,Exact geometric ratio R_0 / r_0 = 1/alpha^2 = 18778.87
+Vortex Ring Self-Induced Axial Speed (Helmholtz-Lamb),"R_0=5.29e-11, r_0=2.82e-15",1.2765e+07,—,—,Thin-core ring speed U = (Gamma/4piR)*[ln(8R/r0) - 1/4] = 12765100.71 m/s

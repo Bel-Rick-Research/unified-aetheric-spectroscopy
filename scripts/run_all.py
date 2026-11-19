@@ -70,6 +70,14 @@ def main(update_manifest: bool) -> int:
     rows_cqgs = cqgs.run_benchmark()
     cqgs.print_summary(rows_cqgs)
 
+    import toroidal_streamline_closure_solver as tscs
+    rows_tscs = tscs.run_benchmark()
+    tscs.print_summary(rows_tscs)
+
+    import two_electron_helium_relaxation_solver as tehrs
+    rows_tehrs = tehrs.run_benchmark()
+    tehrs.print_summary(rows_tehrs)
+
     print("\n2. Manifest Verification")
     if update_manifest:
         count = gm.generate_manifest()

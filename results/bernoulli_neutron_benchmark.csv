@@ -4,3 +4,6 @@ Hydrogen Ground State (n=1),5.2947e-11,-8.2298e-08,8.2298e-08,-1.3235e-23,Stable
 "Super-Orbital Extension (d = 2.0 a_mu, n=1)",1.0589e-10,-2.0574e-08,1.0287e-08,-1.0287e-08,Attractive Pull (F_net < 0 pulls electron back in to n=1)
 "Neutron Pair Bond (n=0, v_theta damped to 0)",2.8195e-15,-2.9022e+01,0.0000e+00,-2.9022e+01,Damped Collapse to n=0 Core (Inertia=0; suction pulls sink into pump throat)
 Neutron Exterior Electric Flux Divergence,1.0000e-10 (Exterior r >> d),—,—,0.0,Strict Electric Neutrality (div v = +Q - Q = 0)
+Neutron Mass Excess Strain (Delta E = +0.7823 MeV),1.8406e-15,-6.8099e+01,0.0000e+00,-6.8099e+01,Compressed Dielectric Strain U = Delta_m * c^2 (d_0 = 1.84 fm)
+Free Neutron Beta Decay Tunnelling (tau = 879.4 s),2.8195e-15,f_0=1.692e+22 Hz,tau=879.4 s,S=57.96,Acoustic Barrier Action S_barrier = 2 * int(kappa dr) = 57.96
+First-Principles Beta Half-Life Derivation,Walled to Tier k<=7,—,—,BLOCKED,BLOCKED: REQUIRES SUB-HADRONIC NOZZLE EOS [TICKET-12 / Paper 5]

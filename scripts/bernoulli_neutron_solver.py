@@ -59,6 +59,14 @@ GAMMA_0 = (MU_0 * C * E_CHARGE**2) / (2.0 * MU_H * ALPHA)
 RHO_A = 1.0e-17                  # kg/m^3 (baseline loaded density)
 P_0 = 0.90                       # Pa (bulk modulus K_A = rho_A * c^2 ~ 0.9 Pa)
 
+# Measured Neutron and Beta Decay Parameters (CODATA 2022 / PDG 2024)
+M_N = 1.67492749804e-27          # Neutron mass (kg)
+DELTA_M_N = M_N - (M_P + M_E)    # Mass excess over free p + e (kg) ~ 1.3946e-30 kg
+DELTA_E_N_J = DELTA_M_N * C**2   # Excess energy in Joules (~ 1.2534e-13 J)
+DELTA_E_N_MEV = DELTA_E_N_J / (E_CHARGE * 1.0e6)  # ~ +0.782333 MeV
+TAU_NEUTRON_S = 879.4            # Free neutron mean lifetime (seconds, PDG 2024)
+TAU_HALF_NEUTRON_S = TAU_NEUTRON_S * math.log(2.0)  # Half-life ~ 609.54 s (~ 10.16 min)
+
 
 def bernoulli_attraction_force_N(d: float, Z: int = 1) -> float:
     """
@@ -103,6 +111,27 @@ def net_exterior_flux_divergence(r: float, d: float, Q: float = 1.0) -> float:
     div(v_net) = (Q_pump + Q_sink) / (4 * pi * r^2) = (Q - Q) / (4 * pi * r^2) = 0.
     """
     return (Q - Q) / (4.0 * math.pi * r**2)
+
+
+def neutron_core_dielectric_compression_radius_m(delta_E_J: float = DELTA_E_N_J) -> float:
+    """
+    Derive the separation distance d_0 where the electrostatic / Bernoulli
+    dielectric strain energy equals the empirical neutron mass excess Delta E = (m_n - m_p - m_e)*c^2:
+        U_strain(d_0) = mu_0 * c^2 * e^2 / (4 * pi * d_0) = Delta_E
+        => d_0 = mu_0 * c^2 * e^2 / (4 * pi * Delta_E)
+    """
+    return (MU_0 * C**2 * E_CHARGE**2) / (4.0 * math.pi * delta_E_J)
+
+
+def beta_decay_acoustic_barrier_action(tau_s: float = TAU_NEUTRON_S, r_core: float = R_E) -> float:
+    """
+    Calculate the acoustic tunnelling barrier action S_barrier = 2 * integral(kappa dr):
+        tau = (1 / f_attempt) * exp(S_barrier)
+        f_attempt = c / (2 * pi * r_core)
+        => S_barrier = ln(f_attempt * tau)
+    """
+    f_attempt = C / (2.0 * math.pi * r_core)
+    return math.log(f_attempt * tau_s)
 
 
 def run_benchmark() -> list[dict]:
@@ -169,6 +198,40 @@ def run_benchmark() -> list[dict]:
         "lattice_inertia_N": "—",
         "net_force_N": f"{div_flux:.1f}",
         "physical_condition": "Strict Electric Neutrality (div v = +Q - Q = 0)",
+    })
+
+    # 6. Neutron Mass Excess Dielectric Compression Radius (TICKET-01)
+    d_0_strain = neutron_core_dielectric_compression_radius_m()
+    f_bern_d0 = bernoulli_attraction_force_N(d_0_strain, Z=1)
+    rows.append({
+        "state": "Neutron Mass Excess Strain (Delta E = +0.7823 MeV)",
+        "orbital_radius_m": f"{d_0_strain:.4e}",
+        "bernoulli_suction_N": f"{f_bern_d0:.4e}",
+        "lattice_inertia_N": "0.0000e+00",
+        "net_force_N": f"{f_bern_d0:.4e}",
+        "physical_condition": f"Compressed Dielectric Strain U = Delta_m * c^2 (d_0 = {d_0_strain*1e15:.2f} fm)",
+    })
+
+    # 7. Free Neutron Beta-Decay Acoustic Barrier Action
+    s_barrier = beta_decay_acoustic_barrier_action()
+    f_attempt = C / (2.0 * math.pi * R_E)
+    rows.append({
+        "state": "Free Neutron Beta Decay Tunnelling (tau = 879.4 s)",
+        "orbital_radius_m": f"{R_E:.4e}",
+        "bernoulli_suction_N": f"f_0={f_attempt:.3e} Hz",
+        "lattice_inertia_N": f"tau={TAU_NEUTRON_S:.1f} s",
+        "net_force_N": f"S={s_barrier:.2f}",
+        "physical_condition": f"Acoustic Barrier Action S_barrier = 2 * int(kappa dr) = {s_barrier:.2f}",
+    })
+
+    # 8. First-Principles Beta-Decay Boundary Status
+    rows.append({
+        "state": "First-Principles Beta Half-Life Derivation",
+        "orbital_radius_m": "Walled to Tier k<=7",
+        "bernoulli_suction_N": "—",
+        "lattice_inertia_N": "—",
+        "net_force_N": "BLOCKED",
+        "physical_condition": "BLOCKED: REQUIRES SUB-HADRONIC NOZZLE EOS [TICKET-12 / Paper 5]",
     })
 
     RESULTS.mkdir(parents=True, exist_ok=True)

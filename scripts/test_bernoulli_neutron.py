@@ -54,14 +54,28 @@ class BernoulliNeutronTests(unittest.TestCase):
         div_flux = bns.net_exterior_flux_divergence(r=1.0e-10, d=bns.R_E, Q=1.0)
         self.assertEqual(div_flux, 0.0)
 
+    def test_neutron_mass_excess_compression_radius(self) -> None:
+        """Verify that electrostatic/dielectric strain energy matching Delta_E_N gives d_0 ~ 1.84 fm."""
+        d_0 = bns.neutron_core_dielectric_compression_radius_m()
+        # Should sit between proton charge radius ~0.84 fm and electron core ~2.82 fm
+        self.assertGreater(d_0, 0.84e-15)
+        self.assertLess(d_0, 2.82e-15)
+        self.assertAlmostEqual(d_0 * 1e15, 1.84, places=1)
+
+    def test_beta_decay_acoustic_barrier_action_order(self) -> None:
+        """Verify free neutron acoustic tunnelling barrier action S_barrier = ln(f_0 * tau) ~ 57.8."""
+        s = bns.beta_decay_acoustic_barrier_action()
+        self.assertGreater(s, 55.0)
+        self.assertLess(s, 60.0)
+
     def test_benchmark_csv_output_integrity(self) -> None:
-        """Verify CSV benchmark table is generated with 5 rows and correct headers."""
+        """Verify CSV benchmark table is generated with 8 rows and correct headers."""
         rows = bns.run_benchmark()
-        self.assertEqual(len(rows), 5)
+        self.assertEqual(len(rows), 8)
         self.assertTrue(RESULTS_CSV.is_file())
         with RESULTS_CSV.open(newline="", encoding="utf-8") as f:
             read_rows = list(csv.DictReader(f))
-        self.assertEqual(len(read_rows), 5)
+        self.assertEqual(len(read_rows), 8)
         self.assertIn("physical_condition", read_rows[0])
         self.assertIn("bernoulli_suction_N", read_rows[0])
 
