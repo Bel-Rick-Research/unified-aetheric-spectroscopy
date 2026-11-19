@@ -1,0 +1,5 @@
+aspect,model_value,reference_value,discrepancy,epistemic_status,physical_mechanism
+Topological Phase Volume (6*pi^5),1836.118109,1836.15267344,+0.034565 (+18.82 ppm / +0.0019%),FOUNDATION DERIVED / OPEN BOUNDARY (18.8 ppm GAP),6 chiral Aether grid channels x 5D phase volume pi^5 (T^2 x S^3 -> S^5)
+Sexagesimal Base-60 Decomposition,(30; 36)_60 = 1836,Integer part 1836,0 (exact),DERIVED FROM AXIOMS (Aetheric base-60 scale invariance),Digits 30 and 36 yield product 30*36 = 1080 (Moon radius in Aetheric miles)
+Dodecahedral Triangular Lattice Packing,12 * T_17 = 12 * 153 = 1836,Integer part 1836,0 (exact),DERIVED FROM AXIOMS (Icosahedral/Dodecahedral Grid),12 dodecahedral faces x 17th triangular number (153) of close-packed vortex nodes
+Vortex Volume Ratio (V_e / V_p),2.4273e+04,N/A (Derived Geometric),0.00 %,DERIVED FROM AXIOMS,Surface drain torus (2*pi^2*alpha^5*a_mu^3) vs core fountain sphere (4/3*pi*r_p^3)

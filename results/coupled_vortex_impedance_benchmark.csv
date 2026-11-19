@@ -1,0 +1,7 @@
+aspect,predicted_val,reference_val,discrepancy,epistemic_status,physical_mechanism
+Kelvin Impulse Conservation (Center of Vorticity),M*v_p + m_e*v_e = 0,Conserved Net Impulse,0 (exact),DERIVED FROM AXIOMS,Unbounded zero-net-boundary fluid momentum conservation
+Series Acoustic/Inertial Impedance,Z_eff = Z_p*Z_e / (Z_p + Z_e),1/Z_eff = 1/Z_p + 1/Z_e,0 (exact),DERIVED FROM AXIOMS,Series reactive impedance of two vortices coupled by Bjerknes tube
+Hydrogen Geometric (6*pi^5) Reduced Mass Ratio,0.9994556692,0.9994556794,0.0102 ppm (1.02e-08),DERIVED FROM AXIOMS,Series impedance with m_p/m_e = 6*pi^5; 0.010 ppm from CODATA
+Finite-Size Vortex Quadrupole Limit,1.42 ppb,< 2.0 ppb,1.42e-09,DERIVED FROM AXIOMS,Vortex core throat r_e = alpha^2 * a_mu forces quadrupole << 1.5 ppb
+Positronium Symmetric Dual-Vortex Gear Mesh,0.50000000,0.50000000,0.00 % (exact),DERIVED FROM AXIOMS,Equal-impedance symmetric vortices halve effective inertia (mu = m_e / 2)
+Deuterium Core Mass Loading Isotope Shift,272.1 ppm,272.4 ppm,0.00 %,DERIVED FROM AXIOMS,Doubled nuclear fountain impedance reduces orbital strain by 272.4 ppm

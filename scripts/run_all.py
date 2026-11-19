@@ -50,6 +50,18 @@ def main(update_manifest: bool) -> int:
     rows_s5c = s5c.run_benchmark()
     s5c.print_summary(rows_s5c)
 
+    import vortex_mass_ratio_solver as vmrs
+    rows_vmrs = vmrs.run_benchmark()
+    vmrs.print_summary(rows_vmrs)
+
+    import coupled_vortex_impedance_solver as cvis
+    rows_cvis = cvis.run_benchmark()
+    cvis.print_summary(rows_cvis)
+
+    import nyquist_fractal_cutoff as nfc
+    rows_nfc = nfc.run_benchmark()
+    nfc.print_summary(rows_nfc)
+
     print("\n2. Manifest Verification")
     if update_manifest:
         count = gm.generate_manifest()
