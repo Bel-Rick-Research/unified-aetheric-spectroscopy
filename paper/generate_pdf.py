@@ -111,24 +111,42 @@ def build_pdf():
         text-align: justify;
     }}
     ol li, ul li {{
-        margin-bottom: 6px;
+        margin-bottom: 8px;
+    }}
+    ol {{
+        padding-left: 22px;
+        margin: 8px 0;
+    }}
+    ul {{
+        padding-left: 20px;
+        margin: 8px 0;
+    }}
+    .katex {{
+        font-size: 1.05em;
+        text-rendering: geometricPrecision;
+    }}
+    .katex-display {{
+        margin: 10px 0 !important;
     }}
     pre {{
-        font-family: 'Liberation Mono', monospace;
+        font-family: 'Liberation Mono', 'DejaVu Sans Mono', monospace;
         font-size: 8.5pt;
         background-color: #f8f8f8;
         padding: 6px 10px;
         border: 1px solid #ddd;
         border-radius: 3px;
-        line-height: 1.3;
+        line-height: 1.35;
         white-space: pre-wrap;
     }}
     table {{
         width: 100%;
         border-collapse: collapse;
         margin: 12px 0;
-        font-size: 9pt;
+        font-size: 9.5pt;
         page-break-inside: avoid;
+    }}
+    table .katex {{
+        font-size: 1.02em;
     }}
     th, td {{
         border: 1px solid #bbb;

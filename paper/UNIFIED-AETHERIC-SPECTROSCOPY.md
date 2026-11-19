@@ -23,7 +23,7 @@ This document derives the unified master field equations governing 3D self-confi
 > 3. *Paper 3:* 3D vortex volume compression derived the $Z^4 / n^3$ Lamb shift scaling and native fluid dipole antenna radiation, but initially imported statistical plasma abstractions ("Debye screening") and was tempted into consensus curve-fitting.
 >
 > **What Paper 4 Delivers:**
-> - **Oscillation is Mass; Inertia is in the Lattice:** Einstein's velocity-mass dilation ($\gamma m_e$) is rejected. Higher oscillation frequency increases mass; inertia is the reactive strain of the icosahedral grid against vertex update-rate changes.
+> - **Oscillation is Mass; Inertia is in the Lattice:** Einstein's velocity-mass dilation ($\gamma \, m_e$) is rejected. Higher oscillation frequency increases mass; inertia is the reactive strain of the icosahedral grid against vertex update-rate changes.
 > - **Charge from Flow Topology:** Positive charge ($+$) is unipolar An outflow from counterspace into 3D space ($\nabla \cdot \mathbf{D} > 0$). Negative charge ($-$) is unipolar sink drainage back into counterspace ($\nabla \cdot \mathbf{D} < 0$). They close into self-confining toroids to eliminate boundary leakage.
 > - **The Neutron Ground State ($n=0$):** Neutrons are the default ground state of a proton-electron pair resting at eigenmode $n=0$ when nuclear proximity robs them of their separating inertia.
 > - **Atomic Precession via Mercury's Rule:** Fine-structure splitting is the micro-scale equivalent of Mercury's orbital precession, driven by the non-linear dielectric stress tensor $\sigma(r)$ of the medium, not Einsteinian velocity-mass increase.
@@ -50,7 +50,7 @@ This document derives the unified master field equations governing 3D self-confi
 | **Toroidal Recirculating Closure** | **DERIVED** | Hydrodynamic self-confinement to eliminate open-boundary Z-pinch leakage. |
 | **Bernoulli / Bjerknes Attraction Force** | **DERIVED** | Mutual suction well between pump and sink: $F = -\frac{\mu_0 c^2 e^2}{4\pi d^2} = -\frac{e^2}{4\pi\varepsilon_0 d^2}$. |
 | **Neutron Ground State ($n=0$) Pair Bond** | **DERIVED** | Damping of separating circulation inertia ($F_{\text{iner}} \to 0$) in nuclear proximity; beta decay upon release. |
-| **Hydrodynamic Gear-Meshing & Exclusion** | **DERIVED** | Stagnation pressure spike forbids identical chirality; counter-rotating torsion meshes into stable $1s^2$ pair; $2n^2$ shell capacity. |
+| **Hydrodynamic Gear-Meshing & Exclusion** | **DERIVED** | Stagnation pressure spike forbids identical chirality; counter-rotating torsion meshes into stable $1\text{s}^2$ pair; $2n^2$ shell capacity. |
 | **Antimatter Annihilation (3-Mode Inversion)** | **DERIVED** | Total flow inversion ($\nabla \cdot \mathbf{v} = 0, \nabla \times \mathbf{v} = 0$) dissolves trapped vortex into $2 m_e c^2 = 1022.0\text{ keV}$ transverse grid waves (using bare lepton mass $m_e$, not hydrogen reduced mass $\mu$). |
 | **Hydrodynamic Wave-Speed Profile Shift** | **DERIVED** | Bulk flow ($v_A = \text{const} \implies r_n = r_0 k^n$) vs. Core inflow ($v \propto r^{-1/2} \implies r_n = n^2 a_\mu / Z$). |
 | **Non-Hermitian EP Stability Matrix ($\mathbf{M}$)** | **DERIVED** | Source–sink balance at Coriolis shear threshold $\kappa = \gamma$ locks into pure real standing modes. |
@@ -62,7 +62,7 @@ This document derives the unified master field equations governing 3D self-confi
 | **High-$Z$ Grid Elasticity Saturation** | **OPEN BOUNDARY / FAILED** | Logarithmic strain volume contraction reduces He+ overshoot to +11.8%; remaining gap is an unresolved boundary representing non-linear lattice bulk modulus saturation under doubled unipolar charge tension. Any numerical estimate $K_A \sim 0.9\text{ Pa}$ is an empirical estimate from assumed density ($\rho_A \sim 10^{-17}\text{ kg/m}^3$), not a derived constant (`TICKET-04`). |
 | **Multi-Line 3D Envelope Overlap** | **DERIVED (55 LINES)** | Evaluated via Frobenius acoustic recurrence and numerical quadrature on a 1D spatial grid; matches all 55 lines in NIST ASD to $\le 0.0114\%$ and satisfies TRK charge conservation sum rule with zero special functions (`TICKET-05`). |
 | **1D Bohr Wire Orbit Approximation** | **WITHDRAWN** | Abandoned as unphysical; electron is an extended 3D vortex ring spanning $10^{25}$ lattice cells. |
-| **Einstein Relativistic Mass ($\gamma m_e$)** | **WITHDRAWN** | Debunked abstraction. Moving faster does not make an electron heavier. |
+| **Einstein Relativistic Mass ($\gamma \, m_e$)** | **WITHDRAWN** | Debunked abstraction. Moving faster does not make an electron heavier. |
 | **Debye Plasma Screening Narrative** | **WITHDRAWN** | Statistical plasma abstraction replaced by hydrodynamic wave-speed constitutive profile shift. |
 | **Coulomb Force Across an Empty Void** | **WITHDRAWN** | Replaced by dielectric pressure/density gradient ($P_{\text{high}} \to P_{\text{low}}$) pulling matter inward. |
 | **Pauli Exclusion / Slater Determinants** | **WITHDRAWN** | Abstract quantum spin statistics replaced by 3D fluid vortex boundary collision and gear-meshing. |
@@ -131,7 +131,7 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
      proving that 1836 is the geometric packing capacity of 12 spatial vortex channels arrayed in triangular 17-step nodal circulation.
    - **Open Boundary ($+18.82\text{ ppm}$ Acoustic Wake Drag):** The remaining $+0.034565$ residual corresponds to the boundary-layer acoustic wake drag of the electron toroidal ring circulating through the background strain field of the central fountain ($\sim \alpha^2$ radiation reaction impedance correction, tracked in `TICKET-07`).
 
-### Benchmark: Proton-to-Electron Mass Ratio ($6\pi^5 \approx 1836.12$)
+### Benchmark: Proton-to-Electron Mass Ratio ($6 \, \pi^5 \approx 1836.12$)
 
 | Metric / Aspect | Predicted (Aetheric) | CODATA 2022 Reference | Residual / Discrepancy | Epistemic Status | Physical Mechanism |
 |:---|:---:|:---:|:---:|:---:|:---|
@@ -156,7 +156,7 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
      $$\delta_{\text{quad}} \sim \frac{1}{2}\left(\frac{r_e}{a_\mu}\right)^2 = \frac{1}{2}\alpha^4 \approx 1.418 \times 10^{-9} \quad (\mathbf{1.42\text{ ppb}})$$
      proving that point-like center-of-vorticity scaling is mathematically exact to within $1.42\text{ ppb}$ for orbital mechanics.
    - **Geometric Mass Ratio Coupling:** Combining with $(M/m_e)_{\text{geom}} = 6\pi^5 = 1836.118109$, the geometric reduced mass ratio is $\mu/m_e = \frac{6\pi^5}{6\pi^5 + 1} = 0.9994556692$, matching CODATA ($0.9994556794$) to **$0.0102\text{ ppm}$** ($1.02 \times 10^{-8}$).
-   - **Symmetric Gear-Meshed Dual Vortex (Positronium):** For two identical counter-rotating vortices ($m_1 = m_2 = m_e$), $Z_{\text{eff}} = Z_e / 2 \implies \mu_{\text{Ps}} = m_e / 2 = \mathbf{0.50000000\, m_e}$ (exact halving).
+   - **Symmetric Gear-Meshed Dual Vortex (Positronium):** For two identical counter-rotating vortices ($m_1 = m_2 = m_e$), $Z_{\text{eff}} = Z_e / 2 \implies \mu_{\text{Ps}} = m_e / 2 = \mathbf{0.50000000\ m_e}$ (exact halving).
 
 ### Benchmark: Coupled Vortex Impedance & Reduced Mass ($\mu$)
 
@@ -166,7 +166,7 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
 | **Series Acoustic Impedance** | $Z_{\text{eff}} = \frac{Z_p Z_e}{Z_p + Z_e}$ | $\frac{1}{Z_{\text{eff}}} = \frac{1}{Z_p} + \frac{1}{Z_e}$ | $0$ (exact) | `DERIVED FROM AXIOMS` | Series reactive impedance divider of coupled Bjerknes tube |
 | **Geometric ($6\pi^5$) Reduced Mass** | $0.9994556692\, m_e$ | $0.9994556794\, m_e$ | $0.0102\text{ ppm}$ ($1.02 \times 10^{-8}$) | `DERIVED FROM AXIOMS` | Series impedance with $m_p/m_e = 6\pi^5$; 0.010 ppm from CODATA |
 | **Finite-Size Quadrupole Bound** | $1.42\text{ ppb}$ | $< 2.0\text{ ppb}$ | $1.42 \times 10^{-9}$ | `DERIVED FROM AXIOMS` | Vortex core throat $r_e = \alpha^2 a_\mu$ forces quadrupole $\ll 1.5\text{ ppb}$ |
-| **Positronium Dual-Vortex Mesh** | $0.50000000\, m_e$ | $0.50000000\, m_e$ | $0.00\%$ (exact) | `DERIVED FROM AXIOMS` | Symmetric equal-impedance vortices halve effective inertia ($\mu = m_e/2$) |
+| **Positronium Dual-Vortex Mesh** | $0.50000000\ m_e$ | $0.50000000\ m_e$ | $0.00\%$ (exact) | `DERIVED FROM AXIOMS` | Symmetric equal-impedance vortices halve effective inertia ($\mu = m_e/2$) |
 | **Deuterium Isotope Mass Shift** | $272.1\text{ ppm}$ | $272.4\text{ ppm}$ | $0.00\%$ | `DERIVED FROM AXIOMS` | Doubled nuclear fountain impedance reduces orbital strain by 272.1 ppm |
 
 7. **Planck-Clock Nyquist Temporal Horizon & Physical Lower Boundary:**
@@ -183,8 +183,8 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
    - **Tier $k = 0$ (Bare Ki Lattice Floor):** $R_{\text{Nyquist}}(0) = \ell_P / \pi \approx 5.1504 \times 10^{-36}\text{ m}$, perimeter $= 2\ell_P$ ($2$ clock ticks). This is the absolute spatial and temporal floor of reality.
    - **Tier $k = 7$ (Sub-Proton 3-Lobe Z-Pinch Throat):** $R_{\text{Nyquist}}(7) = \ell_P / (\pi \alpha^7) \approx 4.6739 \times 10^{-21}\text{ m}$. Deep-inelastic scattering horizon (quarks/partons). This sub-hadronic domain is walled off as the subject of **Paper 5: Sub-Nuclear Quark-Parton Fluid Mechanics & Hadronic Synthesis**.
    - **Tier $k = 8$ (Sub-Hadronic Parton Core):** $R_{\text{Nyquist}}(8) = \ell_P / (\pi \alpha^8) \approx 6.4049 \times 10^{-19}\text{ m}$. This sits at the deep-inelastic parton scattering nozzle ($\sim 10^{-19}\text{ m}$). It is a factor of $1311\times$ ($\sim 9.5/\alpha$) inside the expanded outer charge radius ($r_p \sim 0.84\text{ fm}$), demonstrating that the physical hadron charge envelope requires an additional $1/\alpha$ hydrodynamic expansion stage.
-   - **Tier $k = 10$ (Classical Electron Core Throat):** $R_{\text{Nyquist}}(10) = \ell_P / (\pi \alpha^{10}) \approx 1.2028 \times 10^{-14}\text{ m}$. Compared to $r_e = \alpha^2 a_\mu \approx 2.8179\text{ fm}$, it departs by an uncalibrated 3D geometric packing factor of $4.268\approx 4\pi/3$ ($+326.8\%$).
-   - **Tier $k = 12$ (Bohr Atomic Cavity Shell):** $R_{\text{Nyquist}}(12) = \ell_P / (\pi \alpha^{12}) \approx 2.2587 \times 10^{-10}\text{ m}$. Compared to $a_\mu \approx 5.2918 \times 10^{-11}\text{ m}$, it departs by the identical geometric factor of $4.268\approx 4\pi/3$ ($+326.8\%$).
+   - **Tier $k = 10$ (Classical Electron Core Throat):** $R_{\text{Nyquist}}(10) = \ell_P / (\pi \alpha^{10}) \approx 1.2028 \times 10^{-14}\ \text{m}$. Compared to $r_e = \alpha^2 a_\mu \approx 2.8179\ \text{fm}$, it departs by an uncalibrated 3D geometric packing factor of $4.268\approx 4\pi/3$ ($+326.8\%$).
+   - **Tier $k = 12$ (Bohr Atomic Cavity Shell):** $R_{\text{Nyquist}}(12) = \ell_P / (\pi \alpha^{12}) \approx 2.2587 \times 10^{-10}\ \text{m}$. Compared to $a_\mu \approx 5.2918 \times 10^{-11}\ \text{m}$, it departs by the identical geometric factor of $4.268\approx 4\pi/3$ ($+326.8\%$).
 
    **Exact Scale Ratio Invariance:** Because $R_{\text{Nyquist}}(12) / R_{\text{Nyquist}}(10) = 1/\alpha^2 = 18778.87 \equiv a_\mu / r_e$, the relative step-down scaling between the leptonic core and the atomic cavity envelope is mathematically exact to all decimal places. The common factor of $\approx 4.27$ reflects the conversion between 1D perimeter sampling and 3D spherical volume packing, tracked under `TICKET-11`.
 
@@ -192,11 +192,11 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
 
 | Metric / Aspect | Predicted Nyquist Radius | Physical Reference Radius | Ratio / Discrepancy | Epistemic Status | Physical Mechanism |
 |:---|:---:|:---:|:---:|:---:|:---|
-| **Tier $k=0$ (Lattice Floor)** | $5.1504 \times 10^{-36}\text{ m}$ | $5.1504 \times 10^{-36}\text{ m}$ ($2$ ticks) | $0.00\%$ (exact) | `FOUNDATIONAL AXIOM` | Fundamental Nyquist clock limit ($2p_t$ per perimeter) |
-| **Tier $k=7$ (Sub-Proton Throat)** | $4.6739 \times 10^{-21}\text{ m}$ | $\sim 10^{-21}\text{ m}$ ($1.81 \times 10^{15}$ ticks) | N/A (Sub-hadronic target) | `PAPER 5 TARGET` | Quark/parton deep-inelastic scattering horizon |
-| **Tier $k=8$ (Sub-Hadronic Parton Core)** | $6.4049 \times 10^{-19}\text{ m}$ | $\sim 10^{-19}\text{ m}$ ($2.49 \times 10^{17}$ ticks) | Factor $1311\times$ inside $r_p$ | `SUB-HADRONIC CORE` | Parton Z-pinch core; $1311\times$ inside outer $r_p \sim 0.84\text{ fm}$ |
-| **Tier $k=10$ (Electron Core Throat)** | $1.2028 \times 10^{-14}\text{ m}$ | $r_e \approx 2.8179 \times 10^{-15}\text{ m}$ | Ratio $4.27\times$ ($+326.8\%$) | `DERIVED (SCALING)` | Ratio $R(12)/R(10) = 1/\alpha^2$ exact; 3D factor $\approx 4.27$ |
-| **Tier $k=12$ (Bohr Cavity Scale)** | $2.2587 \times 10^{-10}\text{ m}$ | $a_\mu \approx 5.2918 \times 10^{-11}\text{ m}$ | Ratio $4.27\times$ ($+326.8\%$) | `DERIVED (SCALING)` | Ratio $R(12)/R(10) = 1/\alpha^2$ exact; 3D factor $\approx 4.27$ |
+| **Tier $k=0$ (Lattice Floor)** | $5.1504 \times 10^{-36}\ \text{m}$ | $5.1504 \times 10^{-36}\ \text{m}$ ($2$ ticks) | $0.00\%$ (exact) | `FOUNDATIONAL AXIOM` | Fundamental Nyquist clock limit ($2p_t$ per perimeter) |
+| **Tier $k=7$ (Sub-Proton Throat)** | $4.6739 \times 10^{-21}\ \text{m}$ | $\sim 10^{-21}\ \text{m}$ ($1.81 \times 10^{15}$ ticks) | N/A (Sub-hadronic target) | `PAPER 5 TARGET` | Quark/parton deep-inelastic scattering horizon |
+| **Tier $k=8$ (Sub-Hadronic Parton Core)** | $6.4049 \times 10^{-19}\ \text{m}$ | $\sim 10^{-19}\ \text{m}$ ($2.49 \times 10^{17}$ ticks) | Factor $1311\times$ inside $r_p$ | `SUB-HADRONIC CORE` | Parton Z-pinch core; $1311\times$ inside outer $r_p \sim 0.84\ \text{fm}$ |
+| **Tier $k=10$ (Electron Core Throat)** | $1.2028 \times 10^{-14}\ \text{m}$ | $r_e \approx 2.8179 \times 10^{-15}\ \text{m}$ | Ratio $4.27\times$ ($+326.8\%$) | `DERIVED (SCALING)` | Ratio $R(12)/R(10) = 1/\alpha^2$ exact; 3D factor $\approx 4.27$ |
+| **Tier $k=12$ (Bohr Cavity Scale)** | $2.2587 \times 10^{-10}\ \text{m}$ | $a_\mu \approx 5.2918 \times 10^{-11}\ \text{m}$ | Ratio $4.27\times$ ($+326.8\%$) | `DERIVED (SCALING)` | Ratio $R(12)/R(10) = 1/\alpha^2$ exact; 3D factor $\approx 4.27$ |
 
 ---
 
@@ -265,7 +265,7 @@ To stable-couple within the same primary eigenmode shell ($n=1$), two vortex rin
 $$\mathbf{v}_{\text{contact}, 1} \cdot \mathbf{v}_{\text{contact}, 2} = +|\mathbf{v}|^2 > 0$$
 Their boundary fluid wakes mesh smoothly like counter-rotating mechanical gears rather than colliding. The net angular momentum of the paired shell cancels identically:
 $$J_{\text{net}} = S_1 + S_2 = +\frac{1}{2} - \frac{1}{2} = 0$$
-forming a stable, diamagnetic $1s^2$ closed shell (the Helium ground state).
+forming a stable, diamagnetic $1\text{s}^2$ closed shell (the Helium ground state).
 
 ### 3. Antimatter Annihilation (Total 3-Mode Flow Inversion)
 Total 3-mode flow inversion ($+$ to $-$ radial drain/fountain flip plus inverted toroidal circulation and inverted torsion chirality):
@@ -287,7 +287,7 @@ In [`scripts/gear_meshing_exclusion_solver.py`](../scripts/gear_meshing_exclusio
 | Interaction Pair | Coupling Mechanism | Contact Flow $\mathbf{v}_1 \cdot \mathbf{v}_2$ | Stagnation Pressure | Net $J$ | Stability Result |
 |:---|:---|:---:|:---:|:---:|:---|
 | **$e^-(\text{up}) + e^-(\text{up})$** | Identical Chirality Collision | $-2.40 \times 10^{12}\text{ m}^2/\text{s}^2$ | **$4.79 \times 10^{-5}\text{ Pa}$** [adopts $\rho_A \sim 10^{-17}\text{ kg/m}^3$] | $+1.0$ | **FORBIDDEN** (Pressure spike expels clone) |
-| **$e^-(\text{up}) + e^-(\text{down})$** | Gear-Meshed Laminar Lock | $+2.40 \times 10^{12}\text{ m}^2/\text{s}^2$ | **$0.00\text{ Pa}$** | **$0.0$** | **STABLE** (Harmonic $1s^2$ closed-shell pair) |
+| **$e^-(\text{up}) + e^-(\text{down})$** | Gear-Meshed Laminar Lock | $+2.40 \times 10^{12}\ \text{m}^2/\text{s}^2$ | **$0.00\ \text{Pa}$** | **$0.0$** | **STABLE** (Harmonic $1\text{s}^2$ closed-shell pair) |
 | **$e^-(\text{up}) + e^+(\text{positron})$** | Antimatter Annihilation | $-1.0$ (Destructive Shear) | Unbinding | **$0.0$** | **ANNIHILATED** ($1022.0\text{ keV}$ burst) |
 | **Harmonic Shell $n=1$** | $2 \times 1^2 = 2$ | 1 gear-meshed pair | Laminar Balance | $0.0$ | Max Occupancy $= 2$ vortex rings |
 | **Harmonic Shell $n=2$** | $2 \times 2^2 = 8$ | 4 gear-meshed pairs | Laminar Balance | $0.0$ | Max Occupancy $= 8$ vortex rings |
@@ -301,7 +301,7 @@ In [`scripts/gear_meshing_exclusion_solver.py`](../scripts/gear_meshing_exclusio
 ## V. Scale Invariance vs. Frequency Scale Variance
 
 The foundational axiom of Guardian Cosmology asserts:
-$$\text{Geometry}(R) = \text{Invariant under } R \to \lambda R$$
+$$\text{Geometry}(R) = \text{Invariant under } R \to \lambda \cdot R$$
 
 The same 3D toroidal vortex geometry, driven by a central unipolar Z-pinch fountain, governs the cosmos from the Planck lattice floor ($\sim 10^{-35}\text{ m}$) up through atomic shells ($\sim 10^{-10}\text{ m}$) to solar systems ($\sim 10^{11}\text{ m}$).
 
@@ -330,7 +330,7 @@ $$\rho(r) \propto r^{-2}, \quad B(r) \propto r^{-1} \implies v_A = \frac{B}{\sqr
 Because $v_A$ is independent of $r$, the restoring term has scale-free inverse-square stiffness:
 $$K^2(r) = \frac{g_0}{r^2} \implies r^2 K^2(r) = g_0 = \text{constant}$$
 The wave equation reduces to the scale-invariant **Euler–Cauchy ODE**, forcing planetary nodes into **geometric intervals**:
-$$\boxed{r_n = r_0 \, k^n, \qquad k = \exp\left[\pi \left(\frac{H}{r}\right)\sqrt{\frac{2}{\gamma\beta}}\right]}$$
+$$\boxed{r_n = r_0 \cdot k^n, \qquad k = \exp\left[\pi \left(\frac{H}{r}\right)\sqrt{\frac{2}{\gamma \cdot \beta}}\right]}$$
 The unperturbed natural lattice baseline is $k = \phi \approx 1.618034$ ($H/r \approx 15.3\%$).
 
 ### 2. Micro Atomic Regime (Steep Central Core Gradient Dominance)
@@ -367,7 +367,7 @@ In [`scripts/constitutive_profile_solver.py`](../scripts/constitutive_profile_so
 
 ## VII. Atomic Precession via the Medium Stress Tensor (Mercury's Rule)
 
-In standard physics, atomic fine structure is attributed to Einstein's relativistic velocity-mass scaling ($\gamma m_e$) and Dirac's 4-component spinor matrices.
+In standard physics, atomic fine structure is attributed to Einstein's relativistic velocity-mass scaling ($\gamma \, m_e$) and Dirac's 4-component spinor matrices.
 
 In Guardian Cosmology:
 1. **Einstein Mass Dilation is Rejected:** An electron moving faster does NOT become physically heavier. Mass is trapped wave oscillation frequency; inertia is lattice update-rate resistance.
@@ -453,8 +453,8 @@ In [`scripts/mercury_stress_precession_solver.py`](../scripts/mercury_stress_pre
 ## VIII. Non-Hermitian EP Stability Matrix of the An Pump
 
 The central proton Z-pinch operates as an open, externally powered non-Hermitian fluid oscillator:
-- **An Pump (Source):** Injects potential flux from counterspace into 3D space with volumetric gain rate $+\gamma$ (gain parameter).
-- **Drainage (Sink):** Removes circulating dielectric flux with loss rate $-\gamma$ (loss parameter).
+- **An Pump (Source):** Injects potential flux from counterspace into 3D space with volumetric gain rate $+ \gamma$ (gain parameter).
+- **Drainage (Sink):** Removes circulating dielectric flux with loss rate $- \gamma$ (loss parameter).
 - **Coriolis Shear Coupling ($\kappa$, shear parameter):** Transverse coupling between axial inflow and azimuthal circulation.
 
 In classical open-system continuum mechanics, the dynamic operator matrix is:
@@ -477,7 +477,7 @@ At the **Exceptional Point (EP) threshold ($\kappa = \gamma$)**:
 In 3D continuum mechanics, an electron is an extended vortex ring with core radius $r_e = \frac{\mu_0 e^2}{4\pi \mu} \approx 2.8195 \times 10^{-15}\text{ m}$.
 
 ### 1. Inward Micro-Gravity Plunge
-In meridian $s$-states ($l = 0$), the vortex ring is drawn down the steep dielectric pressure gradient ($P_{\text{high}} \to P_{\text{low}}$) into the central fountain throat. The Keplerian time-in-core fraction is:
+In meridian $\text{s-states}$ ($l = 0$), the vortex ring is drawn down the steep dielectric pressure gradient ($P_{\text{high}} \to P_{\text{low}}$) into the central fountain throat. The Keplerian time-in-core fraction is:
 $$f_{\text{core}}(n, Z) = \frac{2\alpha^3}{3\pi\sqrt{2}} \frac{Z^{1.5}}{n^3}$$
 
 ### 2. Transverse Core Twist Beat Frequency Quantum
@@ -488,14 +488,14 @@ $$\nu_{\text{twist}} = \frac{\alpha^2 \mu c}{\pi \mu_0 e^2} \approx 1.4342 \time
 The dielectric strain volume between the core $r_e$ and orbital boundary $r_n$ scales logarithmically with the lattice gear ratio $\alpha^2$:
 $$S(n, Z) = \ln\left(\frac{r_n}{r_e}\right) = \ln\left(\frac{n^2}{Z \alpha^2}\right)$$
 Normalized to the Hydrogen ($n=2, Z=1$) baseline:
-$$\eta_{\text{strain}}(n, Z) = \frac{\ln\left(\frac{n^2}{Z\alpha^2}\right)}{\ln\left(\frac{4}{\alpha^2}\right)} \qquad (\alpha \approx 1/137.036)$$
+$$\eta_{\text{strain}}(n, Z) = \dfrac{\ln\left(\dfrac{n^2}{Z\alpha^2}\right)}{\ln\left(\dfrac{4}{\alpha^2}\right)} \qquad (\alpha \approx 1/137.036)$$
 
 The strain-saturated Lamb beat frequency in native grid parameters is:
-$$\boxed{\Delta \nu_{\text{Lamb}}(n, Z) = \left[\frac{2\alpha^5 \mu c}{3\pi^2 \sqrt{2} \mu_0 e^2}\right] \frac{Z^4}{n^3} \cdot \frac{\ln\left(\frac{n^2}{Z\alpha^2}\right)}{\ln\left(\frac{4}{\alpha^2}\right)}}$$
+$$\boxed{\Delta \nu_{\text{Lamb}}(n, Z) = \left[\dfrac{2\alpha^5 \mu c}{3\pi^2 \sqrt{2} \mu_0 e^2}\right] \dfrac{Z^4}{n^3} \cdot \dfrac{\ln\left(\dfrac{n^2}{Z\alpha^2}\right)}{\ln\left(\dfrac{4}{\alpha^2}\right)}}}$$
 
 - **Numerical Prefactor Walkthrough:**
   Evaluating the bracket in native dielectric constants:
-  $$\text{Prefactor} = \frac{2\alpha^5 \mu c}{3\pi^2 \sqrt{2} \mu_0 e^2} \approx \frac{2 \times (1/137.035999)^5 \times (9.104425 \times 10^{-31}\text{ kg}) \times (2.997925 \times 10^8\text{ m/s})}{3\pi^2 \sqrt{2} \times (1.256637 \times 10^{-6}\text{ H/m}) \times (1.602177 \times 10^{-19}\text{ C})^2} = 8.36302 \times 10^9\text{ Hz} \quad (\mathbf{8363.02\text{ MHz}})$$
+  $$\text{Prefactor} = \dfrac{2\alpha^5 \mu c}{3\pi^2 \sqrt{2} \mu_0 e^2} \approx \dfrac{2 \times (1/137.035999)^5 \times (9.104425 \times 10^{-31}\ \text{kg}) \times (2.997925 \times 10^8\ \text{m/s})}{3\pi^2 \sqrt{2} \times (1.256637 \times 10^{-6}\ \text{H/m}) \times (1.602177 \times 10^{-19}\ \text{C})^2} = 8.36302 \times 10^9\ \text{Hz} \quad (\mathbf{8363.02\ \text{MHz}})$$
   For Hydrogen $2s - 2p_{1/2}$ ($n=2, Z=1$), the presence fraction is $Z^4 / n^3 = 1/8$, giving:
   $$\Delta\nu_{\text{Lamb}}^{(0)}(2, 1) = \frac{8363.02\text{ MHz}}{8} = \mathbf{1045.38\text{ MHz}}$$
 - **Hydrogen ($Z=1$):** Because $\eta_{\text{strain}}(2, 1) = \frac{\ln(4/\alpha^2)}{\ln(4/\alpha^2)} \equiv 1.000000$ is normalized to the Hydrogen $n=2, Z=1$ ground cavity baseline, the model predicts **$1045.38\text{ MHz}$**, matching measured $1057.85\text{ MHz}$ to **$-1.18\%$** with zero $h$ and zero fits.
@@ -554,9 +554,9 @@ Evaluating the spatial overlap $I_{ul} = \int_0^\infty r^3 \mathcal{R}_u(r) \mat
 
 | Transition | Upper Mode | Lower Mode | Predicted Rate $A_{ul}$ ($s^{-1}$) | NIST ASD Measured ($s^{-1}$) | Residual | Spatial Overlap $I_{ul}$ |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **$3p \to 1s$** | $n=3, l=1$ ($n_r=1$) | $n=1, l=0$ ($n_r=0$) | **$1.6725 \times 10^8$** | $1.6725 \times 10^8$ | **+0.0016 %** | $+0.5167\ a_\mu$ (Phase Canceled) |
-| **$3p \to 2s$** | $n=3, l=1$ ($n_r=1$) | $n=2, l=0$ ($n_r=1$) | **$2.2448 \times 10^7$** | $2.2448 \times 10^7$ | **+0.0012 %** | $+3.0648\ a_\mu$ (Dual-Ripple) |
-| **$4d \to 2p$** | $n=4, l=2$ ($n_r=1$) | $n=2, l=1$ ($n_r=0$) | **$2.0625 \times 10^7$** | $2.0625 \times 10^7$ | **+0.0009 %** | $+1.7097\ a_\mu$ ($d$-Lobe Ripple) |
+| **$3\text{p} \to 1\text{s}$** | $n=3, l=1$ ($n_r=1$) | $n=1, l=0$ ($n_r=0$) | **$1.6725 \times 10^8$** | $1.6725 \times 10^8$ | **+0.0016 %** | $+0.5167\ a_{\mu}$ (Phase Canceled) |
+| **$3\text{p} \to 2\text{s}$** | $n=3, l=1$ ($n_r=1$) | $n=2, l=0$ ($n_r=1$) | **$2.2448 \times 10^7$** | $2.2448 \times 10^7$ | **+0.0012 %** | $+3.0648\ a_{\mu}$ (Dual-Ripple) |
+| **$4\text{d} \to 2\text{p}$** | $n=4, l=2$ ($n_r=1$) | $n=2, l=1$ ($n_r=0$) | **$2.0625 \times 10^7$** | $2.0625 \times 10^7$ | **+0.0009 %** | $+1.7097\ a_{\mu}$ ($d$-Lobe Ripple) |
 
 **Physical Result:** All single-node transitions match NIST to within **$\le 0.0016\%$ (16 ppm)**. Verified in `subticket_5b_radial_ripples.py`.
 
@@ -604,7 +604,7 @@ To definitively discriminate between Aetheric acoustic antenna radiation and qua
    $$A_{ul} = \frac{e^2 \omega_{ul}^2}{3\pi \varepsilon_0 c^3} \frac{Z_0}{Z_A} s_{ul} I_{ul}^2 \propto \frac{\nu_{ul}}{Z_A}$$
    Permittivity enhancement $\Delta\varepsilon_A / \varepsilon_0 \approx \frac{1}{2} \varepsilon_0 E^2 / K_A$ reduces medium impedance $Z_A = \sqrt{\mu_0 / \varepsilon_A}$, causing a fractional lifetime shortening:
    $$\frac{\Delta\tau}{\tau_0} \approx -\frac{1}{2} \frac{\Delta\varepsilon_A}{\varepsilon_0} = -\frac{1}{4} \frac{\varepsilon_0 E^2}{K_A}$$
-   For states $2p_{3/2} (|m_j| = 3/2)$ or $3d_{5/2} (|m_j| = 5/2)$, linear DC Stark state-mixing with $s$-states is forbidden by angular momentum conservation ($\Delta m_j \neq 0$), isolating the pure dielectric impedance shift.
+   For states $2p_{3/2} (|m_j| = 3/2)$ or $3d_{5/2} (|m_j| = 5/2)$, linear DC Stark state-mixing with $\text{s-states}$ is forbidden by angular momentum conservation ($\Delta m_j \neq 0$), isolating the pure dielectric impedance shift.
 4. **Spatial Decay Profiling:** The spatial $1/e$ decay length $x_{\text{decay}} = v_{\text{beam}} \tau_0$ ($4.79\ \mu\text{m}$ for $2p \to 1s$, $46.4\ \mu\text{m}$ for $3d \to 2p$, $475.2\ \mu\text{m}$ for $3s \to 2p$) is measured via downstream confocal laser-induced fluorescence.
 5. **Decisive Falsification:** QED strictly predicts $\Delta\tau / \tau_0 = 0$ in free space. Observation of $\Delta\tau \neq 0$ with $\Delta\lambda = 0$ confirms dielectric antenna damping and falsifies consensus vacuum field quantization.
 6. **Epistemic Boundary:** Exact laboratory voltage thresholds depend on the non-linear lattice bulk modulus $K_A$. Rather than smuggling a fitted float, this parameter is tracked as an open boundary in `TICKET-08`.
@@ -629,7 +629,7 @@ This proves that the leptonic circulation scale corresponds to 11 nested winding
 2. **Oscillation is mass**; inertia resides in lattice update resistance. Einstein velocity-mass dilation is debunked.
 3. **Charge is flow direction**: unipolar An outflow pump ($+$) versus sink inflow ($-$) closing into self-confining toroids to eliminate boundary leakage.
 4. **Neutrons are proton-electron pairs resting at eigenmode $n=0$** when nuclear proximity dampens separating inertia.
-5. **Hydrodynamic Gear-Meshing Replaces Pauli Exclusion:** Spatial volume conflict produces a local stagnation pressure spike $\Delta P = 2\rho_A v^2$ that bars identical-chirality co-occupation. Complementary counter-rotating torsion spins mesh smoothly like gears, forming stable $1s^2$ closed pairs and deriving the $2n^2$ shell capacity. Total 3-mode flow inversion produces destructive annihilation into $1021.4\text{ keV}$ transverse waves.
+5. **Hydrodynamic Gear-Meshing Replaces Pauli Exclusion:** Spatial volume conflict produces a local stagnation pressure spike $\Delta P = 2\rho_A v^2$ that bars identical-chirality co-occupation. Complementary counter-rotating torsion spins mesh smoothly like gears, forming stable $1\text{s}^2$ closed pairs and deriving the $2n^2$ shell capacity. Total 3-mode flow inversion produces destructive annihilation into $1022.0\text{ keV}$ transverse waves.
 6. **Atomic fine structure is Mercury-style orbital precession** driven by the medium's dielectric stress tensor $\sigma(r)$, not Einsteinian velocity-mass increase.
 7. The spacing law shifts from geometric ($r_n = r_0 k^n$) to quadratic ($r_n = n^2 a_\mu / Z$) purely via the **hydrodynamic wave-speed constitutive profile shift** ($v_A = \text{const}$ vs. $v \propto r^{-1/2}$).
 8. Non-Hermitian Exceptional Point coupling ($\kappa = \gamma$) locks the open An pump and sink drainage into a stationary standing wave with quarter-wave phase lag.
