@@ -60,7 +60,7 @@ This research initiative represents the fourth generation and true synthesis of 
 
 ### 2. Charge from Flow Topology (An Pump Outflow vs. Sink Inflow)
 - **Positive Charge ($+$):** Unipolar fountain outflow pumping potential from An (counterspace) into Ki (3D space) along the poloidal axis ($\nabla \cdot \mathbf{D} > 0$).
-- **Negative Charge ($-Boolean$):** Unipolar sink drainage drawing dielectric flux from Ki back into An ($\nabla \cdot \mathbf{D} < 0$).
+- **Negative Charge ($-$):** Unipolar sink drainage drawing dielectric flux from Ki back into An ($\nabla \cdot \mathbf{D} < 0$).
 - **Why Closed Loops Form:** Open linear Z-pinch columns leak energy at their boundary ends. To achieve self-confining dynamic equilibrium, the outflow curls around and returns to the sink, forming a **self-trapping toroidal vortex plasmoid**.
 
 ### 3. The Neutron Ground State (Eigenmode $n=0$)

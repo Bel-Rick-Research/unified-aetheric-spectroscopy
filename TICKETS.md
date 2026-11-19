@@ -60,7 +60,7 @@ Textbook physics treats electric charge as an unexplained, intrinsic sign ($\pm$
 In Guardian Cosmology, electric field $\mathbf{E}$ is the physical velocity flux of Líl: $\mathbf{E} \equiv \mathbf{v}_{\text{Aether}}$.
 - **Positive Charge ($+$):** Unipolar outflow pumping potential from An (counterspace) into Ki (3D space) along the poloidal axis:
   $$\nabla \cdot \mathbf{D} = +\rho_c > 0$$
-- **Negative Charge ($-Boolean$):** Unipolar sink drainage drawing dielectric flux from Ki back into An:
+- **Negative Charge ($-$):** Unipolar sink drainage drawing dielectric flux from Ki back into An:
   $$\nabla \cdot \mathbf{D} = -\rho_c < 0$$
 
 ### 2. Mathematical Derivation of the Bernoulli / Bjerknes Attraction Force
@@ -205,6 +205,25 @@ To solve this problem strictly from fluid continuum mechanics without touching a
   - Transitions: All 55 allowed dipole transitions across all states up to $n \le 6$ ($n_u \le 6, n_l < n_u, |\Delta l| = 1$).
   - Result: Max residual across all 55 lines is **$0.0114\%$ (114 ppm)**; mean residual is **$0.0035\%$ (35 ppm)**.
   - Conservation Law: Confirms Thomas–Reiche–Kuhn (TRK) antenna conservation sum rule: discrete bound sum $\sum_{u=2}^6 f_{1s \to up} = 0.5460$ (exact theoretical $0.5461$). Proves acoustic cavity modes conserve total charge displacement. Verified in `subticket_5c_full_catalog_sweep.py`.
+
+### 3. Hydrodynamic Derivation of Kummer's Acoustic ODE (Closing the Smuggling Loophole)
+To prevent critics from claiming that Kummer's equation is "the radial Schrödinger equation in disguise," Paper 4 Appendix A provides the explicit derivation from 19th-century acoustic continuum mechanics:
+1. **Bernoulli Inflow Gradient:** Unipolar Z-pinch acceleration down the dielectric tension gradient:
+   $$\frac{1}{2} v_0(r)^2 + \Phi_{\text{core}}(r) = 0 \implies v_0(r) = \sqrt{\frac{2 Z \mu_0 c^2 e^2}{4\pi \mu r}} = c \alpha \sqrt{\frac{2 Z a_\mu}{r}}$$
+2. **Linearized Euler Momentum + Mass Continuity:** Stationary harmonic perturbations $\delta\rho = \psi e^{-i\omega t}, \delta\mathbf{v} = \nabla\phi e^{-i\omega t}$:
+   $$\partial_t (\delta\mathbf{v}) + \nabla(\mathbf{v}_0 \cdot \delta\mathbf{v}) = -\frac{1}{\rho_0} \nabla(\delta P) - \nabla(\delta\Phi_{\text{strain}}), \qquad \partial_t (\delta\rho) + \nabla \cdot (\rho_0 \delta\mathbf{v} + \delta\rho \, \mathbf{v}_0) = 0$$
+   Combining them yields the Helmholtz acoustic wave equation $\nabla^2 \psi + K^2(r)\psi = 0$ with $K^2(r) = -\kappa^2 + \frac{2Z}{a_\mu r}$.
+3. **Spherical Separation & Sturm–Liouville Operator:**
+   $$r^2 \mathcal{R}''(r) + 2r \mathcal{R}'(r) + \left[ r^2 K^2(r) - l(l+1) \right] \mathcal{R}(r) = 0$$
+4. **Boundary Containment & Kummer's Confluent Form:** Factoring out core regularity ($r^l$) and outer confinement ($e^{-\kappa r}$):
+   $$\mathcal{R}(r) = \rho^l e^{-\rho/2} w(\rho), \qquad \rho = 2\kappa r$$
+   transforms the Sturm–Liouville equation into:
+   $$\rho w''(\rho) + (2l + 2 - \rho) w'(\rho) + \left( \frac{Z}{\kappa a_\mu} - l - 1 \right) w(\rho) = 0$$
+5. **Phase-Closure Termination (The Magic Integer $n$ Explained):** To prevent exponential blowup at infinity ($\rho \to \infty$), the series must terminate at an integer node count $n_r \in \{0, 1, 2, \dots\}$:
+   $$\frac{Z}{\kappa a_\mu} - l - 1 = n_r \implies \kappa_n = \frac{Z}{n a_\mu}, \qquad n = n_r + l + 1 \implies r_n = \frac{n^2 a_\mu}{Z}$$
+6. **Physical Conclusion (The Bottle-Resonance Model):**
+   - Like blowing across an open glass bottle to produce a clear acoustic tone, an atom is a microscopic acoustic resonator.
+   - The quantum numbers $(n, l)$ are not abstract probability dice rolls; they are the physical geometry required for standing sound ripples to echo cleanly inside an inflow whirlpool without crashing into and canceling themselves out.
 
 ---
 
