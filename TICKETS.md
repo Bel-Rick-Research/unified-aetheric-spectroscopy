@@ -425,7 +425,7 @@ The Standard Model treats the proton-to-electron mass ratio $m_p / m_e = 1836.15
 2. **Dodecahedral Triangular Packing Factorization:**
    The integer 1836 factors into the 12 vertices of the icosahedron / 12 pentagonal faces of the dodecahedron and the 17th triangular harmonic number $T_{17}$:
    $$T_{17} = \sum_{k=1}^{17} k = \frac{17 \times 18}{2} = 153, \qquad 1836 = 12 \times 153 = 12 \times T_{17}$$
-   This proves that 1836 is the exact geometric kissing/packing capacity of 12 spatial vortex channels arrayed in triangular 17-step nodal circulation.
+   This is consistent with 1836 being the geometric packing capacity of 12 spatial vortex channels arrayed in triangular 17-step nodal circulation.
    Verified in `vortex_mass_ratio_solver.py` and unit tests in `test_vortex_mass_ratio.py`.
 
 ---
@@ -465,7 +465,7 @@ This provides a decisive, unambiguous laboratory falsification test of QED vacuu
 
 ## TICKET-09: Deriving the Circulation Quantum ($\Gamma_0$) from Icosahedral Lattice Geometry
 
-- **Status:** `FULLY DERIVED FROM CONTINUUM MECHANICS (21 PPM CLOSURE)`
+- **Status:** `HIERARCHY MATCHED (21 PPM); κ_3D CORRECTION TERM AWAITS INDEPENDENT DERIVATION`
 - **Lead Mechanism:** Minimum Closed Line Integral of Displacement across Icosahedral Quasicrystal Cells vs. Macroscopic Vortex Core Perimeter; 3D Toroidal Packing Factor $\kappa_{\text{3D}}$.
 
 ### 1. Physical Formulation: Cancellation of Planck's Constant
@@ -477,52 +477,22 @@ $$\boxed{\Gamma_0 = c \lambda_{C,\mu}}$$
 Planck's constant $h$ is identically $\mu \Gamma_0$, meaning $h$ is nothing more than the product of circulation and inertial mass!
 
 ### 2. The Planck-Cell Minimum Line Integral and Hierarchy Step
-On the discrete icosahedral Ki lattice ($\ell_P = \phi \times 10^{-35}\text{ m}$, $p_t = \ell_P / c$), the fundamental floor scale is the 2-tick Nyquist perimeter radius $R_{\text{Nyquist}}(0) = \ell_P / \pi \approx 5.1504 \times 10^{-36}\text{ m}$. Comparing the bare leptonic circulation scale $\lambda_{C,e} = \frac{\mu_0 c e^2}{2 m_e \alpha} \approx 2.4263 \times 10^{-12}\text{ m}$ against this lattice floor defines the total hierarchy step:
-$$N_{\text{hierarchy}} \equiv \frac{\lambda_{C,e}}{\ell_P / \pi} \approx \mathbf{4.7109 \times 10^{23}}$$
+On the discrete icosahedral Ki lattice ($\ell_P = \phi \times 10^{-35}\text{ m}$, $p_t = \ell_P / c$), the smallest closed loop is the Nyquist 2-tick perimeter ($2\ell_P$) with maximum transit speed $c$:
+$$\Gamma_{\text{cell}} = \oint_{\text{cell}} \mathbf{v} \cdot d\mathbf{l} = 2 c \ell_P \approx 9.7015 \times 10^{-27}\text{ m}^2/\text{s}$$
+The ratio between the bare leptonic circulation scale $\lambda_{C,e} = \frac{\mu_0 c e^2}{2 m_e \alpha} \approx 2.4263 \times 10^{-12}\text{ m}$ and this cell defines the total hierarchy step:
+$$N_{\text{hierarchy}} \equiv \frac{\lambda_{C,e}}{2\ell_P} \approx \mathbf{7.4977 \times 10^{22}}$$
 
 ### 3. 3D Toroidal Packing Factor Resolution ($-21\text{ ppm}$)
-Connecting with the 3D toroidal packing volume factor $\kappa_{\text{3D}} \equiv \frac{4\pi}{3}(1 + \frac{3}{16\pi^2}) \approx 4.268368$ derived in TICKET-11, the hierarchy ratio matches 11 nested winding orders of the fine-structure gear ratio:
-$$\boxed{N_{\text{hierarchy}} = \frac{1}{\kappa_{\text{3D}} \alpha^{11}} = \mathbf{4.7108 \times 10^{23}}}$$
-yielding an exact match to within **$-21.05\text{ ppm}$** ($0.0021\%$).
+Connecting with the 3D toroidal packing volume factor $\kappa_{\text{3D}} \equiv \frac{4\pi}{3}(1 + \frac{3}{16\pi^2}) \approx 4.268368$ derived in TICKET-11, the hierarchy ratio corresponds to 11 nested winding orders of the fine-structure gear ratio:
+$$\boxed{N_{\text{hierarchy}} \approx \frac{1}{\kappa_{\text{3D}} \alpha^{11}} = \mathbf{7.4976 \times 10^{22}}}$$
+a match to within **$-21.05\text{ ppm}$** ($0.0021\%$).
+*Epistemic note:* the leading factor $4\pi/3$ alone gives $4.18879$ ($-1.9\%$); the $3/(16\pi^2)$ correction is identified from the residual and awaits an independent geometric derivation. `[OPEN BOUNDARY]`
 
 ### 4. Unified Reciprocal Identity with Ticket 11
 Because the Tier $k=10$ (electron throat) and Tier $k=12$ (Bohr cavity) 1D Nyquist ratios satisfy:
 $$\frac{R_{\text{Nyquist}}(10)}{r_e} = \frac{R_{\text{Nyquist}}(12)}{a_0} = \frac{1}{\alpha^{11} N_{\text{hierarchy}}} = 4.268278$$
-the circulation quantum hierarchy (Ticket 09) and the Nyquist scale ladder recalibration (Ticket 11) represent the identical 3D toroidal packing relation $\kappa_{\text{3D}}$ viewed from reciprocal directions.
-Verified in `circulation_quantum_geometry_solver.py` and unit tests in `test_circulation_quantum_geometry.py`.$, the same open boundary as `TICKET-04`). If $K_A \sim 0.90\text{ Pa}$, a $1.0\%$ shift requires $E \approx 4.5 \times 10^4\text{ V/m}$; if $K_A$ is higher, $E$ scales as $\sqrt{K_A}$. Per Epistemic Law 1, we halt rather than tuning $K_A$.
-
----
-
-## TICKET-09: Deriving the Circulation Quantum ($\Gamma_0$) from Icosahedral Lattice Geometry
-
-- **Status:** `FOUNDATION FORMULATED / BLOCKED ON MASS HIERARCHY [m_e / m_P]`
-- **Lead Mechanism:** Minimum Closed Line Integral of Displacement across Icosahedral Quasicrystal Cells vs. Macroscopic Vortex Core Perimeter.
-
-### 1. Physical Formulation: Cancellation of Planck's Constant
-In Paper 2 and Paper 4, Planck's constant $h$ cancels out of transition beat frequencies ($\nu = \Delta(v^2)/(2\Gamma_0)$).
-In fluid continuum mechanics, circulation around a vortex ring is conserved by Kelvin's theorem:
-$$\Gamma_0 = \oint \mathbf{v} \cdot d\mathbf{l} = 2\pi a_\mu v_1 = \frac{\mu_0 c e^2}{2\mu\alpha} \approx 7.27389 \times 10^{-4}\text{ m}^2/\text{s}$$
-Notice that expressing $\mu$ in terms of its Compton wavelength $\lambda_{C,\mu} = h / (\mu c)$ reveals the exact physical identity:
-$$\boxed{\Gamma_0 = c \lambda_{C,\mu}}$$
-Planck's constant $h$ is identically $\mu \Gamma_0$, meaning $h$ is nothing more than the product of circulation and inertial mass!
-
-### 2. The Planck-Cell Minimum Line Integral
-On the discrete icosahedral Ki lattice ($\ell_P = \phi \times 10^{-35}\text{ m}$, $p_t = \ell_P / c$), the smallest closed loop is the Nyquist 2-tick perimeter ($2\ell_P$) with maximum transit speed $c$:
-$$\Gamma_{\text{cell}} = \oint_{\text{cell}} \mathbf{v} \cdot d\mathbf{l} = 2 c \ell_P \approx 9.7015 \times 10^{-27}\text{ m}^2/\text{s}$$
-The ratio between macroscopic atomic vortex circulation and the bare Planck cell is:
-$$N_{\text{hierarchy}} \equiv \frac{\Gamma_0}{\Gamma_{\text{cell}}} = \frac{c \lambda_{C,\mu}}{2 c \ell_P} = \frac{\lambda_{C,\mu}}{2\ell_P} \approx \mathbf{7.4977 \times 10^{22}}$$
-
-### 3. Connection to the Planck-Clock Nyquist Scale Ladder
-In the scale ladder of TICKET-11, spatial scales step outward by powers of the fine-structure gear ratio $\alpha \approx 1/137.036$:
-$$\frac{\lambda_{C,\mu}}{\ell_P} \approx \frac{2}{\alpha^{11}} \approx 2.03 \times 10^{23}$$
-This proves that the hierarchy factor $N_{\text{hierarchy}} \sim 10^{23}$ is not arbitrary, but corresponds to **11 nested winding orders of the fine-structure gear ratio $\alpha$**.
-
-### 4. Epistemic Limitation & Block
-- **BLOCKED: REQUIRES EXTERNAL INPUT [Leptonic-to-Planck Mass Hierarchy Ratio $\lambda_C / \ell_P$ or First-Principles Winding Tier Selection $k=10$]**
-- In `TICKET-07`, we cleanly derived the *relative* mass ratio between the proton and electron ($m_p / m_e = 6\pi^5$) from 5D phase-space hypersphere geometry because both particles share the same spatial lattice.
-- However, deriving the *absolute* value of $\Gamma_0$ (or $m_e$) from bare lattice parameters ($\ell_P, c, \mu_0, \varepsilon_0$) requires deriving why the stable electron sink knot selects Tier $k=10$ ($r_e = \alpha^2 a_\mu$) rather than collapsing to $k=0$ ($\ell_P$).
-- This is the fundamental electroweak/leptonic hierarchy problem. Per Epistemic Law 1, we halt here and document the exact identity $\Gamma_0 = c \lambda_C$ rather than inserting an empirical float.
-- Verified in `circulation_quantum_geometry_solver.py` and unit tests in `test_circulation_quantum_geometry.py`.
+the circulation quantum hierarchy (Ticket 09) and the Nyquist scale ladder recalibration (Ticket 11) appear to express the same 3D toroidal packing relation $\kappa_{\text{3D}}$ viewed from reciprocal directions.
+Verified in `circulation_quantum_geometry_solver.py` and unit tests in `test_circulation_quantum_geometry.py`.
 
 ---
 

@@ -9,7 +9,7 @@ import re
 import shutil
 import subprocess
 import sys
-import markdown
+from markdown_it import MarkdownIt
 
 PAPER_DIR = os.path.dirname(os.path.abspath(__file__))
 MD_PATH = os.path.join(PAPER_DIR, "UNIFIED-AETHERIC-SPECTROSCOPY.md")
@@ -41,9 +41,18 @@ def build_pdf():
     processed_md = re.sub(r'\$\$(.*?)\$\$', save_block_math, md_text, flags=re.DOTALL)
     processed_md = re.sub(r'(?<!\$)\$([^\$\n]+?)\$(?!\$)', save_inline_math, processed_md)
 
-    body_html = markdown.markdown(
-        processed_md,
-        extensions=['extra', 'tables', 'codehilite', 'toc']
+    # CommonMark list semantics match GitHub rendering (nested content aligns to marker width)
+    body_html = MarkdownIt("commonmark").enable("table").render(processed_md)
+
+    def slugify(text):
+        text = re.sub(r'<[^>]+>', '', text).lower()
+        text = re.sub(r'[^\w\s-]', '', text)
+        return re.sub(r'\s+', '-', text.strip())
+
+    body_html = re.sub(
+        r'<h([1-4])>(.*?)</h\1>',
+        lambda m: f'<h{m.group(1)} id="{slugify(m.group(2))}">{m.group(2)}</h{m.group(1)}>',
+        body_html,
     )
 
     for i, m in enumerate(math_blocks):
@@ -110,6 +119,12 @@ def build_pdf():
         margin-bottom: 8px;
         text-align: justify;
     }}
+    li p {{
+        text-align: left;
+    }}
+    li {{
+        text-align: left;
+    }}
     ol li, ul li {{
         margin-bottom: 8px;
     }}
@@ -143,6 +158,11 @@ def build_pdf():
         border-collapse: collapse;
         margin: 12px 0;
         font-size: 9.5pt;
+    }}
+    thead {{
+        display: table-header-group;
+    }}
+    tr {{
         page-break-inside: avoid;
     }}
     table .katex {{
@@ -152,6 +172,7 @@ def build_pdf():
         border: 1px solid #bbb;
         padding: 4.5pt 6pt;
         text-align: left;
+        vertical-align: top;
     }}
     th {{
         background-color: #f2f2f2;
@@ -164,12 +185,30 @@ def build_pdf():
         padding: 1px 3px;
         border-radius: 2px;
     }}
+    a {{
+        color: #1f3d6b;
+        text-decoration: none;
+    }}
+    a code {{
+        background: none;
+        padding: 0;
+    }}
+    hr {{
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 16px 0;
+    }}
     blockquote {{
         border-left: 3px solid #2b4c7e;
         background: #f8fafd;
         margin: 10px 0;
         padding: 6px 12px;
-        font-style: italic;
+    }}
+    blockquote p {{
+        margin: 4px 0;
+    }}
+    .katex-display {{
+        page-break-inside: avoid;
     }}
 </style>
 </head>
@@ -189,7 +228,7 @@ def build_pdf():
 
     tmp_pdf = "/tmp/unified_aetheric_spectroscopy.pdf"
     print(f"Generating PDF via Brave Headless: {tmp_pdf}")
-    pdf_cmd = f"flatpak run com.brave.Browser --headless --no-sandbox --print-to-pdf={tmp_pdf} {HTML_STAGE2}"
+    pdf_cmd = f"flatpak run com.brave.Browser --headless --no-sandbox --no-pdf-header-footer --print-to-pdf={tmp_pdf} {HTML_STAGE2}"
     subprocess.run(pdf_cmd, shell=True, check=True)
 
     shutil.copyfile(tmp_pdf, PDF_OUT)
