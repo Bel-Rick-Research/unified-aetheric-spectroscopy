@@ -5,7 +5,7 @@
 **Classification:** Theoretical physics, Aetheric continuum mechanics, non-Hermitian vortex electrodynamics  
 **Author:** Rick Drayson  
 **Date:** 17 November 2026 (Inception Draft v0.1)  
-**Status:** Inception phase. Unifies atomic and celestial standing-wave resonators purely within the continuum Aether framework. Replaces Bohr wire tracks, Einstein velocity-mass scaling, Coulomb empty-void forces, and Debye plasma abstractions with pure fluid mechanics, flow-topology charge, the $n=0$ neutron ground state, and dielectric medium stress precession.
+**Status:** Inception phase. Unifies atomic and celestial standing-wave resonators purely within the continuum Aether framework, generalizing 1D orbital tracks, relativistic mass adjustments, electrostatic action-at-a-distance, and statistical plasma analogies into a unified model of fluid continuum mechanics, topological charge flow, the $n=0$ neutron ground state, and dielectric medium stress precession.
 
 ---
 
@@ -13,22 +13,24 @@
 
 This document derives the unified master field equations governing 3D self-confining toroidal vortex resonators in the dielectric Aether, establishing the physical mechanism of atomic quantization, charge flow topology, fine-structure precession, and the $n=0$ neutron pair bond, while maintaining an active ticket ledger for open physical boundaries.
 
+> **Scope & Framework Disclaimer:** This paper presents a complete composition of the standing-wave spectroscopic model from the atomic cavity scale down to the nuclear core boundary ($r \ge 10^{-15}\text{ m}$). While mathematically self-contained and internally closed across this regime, it is an explicitly scope-limited boundary paper within a broader multi-scale continuum framework. Phenomena operating below the proton core radius ($r < 10^{-15}\text{ m}$)—including deep-inelastic parton scattering, sub-hadronic vortex knotting, and the absolute first-principles derivation of the leptonic mass hierarchy—are demarcated as external boundary inputs or tracked in the open ticket ledger, forming the subject of subsequent investigation (Paper 5: Sub-Nuclear Quark-Parton Fluid Mechanics & Hadronic Synthesis).
+
 ---
 
 ## Executive Brief
 
-> **The True Synthesis.** Across three generations of research, we discovered the exact mathematical ceilings and conceptual failures of inherited consensus approximations:
-> 1. *Paper 1:* Linear classical Helmholtz cavities fail because they produce linear acoustic harmonics ($\omega_n \propto n$), not the inverse-square Rydberg spectrum ($E_n \propto -1/n^2$).
-> 2. *Paper 2:* 1D circular wire orbits derived gross $r_n \propto n^2$ and fine structure, but hit an absolute brick wall at the Lamb shift (predicting 0 Hz) and line strengths (underestimating radiated power by 82%) because squeezing vast 3D vortices spanning $10^{25}$ lattice cells into a 1D line is contradictory.
-> 3. *Paper 3:* 3D vortex volume compression derived the $Z^4 / n^3$ Lamb shift scaling and native fluid dipole antenna radiation, but initially imported statistical plasma abstractions ("Debye screening") and was tempted into consensus curve-fitting.
+> **Evolution of the Resonator Framework.** Developing this model progressed through distinct geometric stages, each clarifying the physical requirements of the medium:
+> 1. *Paper 1:* Linear classical Helmholtz cavities established the continuum acoustic baseline, demonstrating that uniform media produce linear harmonics ($\omega_n \propto n$), which highlighted the requirement for a non-linear velocity gradient to generate the inverse-square Rydberg spectrum ($E_n \propto -1/n^2$).
+> 2. *Paper 2:* 1D circular wire models successfully yielded gross $r_n \propto n^2$ scaling and fine structure, but revealed the physical boundaries of 1D approximations when addressing the Lamb shift (which requires 3D core volume presence) and transition damping rates (where 1D filaments underestimate 3D dipole radiation by 82%).
+> 3. *Paper 3:* 3D vortex volume compression established the $Z^4 / n^3$ Lamb shift scaling and native fluid dipole antenna damping, identifying that statistical plasma analogies can be superseded by direct hydrodynamic wave-speed constitutive profiles.
 >
-> **What Paper 4 Delivers:**
-> - **Oscillation is Mass; Inertia is in the Lattice:** Einstein's velocity-mass dilation ($\gamma \, m_e$) is rejected. Higher oscillation frequency increases mass; inertia is the reactive strain of the icosahedral grid against vertex update-rate changes.
-> - **Charge from Flow Topology:** Positive charge ($+$) is unipolar An outflow from counterspace into 3D space ($\nabla \cdot \mathbf{D} > 0$). Negative charge ($-$) is unipolar sink drainage back into counterspace ($\nabla \cdot \mathbf{D} < 0$). They close into self-confining toroids to eliminate boundary leakage.
-> - **The Neutron Ground State ($n=0$):** Neutrons are the default ground state of a proton-electron pair resting at eigenmode $n=0$ when nuclear proximity robs them of their separating inertia.
-> - **Atomic Precession via Mercury's Rule:** Fine-structure splitting is the micro-scale equivalent of Mercury's orbital precession, driven by the non-linear dielectric stress tensor $\sigma(r)$ of the medium, not Einsteinian velocity-mass increase.
-> - **Hydrodynamic Constitutive Profile Shift:** The transition between celestial spacing ($r_n = r_0 k^n$) and atomic spacing ($r_n = n^2 a_0 / Z$) is a pure fluid transition from scale-free constant wave speed ($v_A = \text{const}$) to steep unipolar core inflow ($v \propto r^{-1/2}$).
-> - **The Open Ticket System:** All unresolved mechanisms are tracked in [`TICKETS.md`](../TICKETS.md) rather than papered over with QM wavefunctions or empirical decimal floats.
+> **What This Paper Formulates:**
+> - **Oscillation is Mass; Inertia is in the Lattice:** Rather than attributing inertia to intrinsic relativistic mass dilation ($\gamma \, m_e$), mass is identified as the reactive impedance of trapped wave oscillation, and inertia as the strain of the icosahedral lattice against vertex update-rate changes.
+> - **Charge from Flow Topology:** Positive charge ($+$) is modeled as unipolar An outflow from counterspace into 3D space ($\nabla \cdot \mathbf{D} > 0$), while negative charge ($-$) is unipolar sink drainage back into counterspace ($\nabla \cdot \mathbf{D} < 0$), closing into self-confining toroids to eliminate boundary leakage.
+> - **The Neutron Ground State ($n=0$):** Neutrons are described as the ground-state configuration of a proton-electron pair resting at eigenmode $n=0$ when nuclear proximity dampens separating orbital inertia.
+> - **Atomic Precession via Medium Stress:** Fine-structure splitting is derived as orbital precession driven by the non-linear dielectric stress tensor $\sigma(r)$ of the medium, providing a continuum fluid counterpart to kinematic relativistic corrections.
+> - **Hydrodynamic Constitutive Profile Shift:** The transition between celestial geometric spacing ($r_n = r_0 k^n$) and atomic quadratic spacing ($r_n = n^2 a_\mu / Z$) arises naturally from a fluid regime shift in the medium's wave-speed profile, from scale-free bulk wave speed ($v_A = \text{const}$) to steep core inflow ($v \propto r^{-1/2}$).
+> - **The Open Ticket System:** All physical boundaries and uncalibrated parameters are cataloged explicitly in [`TICKETS.md`](../TICKETS.md) rather than obscured by ad-hoc parameters or empirical curve-fitting.
 
 ---
 
@@ -61,19 +63,19 @@ This document derives the unified master field equations governing 3D self-confi
 | **Rational Continuity Transition Profile** | **DERIVED** | Geometric fluid continuity $T(r) = R_{\text{trans}}/(R_{\text{trans}}+r)$, naturally converting $1/r$ core gradient to $1/r^2$ scale-free bulk flow. |
 | **High-$Z$ Grid Elasticity Saturation** | **OPEN BOUNDARY / FAILED** | Logarithmic strain volume contraction reduces He+ overshoot to +11.8%; remaining gap is an unresolved boundary representing non-linear lattice bulk modulus saturation under doubled unipolar charge tension. Any numerical estimate $K_A \sim 0.9\text{ Pa}$ is an empirical estimate from assumed density ($\rho_A \sim 10^{-17}\text{ kg/m}^3$), not a derived constant (`TICKET-04`). |
 | **Multi-Line 3D Envelope Overlap** | **DERIVED (55 LINES)** | Evaluated via Frobenius acoustic recurrence and numerical quadrature on a 1D spatial grid; matches all 55 lines in NIST ASD to $\le 0.0114\%$ and satisfies TRK charge conservation sum rule with zero special functions (`TICKET-05`). |
-| **1D Bohr Wire Orbit Approximation** | **WITHDRAWN** | Abandoned as unphysical; electron is an extended 3D vortex ring spanning $10^{25}$ lattice cells. |
-| **Einstein Relativistic Mass ($\gamma \, m_e$)** | **WITHDRAWN** | Debunked abstraction. Moving faster does not make an electron heavier. |
-| **Debye Plasma Screening Narrative** | **WITHDRAWN** | Statistical plasma abstraction replaced by hydrodynamic wave-speed constitutive profile shift. |
-| **Coulomb Force Across an Empty Void** | **WITHDRAWN** | Replaced by dielectric pressure/density gradient ($P_{\text{high}} \to P_{\text{low}}$) pulling matter inward. |
-| **Pauli Exclusion / Slater Determinants** | **WITHDRAWN** | Abstract quantum spin statistics replaced by 3D fluid vortex boundary collision and gear-meshing. |
+| **1D Bohr Wire Orbit Approximation** | **SUPERSEDED** | Generalized to 3D continuum geometry; the electron is modeled as an extended 3D toroidal vortex ring spanning $10^{25}$ lattice cells. |
+| **Einstein Relativistic Mass ($\gamma \, m_e$)** | **REINTERPRETED** | Reinterpreted via dielectric medium stress $\sigma(r)$; inertia reflects reactive lattice strain rather than intrinsic kinematic mass dilation. |
+| **Debye Plasma Screening Narrative** | **SUPERSEDED** | Replaced by direct hydrodynamic wave-speed constitutive profiles across the cavity boundary. |
+| **Coulomb Force Across an Empty Void** | **REINTERPRETED** | Formulated as a dielectric pressure/density gradient ($P_{\text{high}} \to P_{\text{low}}$) producing Bernoulli/Bjerknes hydrodynamic attraction. |
+| **Pauli Exclusion / Slater Determinants** | **MECHANICAL BASIS** | Formulated mechanically via 3D fluid vortex boundary shear and hydrodynamic gear-meshing interaction. |
 
 ---
 
 ## II. Charge and Mass from Flow Topology: An Outflow Pump vs. Sink Inflow
 
-Textbook physics treats electric charge as an unexplained, intrinsic sign ($\pm$) attached to dimensionless point particles, interacting via unphysical action-at-a-distance across an empty void.
+Standard electrostatic formalisms assign electric charge as an intrinsic sign ($\pm$) to point particles, describing interactions via action-at-a-distance across empty space.
 
-In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displacement (Líl) between space and counterspace**:
+In this continuum framework, charge represents the **direction of dynamic fluid displacement (Líl) between space and counterspace**:
 
 ```
         AN (Counterspace / Potential Source)
@@ -108,7 +110,7 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
    $$\boxed{\mathbf{F}_{\text{attraction}}(d) = -\frac{\mu_0 c^2 e^2}{4\pi d^2} \hat{\mathbf{d}} = -\frac{e^2}{4\pi \varepsilon_0 d^2} \hat{\mathbf{d}}}$$
 
 5. **The Proton-to-Electron Mass Ratio from Vortex Topologies ($m_p/m_e = 6\pi^5 = 1836.12$):**
-   The Standard Model treats the proton-to-electron mass ratio $m_p / m_e = 1836.15267344$ as an unexplained, arbitrary empirical parameter inserted by hand into equations. In Guardian Cosmology, mass is the inductive reactive impedance of trapped wave circulation:
+   Standard phenomenology treats the proton-to-electron mass ratio $m_p / m_e = 1836.15267344$ as an empirical input. In this continuum framework, mass is modeled as the inductive reactive impedance of trapped wave circulation:
    $$m = \frac{\mu\Gamma_0}{2\pi c^2} \omega_0 \implies \frac{m_p}{m_e} = \frac{\omega_p}{\omega_e} = \frac{\bar{\lambda}_{C,e}}{\bar{\lambda}_{C,p}}$$
    where $\bar{\lambda}_C = \Gamma_0 / (2\pi c)$ is the reduced Compton circulation wavelength.
 
@@ -170,7 +172,7 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
 | **Deuterium Isotope Mass Shift** | $272.1\text{ ppm}$ | $272.4\text{ ppm}$ | $0.00\%$ | `DERIVED FROM AXIOMS` | Doubled nuclear fountain impedance reduces orbital strain by 272.1 ppm |
 
 7. **Planck-Clock Nyquist Temporal Horizon & Physical Lower Boundary:**
-   Standard quantum mechanics and general relativity allow unphysical mathematical singularities ($r \to 0$) because they assume smooth, continuous spacetime down to zero distance. In Guardian Cosmology, the Aether is underpinned by a discrete icosahedral Ki quasicrystal lattice with cell spacing $\ell_P = \phi \times 10^{-35}\text{ m}$ and discrete clock tick $p_t = \ell_P / c \approx 5.39 \times 10^{-44}\text{ s}$.
+   Standard continuum field equations encounter mathematical singularities ($r \to 0$) under the idealization of continuous spacetime down to zero distance. In this continuum framework, the Aether is modeled as underpinned by a discrete icosahedral Ki quasicrystal lattice with cell spacing $\ell_P = \phi \times 10^{-35}\text{ m}$ and discrete clock tick $p_t = \ell_P / c \approx 5.39 \times 10^{-44}\text{ s}$.
 
    Because grid wave speed $c = \ell_P / p_t$ is constant, as spatial scale $R$ shrinks, transit frequency $f = c/R$ explodes. Internal vortex phase circulation scales with integer powers of the lattice gear ratio $\alpha \approx 1/137.036$:
    $$v_{\text{phase}}(k) \sim \frac{c}{\alpha^k}$$
@@ -202,10 +204,10 @@ In Guardian Cosmology, charge is strictly the **direction of dynamic fluid displ
 
 ## III. The Neutron Ground State (Eigenmode $n=0$)
 
-A major mystery of standard physics is why the neutron exists as an apparently separate particle that nevertheless beta-decays into a proton, an electron, and an antineutrino after $\sim 14.7\text{ minutes}$:
+In conventional nuclear phenomenology, the neutron is categorized as an independent nucleon that nevertheless beta-decays into a proton, an electron, and an antineutrino after $\sim 14.7\text{ minutes}$:
 $$n^0 \to p^+ + e^- + \bar{\nu}_e$$
 
-In our wave topology framework, **the neutron is the default ground state of a proton-electron pair**:
+In our wave topology framework, **the neutron is modeled as the ground state of a proton-electron pair**:
 
 1. **The Inward Bernoulli Suction:**
    $$F_{\text{Bernoulli}}(r) = -\frac{\mu_0 c^2 e^2}{4\pi r^2} \propto -\frac{1}{r^2}$$
@@ -245,11 +247,11 @@ In [`scripts/bernoulli_neutron_solver.py`](../scripts/bernoulli_neutron_solver.p
 
 ---
 
-## IV. Hydrodynamic Gear-Meshing and Exclusion Mechanics (Replacing Pauli Exclusion)
+## IV. Hydrodynamic Gear-Meshing and Exclusion Mechanics (Continuum Formulation of Exclusion)
 
-Standard quantum mechanics treats the "Pauli Exclusion Principle" as an unexplained mathematical prohibition: no two electrons can occupy the same quantum state, enforced via anti-symmetric Slater determinants. It provides zero physical mechanism for *why* electrons refuse to occupy the same state.
+Standard quantum mechanics formulates the Pauli Exclusion Principle as an axiomatic symmetry requirement: no two electrons may occupy the same quantum state, implemented via anti-symmetric wavefunctions and Slater determinants.
 
-In Guardian Cosmology, electrons are continuous 3D toroidal vortex plasmoids operating within the icosahedral quasicrystal lattice. Across the 3 spatial projection axes, there are **6 discrete chiral rotation states** defined by the 3-mode flow vector:
+In this continuum framework, electrons are modeled as continuous 3D toroidal vortex plasmoids operating within the icosahedral quasicrystal lattice. Across the 3 spatial projection axes, there are **6 discrete chiral rotation states** defined by the 3-mode flow vector:
 $$\boldsymbol{\sigma} = (\sigma_{\text{radial}}, \sigma_{\text{toroidal}}, \sigma_{\text{torsion}}) \in \{-1, +1\}^3$$
 For an electron sink: $\sigma_{\text{radial}} = -1$ (Ki $\to$ An drainage).
 
@@ -300,7 +302,7 @@ In [`scripts/gear_meshing_exclusion_solver.py`](../scripts/gear_meshing_exclusio
 
 ## V. Scale Invariance vs. Frequency Scale Variance
 
-The foundational axiom of Guardian Cosmology asserts:
+The foundational geometric scaling law of this framework asserts:
 $$\text{Geometry}(R) = \text{Invariant under } R \to \lambda \cdot R$$
 
 The same 3D toroidal vortex geometry, driven by a central unipolar Z-pinch fountain, governs the cosmos from the Planck lattice floor ($\sim 10^{-35}\text{ m}$) up through atomic shells ($\sim 10^{-10}\text{ m}$) to solar systems ($\sim 10^{11}\text{ m}$).
@@ -367,10 +369,10 @@ In [`scripts/constitutive_profile_solver.py`](../scripts/constitutive_profile_so
 
 ## VII. Atomic Precession via the Medium Stress Tensor (Mercury's Rule)
 
-In standard physics, atomic fine structure is attributed to Einstein's relativistic velocity-mass scaling ($\gamma \, m_e$) and Dirac's 4-component spinor matrices.
+In standard relativistic quantum mechanics, atomic fine structure is attributed to kinematic velocity-mass increases ($\gamma \, m_e$) and Dirac spinor dynamics.
 
-In Guardian Cosmology:
-1. **Einstein Mass Dilation is Rejected:** An electron moving faster does NOT become physically heavier. Mass is trapped wave oscillation frequency; inertia is lattice update-rate resistance.
+In this continuum framework:
+1. **Inertia as Reactive Lattice Strain:** Inertia is modeled as the update-rate resistance of the lattice against acceleration, rather than intrinsic velocity-dependent mass variation. Mass is the reactive impedance of trapped wave oscillation frequency.
 2. **Mercury's Precession Rule:** In our solar system, Mercury precesses $43''/\text{century}$ because it orbits within the non-linear radial dielectric/gravitational stress gradient $\sigma(r)$ of the Sun's heliospheric vortex, adding an effective $-1/r^3$ perturbation:
    $$V_{\text{eff}}(r) = -\frac{K}{r} + \frac{L^2}{2\mu r^2} - \frac{\epsilon K L^2}{2\mu c^2 r^3}$$
    yielding an advance per revolution governed strictly by the dimensionless stress parameter $(v/c)^2$:
@@ -520,7 +522,7 @@ For Lyman-$\alpha$ ($2p \to 1s$):
 $$\boxed{A(2p \to 1s) = \frac{4}{3}\alpha \frac{\omega_{21}^3}{c^2} \left(\frac{1}{3}\right) I_{21}^2 = 6.2649 \times 10^8\ \text{s}^{-1} \quad (\tau = 1.5962\text{ ns})}$$
 where $I_{21} = 1.290266\ a_\mu$ is computed numerically, matching NIST ASD to **$+0.0016\%$** with zero Planck's constant $h$ and zero Laguerre polynomials.
 
-*(Historical Note: The closed-form prefactor $(2/3)^8 = (128\sqrt{2}/243)^2$ arises when integrating standard Schrödinger hydrogen eigenfunctions analytically; in Guardian Cosmology, this value is verified as an emergent property of the classical acoustic Sturm–Liouville cavity modes via direct numerical integration).*
+*(Historical Note: The closed-form prefactor $(2/3)^8 = (128\sqrt{2}/243)^2$ arises when integrating standard Schrödinger hydrogen eigenfunctions analytically; in this continuum model, this value is verified as an emergent property of the classical acoustic Sturm–Liouville cavity modes via direct numerical integration).*
 
 ### 1. Sub-Ticket 5A: Circular Ladder 3D Fluid Dipole Antenna Benchmark
 Circular states have zero radial nodes ($n_r = 0$). They represent clean, single toroidal vortex rings whose fluid radial envelopes are nodeless:
@@ -581,7 +583,7 @@ Evaluating the classical antenna dipole overlap integral $I_{ul} = \int_0^\infty
 
 **Classical Antenna Conservation Law:** The Thomas–Reiche–Kuhn (TRK) oscillator strength sum rule:
 $$f_{l \to u} = \frac{4\pi \omega_{ul}}{3\Gamma_0} \frac{\max(l_u, l_l)}{2l_l + 1} I_{ul}^2, \qquad \sum_u f_{l \to u} + \int \frac{df}{d\omega} d\omega = 1.0$$
-proves that the fluid standing modes conserve total charge displacement across the acoustic cavity, completing the full multi-line spectroscopy derivation without consensus quantum mechanics. Verified in `subticket_5c_full_catalog_sweep.py`.
+proves that the fluid standing modes conserve total charge displacement across the acoustic cavity, completing the full multi-line spectroscopy derivation strictly within continuum fluid electrodynamics. Verified in `subticket_5c_full_catalog_sweep.py`.
 
 ---
 
@@ -606,8 +608,8 @@ To definitively discriminate between Aetheric acoustic antenna radiation and qua
    $$\frac{\Delta\tau}{\tau_0} \approx -\frac{1}{2} \frac{\Delta\varepsilon_A}{\varepsilon_0} = -\frac{1}{4} \frac{\varepsilon_0 E^2}{K_A}$$
    For states $2p_{3/2} (|m_j| = 3/2)$ or $3d_{5/2} (|m_j| = 5/2)$, linear DC Stark state-mixing with $\text{s-states}$ is forbidden by angular momentum conservation ($\Delta m_j \neq 0$), isolating the pure dielectric impedance shift.
 4. **Spatial Decay Profiling:** The spatial $1/e$ decay length $x_{\text{decay}} = v_{\text{beam}} \tau_0$ ($4.79\ \mu\text{m}$ for $2p \to 1s$, $46.4\ \mu\text{m}$ for $3d \to 2p$, $475.2\ \mu\text{m}$ for $3s \to 2p$) is measured via downstream confocal laser-induced fluorescence.
-5. **Decisive Falsification:** QED strictly predicts $\Delta\tau / \tau_0 = 0$ in free space. Observation of $\Delta\tau \neq 0$ with $\Delta\lambda = 0$ confirms dielectric antenna damping and falsifies consensus vacuum field quantization.
-6. **Epistemic Boundary:** Exact laboratory voltage thresholds depend on the non-linear lattice bulk modulus $K_A$. Rather than smuggling a fitted float, this parameter is tracked as an open boundary in `TICKET-08`.
+5. **Decisive Falsification:** Standard QED predicts $\Delta\tau / \tau_0 = 0$ in free space. Observation of $\Delta\tau \neq 0$ with $\Delta\lambda = 0$ would confirm dielectric antenna damping and distinguish this continuum approach from standard vacuum field quantization.
+6. **Epistemic Boundary:** Exact laboratory voltage thresholds depend on the non-linear lattice bulk modulus $K_A$. Rather than introducing an un-derived empirical float, this parameter is tracked as an open boundary in `TICKET-08`.
 
 ### Circulation Quantum Geometry and Hierarchy Scale (Ticket 09)
 
@@ -625,21 +627,21 @@ This proves that the leptonic circulation scale corresponds to 11 nested winding
 
 ## XII. Summary
 
-1. Squeezing vast 3D vortices spanning septillions of lattice cells into Bohr's 1D wire orbit was the root failure of 20th-century atomic modeling.
-2. **Oscillation is mass**; inertia resides in lattice update resistance. Einstein velocity-mass dilation is debunked.
+1. Modeling extended 3D vortices spanning septillions of lattice cells as 1D circular line orbits created severe geometric limits in 20th-century atomic theory.
+2. **Oscillation is mass**; inertia resides in lattice update-rate resistance against acceleration, rather than intrinsic velocity-dependent mass dilation.
 3. **Charge is flow direction**: unipolar An outflow pump ($+$) versus sink inflow ($-$) closing into self-confining toroids to eliminate boundary leakage.
 4. **Neutrons are proton-electron pairs resting at eigenmode $n=0$** when nuclear proximity dampens separating inertia.
-5. **Hydrodynamic Gear-Meshing Replaces Pauli Exclusion:** Spatial volume conflict produces a local stagnation pressure spike $\Delta P = 2\rho_A v^2$ that bars identical-chirality co-occupation. Complementary counter-rotating torsion spins mesh smoothly like gears, forming stable $1\text{s}^2$ closed pairs and deriving the $2n^2$ shell capacity. Total 3-mode flow inversion produces destructive annihilation into $1022.0\text{ keV}$ transverse waves.
+5. **Continuum Formulation of Exclusion via Gear-Meshing:** Spatial volume conflict produces a local stagnation pressure spike $\Delta P = 2\rho_A v^2$ that prevents identical-chirality co-occupation. Complementary counter-rotating torsion spins mesh smoothly like gears, forming stable $1\text{s}^2$ closed pairs and deriving the $2n^2$ shell capacity. Total 3-mode flow inversion produces destructive phase cancellation into $1022.0\text{ keV}$ transverse waves.
 6. **Atomic fine structure is Mercury-style orbital precession** driven by the medium's dielectric stress tensor $\sigma(r)$, not Einsteinian velocity-mass increase.
 7. The spacing law shifts from geometric ($r_n = r_0 k^n$) to quadratic ($r_n = n^2 a_\mu / Z$) purely via the **hydrodynamic wave-speed constitutive profile shift** ($v_A = \text{const}$ vs. $v \propto r^{-1/2}$).
 8. Non-Hermitian Exceptional Point coupling ($\kappa = \gamma$) locks the open An pump and sink drainage into a stationary standing wave with quarter-wave phase lag.
-9. Active research frontiers are tracked in [`TICKETS.md`](../TICKETS.md) rather than patched with quantum mechanical wavefunctions or empirical decimal floats.
+9. Active research frontiers and parameter boundaries are cataloged in [`TICKETS.md`](../TICKETS.md) rather than masked with ad-hoc empirical parameters.
 
 ---
 
 ## Appendix A: Hydrodynamic Derivation of the Radial Acoustic Cavity Equation
 
-To establish complete mathematical independence from consensus quantum mechanics and insulate the derivation against claims of smuggled Schrödinger eigenfunctions, we derive the radial acoustic wave operator (Section VI and Section X) directly from linearized continuum fluid mechanics in the unipolar Z-pinch inflow gradient.
+To establish complete mathematical independence from standard quantum mechanical postulates and derive the governing equations directly from first principles, we derive the radial acoustic wave operator (Section VI and Section X) directly from linearized continuum fluid mechanics in the unipolar Z-pinch inflow gradient.
 
 ### 1. Background Medium Flow and Acoustic Perturbation
 Consider a compressible, irrotational dielectric fluid medium of equilibrium mass density $\rho_0(r)$ and local acoustic wave speed $c = 1/\sqrt{\mu_A \varepsilon_A}$ surrounding a central unipolar fountain of strength $Z$. In the inner micro-atomic regime ($r \ll R_{\text{trans}}$), longitudinal inflow accelerates down the central dielectric pressure gradient ($P_{\text{high}} \to P_{\text{low}}$) according to Bernoulli's law:
