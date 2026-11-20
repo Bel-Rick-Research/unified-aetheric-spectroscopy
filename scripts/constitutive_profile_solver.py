@@ -55,6 +55,20 @@ def rational_continuity_transition(r: float, r_trans: float = R_TRANS_M) -> floa
     return r_trans / (r_trans + r)
 
 
+def sonic_choking_radius(Z: int = 1) -> float:
+    """
+    Inner acoustic crossover radius where radial inflow reaches grid wave speed c:
+        v(r_sonic) = c * sqrt(2 * Z * r_e / r_sonic) = c  =>  r_sonic(Z) = 2 * Z * r_e
+    """
+    return 2.0 * Z * R_E
+
+
+def rational_inner_continuity_transition(r: float, Z: int = 1) -> float:
+    """Return inner sonic choking rational continuity factor T_inner(r) = r / (r + r_sonic(Z))."""
+    r_sonic = sonic_choking_radius(Z)
+    return r / (r + r_sonic)
+
+
 def effective_operator_bracket(r: float, Z: int = 1, r_trans: float = R_TRANS_M) -> float:
     """
     Return dimensionless bracket U(r) = r^2 * K_grad^2(r) = (2Z / a_mu) * [r * R_trans / (R_trans + r)].
@@ -70,24 +84,47 @@ def asymptotic_euler_cauchy_g0(Z: int = 1, r_trans: float = R_TRANS_M) -> float:
     return (2.0 * Z * r_trans) / A_MU
 
 
-def dielectric_strain_volume_factor(n: int, Z: int = 1) -> float:
+def dielectric_strain_volume_factor_static(n: int, Z: int = 1) -> float:
     """
-    Logarithmic strain volume ratio between core r_e and orbital boundary r_n:
-        S(n, Z) = ln(r_n / r_e) = ln(n^2 / (Z * alpha^2))
+    Static core boundary model (sharp cutoff at r_e):
+        S_static(n, Z) = ln(r_n / r_e) = ln(n^2 / (Z * alpha^2))
     Normalized to Hydrogen (n=2, Z=1) baseline:
-        eta_strain = ln(n^2 / (Z * alpha^2)) / ln(4 / alpha^2)
+        eta_static = ln(n^2 / (Z * alpha^2)) / ln(4 / alpha^2)
     """
     s_val = math.log((n ** 2) / (Z * ALPHA ** 2))
     s_ref = math.log(4.0 / (1.0 * ALPHA ** 2))
     return s_val / s_ref
 
 
-def lamb_shift_frequency_native_hz(n: int, Z: int = 1, with_strain: bool = True) -> float:
+def dielectric_strain_volume_factor_rational(n: int, Z: int = 1) -> float:
+    """
+    Rational continuity sonic choking strain volume factor (Section VI dual profile):
+    Integrating T_inner(r) / r across the acoustic cavity from 0 to r_n(Z):
+        S_rational(n, Z) = integral_0^{r_n} dr / (r + 2 * Z * r_e) = ln(1 + r_n / (2 * Z * r_e))
+        where r_n(Z) = n^2 * a_mu / Z = n^2 * r_e / (Z * alpha^2)
+        => r_n / (2 * Z * r_e) = n^2 / (2 * Z^2 * alpha^2)
+        S_rational(n, Z) = ln(1 + n^2 / (2 * Z^2 * alpha^2))
+    Normalized to Hydrogen (n=2, Z=1) baseline:
+        eta_rational = S_rational(n, Z) / S_rational(2, 1)
+    """
+    s_val = math.log(1.0 + (n ** 2) / (2.0 * (Z ** 2) * (ALPHA ** 2)))
+    s_ref = math.log(1.0 + 4.0 / (2.0 * (1.0 ** 2) * (ALPHA ** 2)))
+    return s_val / s_ref
+
+
+def dielectric_strain_volume_factor(n: int, Z: int = 1, mode: str = "rational") -> float:
+    """Dielectric strain volume factor. Defaults to the rational continuity sonic profile."""
+    if mode == "static":
+        return dielectric_strain_volume_factor_static(n, Z)
+    return dielectric_strain_volume_factor_rational(n, Z)
+
+
+def lamb_shift_frequency_native_hz(n: int, Z: int = 1, with_strain: bool = True, mode: str = "rational") -> float:
     """Calculate Lamb shift beat frequency in pure native grid parameters (NO h, NO hbar)."""
     raw_hz = NATIVE_LAMB_PREFACTOR_HZ * (Z ** 4) / (n ** 3)
     if not with_strain:
         return raw_hz
-    return raw_hz * dielectric_strain_volume_factor(n, Z)
+    return raw_hz * dielectric_strain_volume_factor(n, Z, mode=mode)
 
 
 def run_benchmark() -> list[dict]:
@@ -138,29 +175,42 @@ def run_benchmark() -> list[dict]:
     })
 
     # 4. Helium+ / Hydrogen Lamb Ratio Comparison (Dielectric Strain Saturation)
-    nu_H = lamb_shift_frequency_native_hz(2, Z=1, with_strain=True)
+    nu_H_stat = lamb_shift_frequency_native_hz(2, Z=1, with_strain=True, mode="static")
     nu_He_raw = lamb_shift_frequency_native_hz(2, Z=2, with_strain=False)
-    nu_He_sat = lamb_shift_frequency_native_hz(2, Z=2, with_strain=True)
+    nu_He_stat = lamb_shift_frequency_native_hz(2, Z=2, with_strain=True, mode="static")
+
+    nu_H_rat = lamb_shift_frequency_native_hz(2, Z=1, with_strain=True, mode="rational")
+    nu_He_rat = lamb_shift_frequency_native_hz(2, Z=2, with_strain=True, mode="rational")
     obs_ratio = 14041.45 / 1057.85  # Empirical NIST ratio ~ 13.2736
     
     rows.append({
         "scale_regime": "GRID STRAIN SATURATION (Raw Geometric Z^4)",
         "radius_m": "n=2, Z=2 vs Z=1",
         "T_transition_factor": "—",
-        "bracket_U_val": f"Ratio = {nu_He_raw / nu_H:.2f}",
+        "bracket_U_val": f"Ratio = {nu_He_raw / nu_H_stat:.2f}",
         "asymptotic_target": f"NIST Observed Ratio = {obs_ratio:.2f}",
-        "residual_pct": f"{( (nu_He_raw / nu_H) / obs_ratio - 1.0) * 100.0:+.2f} %",
+        "residual_pct": f"{( (nu_He_raw / nu_H_stat) / obs_ratio - 1.0) * 100.0:+.2f} %",
         "physical_regime": "Raw Geometric Z^4 Volume Scaling (+20.5% overshoot)",
     })
 
     rows.append({
-        "scale_regime": "GRID STRAIN SATURATION (With ln(r_n/r_e) Contraction)",
+        "scale_regime": "GRID STRAIN SATURATION (Static Core ln(r_n/r_e))",
         "radius_m": "n=2, Z=2 vs Z=1",
-        "T_transition_factor": f"eta_strain = {dielectric_strain_volume_factor(2, Z=2):.4f}",
-        "bracket_U_val": f"Ratio = {nu_He_sat / nu_H:.2f}",
+        "T_transition_factor": f"eta_strain = {dielectric_strain_volume_factor(2, Z=2, mode='static'):.4f}",
+        "bracket_U_val": f"Ratio = {nu_He_stat / nu_H_stat:.2f}",
         "asymptotic_target": f"NIST Observed Ratio = {obs_ratio:.2f}",
-        "residual_pct": f"{( (nu_He_sat / nu_H) / obs_ratio - 1.0) * 100.0:+.2f} %",
-        "physical_regime": "Strain Contraction S = ln(n^2/Z*alpha^2) (+13.1% residual, boundary placed)",
+        "residual_pct": f"{( (nu_He_stat / nu_H_stat) / obs_ratio - 1.0) * 100.0:+.2f} %",
+        "physical_regime": "Static Boundary S = ln(n^2/Z*alpha^2) (+13.1% residual, boundary placed)",
+    })
+
+    rows.append({
+        "scale_regime": "GRID STRAIN SATURATION (Rational Continuity Sonic Choking)",
+        "radius_m": "n=2, Z=2 vs Z=1",
+        "T_transition_factor": f"eta_strain = {dielectric_strain_volume_factor(2, Z=2, mode='rational'):.4f}",
+        "bracket_U_val": f"Ratio = {nu_He_rat / nu_H_rat:.2f}",
+        "asymptotic_target": f"NIST Observed Ratio = {obs_ratio:.2f}",
+        "residual_pct": f"{( (nu_He_rat / nu_H_rat) / obs_ratio - 1.0) * 100.0:+.2f} %",
+        "physical_regime": "Rational Sonic Horizon S = ln(1 + n^2/2Z^2*alpha^2) (+4.68% residual)",
     })
 
     RESULTS.mkdir(parents=True, exist_ok=True)

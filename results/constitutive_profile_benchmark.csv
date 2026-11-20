@@ -3,4 +3,5 @@ scale_regime,radius_m,T_transition_factor,bracket_U_val,asymptotic_target,residu
 "INTERMEDIATE (Acoustic Boundary Layer, r = R_trans)",1.0000e-03,0.50000000,1.8887e+07,50% Core Gradient / 50% Bulk Flow,+0.00 %,Continuity Crossover (v_inflow ~ v_bulk)
 "MACRO (Circumstellar Bulk Flow, r >> R_trans)",1.4960e+11,6.6846e-15,3.7774e+07,Euler-Cauchy Constant g_0 = 3.7774e+07,-0.000000 %,Scale-Free Constant Wave Speed (r^2 K^2 -> g_0 => r_n = r_0 k^n)
 GRID STRAIN SATURATION (Raw Geometric Z^4),"n=2, Z=2 vs Z=1",—,Ratio = 16.00,NIST Observed Ratio = 13.27,+20.54 %,Raw Geometric Z^4 Volume Scaling (+20.5% overshoot)
-GRID STRAIN SATURATION (With ln(r_n/r_e) Contraction),"n=2, Z=2 vs Z=1",eta_strain = 0.9383,Ratio = 15.01,NIST Observed Ratio = 13.27,+13.10 %,"Strain Contraction S = ln(n^2/Z*alpha^2) (+13.1% residual, boundary placed)"
+GRID STRAIN SATURATION (Static Core ln(r_n/r_e)),"n=2, Z=2 vs Z=1",eta_strain = 0.9383,Ratio = 15.01,NIST Observed Ratio = 13.27,+13.10 %,"Static Boundary S = ln(n^2/Z*alpha^2) (+13.1% residual, boundary placed)"
+GRID STRAIN SATURATION (Rational Continuity Sonic Choking),"n=2, Z=2 vs Z=1",eta_strain = 0.8684,Ratio = 13.89,NIST Observed Ratio = 13.27,+4.68 %,Rational Sonic Horizon S = ln(1 + n^2/2Z^2*alpha^2) (+4.68% residual)

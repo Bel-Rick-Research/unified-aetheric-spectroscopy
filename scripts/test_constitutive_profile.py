@@ -40,14 +40,30 @@ class ConstitutiveProfileTests(unittest.TestCase):
         expected_g0 = cps.asymptotic_euler_cauchy_g0(Z=1)
         self.assertAlmostEqual(u_val / expected_g0, 1.0, places=6)
 
+    def test_sonic_choking_radius(self) -> None:
+        """Verify inner sonic crossover radius r_sonic(Z) = 2 * Z * r_e."""
+        r_sonic_H = cps.sonic_choking_radius(Z=1)
+        r_sonic_He = cps.sonic_choking_radius(Z=2)
+        self.assertAlmostEqual(r_sonic_H, 2.0 * cps.R_E, places=18)
+        self.assertAlmostEqual(r_sonic_He, 4.0 * cps.R_E, places=18)
+
     def test_dielectric_strain_volume_factor_contracts_ratio(self) -> None:
-        """Verify ln(r_n/r_e) strain volume contracts He+/H ratio from 16.0 to 15.012."""
-        eta_H = cps.dielectric_strain_volume_factor(2, Z=1)
-        eta_He = cps.dielectric_strain_volume_factor(2, Z=2)
-        self.assertEqual(eta_H, 1.0)
-        self.assertAlmostEqual(eta_He, 0.93826, places=4)
-        ratio_sat = 16.0 * (eta_He / eta_H)
-        self.assertAlmostEqual(ratio_sat, 15.012, places=2)
+        """Verify static and rational continuity strain volume factors contract He+/H ratio."""
+        # Static model: contracts 16.0 to 15.012 (+13.1% residual)
+        eta_H_stat = cps.dielectric_strain_volume_factor(2, Z=1, mode="static")
+        eta_He_stat = cps.dielectric_strain_volume_factor(2, Z=2, mode="static")
+        self.assertEqual(eta_H_stat, 1.0)
+        self.assertAlmostEqual(eta_He_stat, 0.93826, places=4)
+        ratio_stat = 16.0 * (eta_He_stat / eta_H_stat)
+        self.assertAlmostEqual(ratio_stat, 15.012, places=2)
+
+        # Rational continuity sonic choking model: contracts 16.0 to 13.894 (+4.68% residual)
+        eta_H_rat = cps.dielectric_strain_volume_factor(2, Z=1, mode="rational")
+        eta_He_rat = cps.dielectric_strain_volume_factor(2, Z=2, mode="rational")
+        self.assertEqual(eta_H_rat, 1.0)
+        self.assertAlmostEqual(eta_He_rat, 0.86840, places=4)
+        ratio_rat = 16.0 * (eta_He_rat / eta_H_rat)
+        self.assertAlmostEqual(ratio_rat, 13.894, places=2)
 
     def test_no_h_or_hbar_used_in_native_frequency_function(self) -> None:
         """Guard: Ensure H_PLANCK and HBAR are NOT used in native frequency function."""
@@ -58,13 +74,13 @@ class ConstitutiveProfileTests(unittest.TestCase):
         self.assertNotIn("HBAR", func_match.group(0))
 
     def test_benchmark_csv_output_integrity(self) -> None:
-        """Verify CSV benchmark table is generated with 5 rows and correct headers."""
+        """Verify CSV benchmark table is generated with 6 rows and correct headers."""
         rows = cps.run_benchmark()
-        self.assertEqual(len(rows), 5)
+        self.assertEqual(len(rows), 6)
         self.assertTrue(RESULTS_CSV.is_file())
         with RESULTS_CSV.open(newline="", encoding="utf-8") as f:
             read_rows = list(csv.DictReader(f))
-        self.assertEqual(len(read_rows), 5)
+        self.assertEqual(len(read_rows), 6)
         self.assertIn("bracket_U_val", read_rows[0])
         self.assertIn("asymptotic_target", read_rows[0])
 
