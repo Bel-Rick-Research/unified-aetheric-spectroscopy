@@ -1,6 +1,35 @@
 # Unified Aetheric Spectroscopy & Standing-Wave Mechanics (Paper 4)
 
-**Parent Directory:** [research/](../)
+## Zenodo publication package (v1.0)
+
+Upload `unified-aetheric-spectroscopy-v1.0.zip` from this repository to Zenodo.
+It contains the final PDF, Markdown manuscript, PDF generator, this README,
+research-boundary ledger, reference data, solvers, tests, benchmark tables, and
+their existing SHA-256 manifest. Git metadata, caches, local notes, and the ZIP
+itself are excluded. The adjacent `.zip.sha256` file verifies the ZIP download.
+
+After extracting, enter `unified-aetheric-spectroscopy-v1.0/` and run:
+
+```sh
+sha256sum --check MANIFEST.sha256
+python3 scripts/run_all.py
+```
+
+The verification runner requires Python 3.10 or newer and NumPy. Rebuilding the
+PDF additionally requires `markdown-it-py`, Brave installed as the
+`com.brave.Browser` Flatpak, and network access to load KaTeX from jsDelivr.
+The supplied PDF can be read offline without these dependencies.
+
+The manuscript and `TICKETS.md` describe the scope and remaining derivation
+boundaries. Passing computational tests does not establish independent physical
+validation. The historical research overview below predates the v1.0 editorial
+revision; the manuscript takes precedence where wording differs.
+
+Reference snapshots in `data/` originate from the
+[NIST Atomic Spectra Database](https://physics.nist.gov/asd).
+No repository license is currently supplied; this package does not assign a new
+license to the manuscript, code, or third-party data. Select Zenodo licensing
+only where the necessary rights are established.
 
 ---
 
@@ -97,7 +126,7 @@ When we encounter open questions, we do not patch them with quantum mechanical c
 
 - **[`TICKETS.md`](TICKETS.md):** The active research ticket ledger for open mechanisms and derivations.
 - **[`paper/`](paper/):** Theoretical derivations, proofs, and the master manuscript.
-  - [`UNIFIED-AETHERIC-SPECTROSCOPY.md`](paper/UNIFIED-AETHERIC-SPECTROSCOPY.md): Master working draft.
+  - [`UNIFIED-AETHERIC-SPECTROSCOPY.md`](paper/UNIFIED-AETHERIC-SPECTROSCOPY.md): Version 1.0 manuscript.
   - [`generate_pdf.py`](paper/generate_pdf.py): KaTeX DOM expansion and Brave Headless PDF compiler.
 - **[`scripts/`](scripts/):** Numerical solvers and validation tests.
   - `unified_aetheric_solver.py`: Core solver reflecting pure Aetheric formulation.
