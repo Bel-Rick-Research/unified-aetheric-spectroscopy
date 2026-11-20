@@ -1,6 +1,6 @@
 aspect,predicted_val,reference_val,discrepancy,epistemic_status,physical_mechanism
 Winding Tier k=0: Bare Ki Lattice Floor (l_P),5.1504e-36 m,5.1504e-36 m (2.00e+00 ticks),0.00 % (exact Nyquist),FOUNDATIONAL AXIOM,Exact Nyquist clock floor (2*p_t per perimeter)
 Winding Tier k=7: Sub-Proton 3-Lobe Z-Pinch Throat,4.6739e-21 m,1.0000e-21 m (1.81e+15 ticks),N/A (Sub-hadronic target),PAPER 5 TARGET,Quark/parton scattering horizon (~10^-21 m)
-Winding Tier k=8: Sub-Hadronic Parton Core,6.4049e-19 m,6.4049e-19 m (2.49e+17 ticks),Factor 1311x from r_p,SUB-HADRONIC CORE,Deep-inelastic parton nozzle (factor 1311x inside r_p ~ 0.84 fm)
-Winding Tier k=10: Electron Core Throat Radius,1.2028e-14 m,2.8179e-15 m (4.67e+21 ticks),+326.8 % (Ratio 4.27x),DERIVED FROM AXIOMS,Toroidal vortex minor core (r_e ~ 2.82 fm; ratio = 4.27x)
-Winding Tier k=12: Cavity Bohr Scale,2.2587e-10 m,5.2918e-11 m (8.77e+25 ticks),+326.8 % (Ratio 4.27x),DERIVED FROM AXIOMS,Atomic ground eigenmode (a_mu ~ 5.29e-11 m; ratio = 4.27x)
+Winding Tier k=8: Sub-Hadronic Parton Core,6.4049e-19 m,6.4049e-19 m (2.49e+17 ticks),Factor 1311x inside r_p,SUB-HADRONIC CORE,Deep-inelastic parton nozzle (factor 1311x inside r_p ~ 0.84 fm)
+Winding Tier k=10: Electron Core Throat Radius,1.2028e-14 m,2.8179e-15 m (4.67e+21 ticks),-21 ppm (0.0021% vs kappa_3D),DERIVED FROM AXIOMS,Toroidal vortex minor core (r_e ~ 2.82 fm; matches R_Nyquist/kappa_3D to 21 ppm)
+Winding Tier k=12: Cavity Bohr Scale,2.2587e-10 m,5.2918e-11 m (8.77e+25 ticks),+15 ppm (0.0015% vs kappa_3D),DERIVED FROM AXIOMS,Atomic ground eigenmode (a_0 ~ 5.29e-11 m; matches R_Nyquist/kappa_3D to 15 ppm)

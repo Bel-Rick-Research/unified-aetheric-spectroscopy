@@ -15,9 +15,10 @@ purely from 3D fluid vortex mechanics and icosahedral lattice chirality:
    When two vortex rings share the same state vector sigma_1 == sigma_2, their fluid velocities
    collide head-on at the contact interface:
        v_1 . v_2 = -|v|^2 < 0
-   generating an intense local stagnation pressure spike:
-       Delta P_stagnation = 2 * rho_A * v^2
+   generating an intense native stagnation pressure spike derived from Bohr cavity energy density:
+       Delta P_stagnation = 4 * u_E(a_mu) = (mu_0 * c^2 * e^2) / (8 * pi^2 * a_mu^4) = 4.672e12 Pa
    forcing them violently apart and forbidding co-occupation of the same state.
+   Eliminates all assumed empirical density floats (rho_A ~ 10^-17 kg/m^3).
 3. Chiral Phase-Locking (Gear-Meshing):
    Two vortex rings with complementary torsion (sigma_torsion_1 == -sigma_torsion_2) mesh smoothly:
        v_1 . v_2 = +|v|^2 > 0  at contact boundary
@@ -74,6 +75,19 @@ class ChiralVortexState:
         return self.sigma_radial == +1
 
 
+def native_cavity_stagnation_pressure(n: int = 1, Z: int = 1) -> float:
+    """
+    Calculate the native stagnation pressure barrier between identical-chirality vortex rings:
+        Delta P_stagnation = 4 * u_E(r_n) = (mu_0 * c^2 * (e*Z)^2) / (8 * pi^2 * r_n^4)
+    where r_n = n^2 * a_mu / Z.
+    At n=1, Z=1:
+        Delta P_stagnation = 4.6723e12 Pa
+    Derived directly from native grid constants with zero empirical density floats (eliminating rho_A).
+    """
+    r_n = (n**2 * A_MU) / Z
+    return (MU_0 * C**2 * (E_CHARGE * Z)**2) / (8.0 * (math.pi**2) * (r_n**4))
+
+
 def evaluate_vortex_coupling(v1: ChiralVortexState, v2: ChiralVortexState, n: int = 1, Z: int = 1) -> dict:
     """Evaluate hydrodynamic coupling, boundary velocity dot-product, and pressure stability between two states."""
     v_orb = (Z * ALPHA * C) / n
@@ -98,12 +112,12 @@ def evaluate_vortex_coupling(v1: ChiralVortexState, v2: ChiralVortexState, n: in
     if (v1.sigma_radial == v2.sigma_radial and
         v1.sigma_toroidal == v2.sigma_toroidal and
         v1.sigma_torsion == v2.sigma_torsion):
-        delta_p = 2.0 * RHO_A * (v_orb ** 2)
+        delta_p = native_cavity_stagnation_pressure(n=n, Z=Z)
         return {
             "pair": f"{v1.name} + {v2.name}",
             "coupling_type": "IDENTICAL_CHIRALITY_COLLISION",
             "contact_dot_product": f"-{v_orb**2:.2e} m^2/s^2 (< 0, Head-on collision)",
-            "stagnation_pressure_Pa": f"{delta_p:.2e} Pa [adopts rho_A ~ 1e-17 kg/m^3]",
+            "stagnation_pressure_Pa": f"{delta_p:.2e} Pa [Native: mu_0*c^2*e^2/(8*pi^2*a_mu^4)]",
             "net_angular_momentum": f"{v1.sigma_torsion:+.1f}",
             "stability_status": "FORBIDDEN (Stagnation pressure spike forces vortices apart)",
             "is_stable": False,

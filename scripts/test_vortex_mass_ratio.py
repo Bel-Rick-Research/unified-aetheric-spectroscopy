@@ -26,6 +26,14 @@ class VortexMassRatioTests(unittest.TestCase):
         self.assertAlmostEqual(ppm, 18.82, places=1)
         self.assertLess(ppm, 19.0)
 
+    def test_mass_ratio_with_wake_drag_within_3_ppb(self) -> None:
+        """Verify (m_p / m_e)_wake = 6*pi^5*(1 + alpha^2/(2*sqrt(2))) collapses residual to 2.3 ppb."""
+        m_wake = vmrs.mass_ratio_with_wake_drag()
+        self.assertAlmostEqual(m_wake, 1836.15267767, places=5)
+        ppb = vmrs.wake_drag_residual_ppb()
+        self.assertAlmostEqual(ppb, 2.30, places=1)
+        self.assertLess(ppb, 3.0)
+
     def test_base60_sexagesimal_decomposition(self) -> None:
         """Verify 1836 decomposes into base-60 digits (30; 36)_60."""
         d_1, d_0 = vmrs.base60_sexagesimal_decomposition(1836)
@@ -54,13 +62,13 @@ class VortexMassRatioTests(unittest.TestCase):
         self.assertGreater(params["proton_core_vol_m3"], 0.0)
 
     def test_benchmark_csv_output_integrity(self) -> None:
-        """Verify CSV benchmark table is generated with 4 rows and correct headers."""
+        """Verify CSV benchmark table is generated with 5 rows and correct headers."""
         rows = vmrs.run_benchmark()
-        self.assertEqual(len(rows), 4)
+        self.assertEqual(len(rows), 5)
         self.assertTrue(RESULTS_CSV.is_file())
         with RESULTS_CSV.open(newline="", encoding="utf-8") as f:
             read_rows = list(csv.DictReader(f))
-        self.assertEqual(len(read_rows), 4)
+        self.assertEqual(len(read_rows), 5)
         self.assertIn("aspect", read_rows[0])
         self.assertIn("epistemic_status", read_rows[0])
         self.assertIn("physical_mechanism", read_rows[0])

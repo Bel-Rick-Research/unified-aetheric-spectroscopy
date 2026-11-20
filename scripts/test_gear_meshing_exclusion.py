@@ -28,6 +28,9 @@ class GearMeshingExclusionTests(unittest.TestCase):
         self.assertIn("FORBIDDEN", res["stability_status"])
         p_val = float(res["stagnation_pressure_Pa"].split()[0])
         self.assertGreater(p_val, 0.0)
+        self.assertAlmostEqual(p_val, 4.67e12, delta=0.05e12)
+        p_native = gms.native_cavity_stagnation_pressure(n=1, Z=1)
+        self.assertAlmostEqual(p_native, 4.6723e12, delta=0.01e12)
 
     def test_complementary_torsion_produces_laminar_gear_meshing(self) -> None:
         """Verify complementary torsion spins (+1 and -1) mesh with zero stagnation pressure and net zero J."""

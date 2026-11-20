@@ -16,15 +16,29 @@ if str(HERE) not in sys.path:
 from circulation_quantum_geometry_solver import (
     C,
     L_P,
+    ALPHA,
+    KAPPA_3D,
     GAMMA_CELL,
     GAMMA_0,
     LAMBDA_C_MU,
+    LAMBDA_C_E,
     circulation_scale_hierarchy,
     run_benchmark,
 )
 
 
 class TestCirculationQuantumGeometry(unittest.TestCase):
+    def test_kappa_3d_packing_factor(self):
+        """Verify 3D toroidal packing factor kappa_3D = (4*pi/3)*(1 + 3/(16*pi^2)) ~ 4.268368."""
+        self.assertAlmostEqual(KAPPA_3D, 4.268368, places=5)
+
+    def test_3d_packing_hierarchy_within_25_ppm(self):
+        """Verify 1 / (kappa_3D * alpha^11) matches bare electron Compton ratio lambda_C,e / (2*l_P) to 21 ppm."""
+        n_geom = 1.0 / (KAPPA_3D * (ALPHA ** 11))
+        n_ref = LAMBDA_C_E / (2.0 * L_P)
+        diff_ppm = abs(n_geom - n_ref) / n_ref * 1e6
+        self.assertLess(diff_ppm, 25.0)
+
     def test_planck_cell_circulation_value(self):
         """Verify minimum 2-tick Planck cell circulation equals 2 * c * l_P."""
         expected = 2.0 * C * L_P

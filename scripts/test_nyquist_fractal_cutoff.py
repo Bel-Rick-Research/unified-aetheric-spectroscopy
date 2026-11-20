@@ -18,6 +18,7 @@ from nyquist_fractal_cutoff import (
     L_P,
     P_T,
     C,
+    KAPPA_3D,
     nyquist_cutoff_radius,
     ticks_per_perimeter,
     scale_hierarchy_catalog,
@@ -28,6 +29,24 @@ HERE = Path(__file__).resolve().parent
 
 
 class TestNyquistFractalCutoff(unittest.TestCase):
+    def test_kappa_3d_packing_factor(self):
+        """Verify 3D packing factor kappa_3D is ~4.268368."""
+        self.assertAlmostEqual(KAPPA_3D, 4.268368, places=5)
+
+    def test_tier_10_and_12_scale_invariant_ratio(self):
+        """Verify R_Nyquist(10)/r_e and R_Nyquist(12)/a_0 match kappa_3D to ~21 ppm."""
+        r10 = nyquist_cutoff_radius(10)
+        r_e = 2.8179403262e-15
+        ratio_10 = r10 / r_e
+
+        r12 = nyquist_cutoff_radius(12)
+        a_0 = 5.29177210903e-11
+        ratio_12 = r12 / a_0
+
+        self.assertAlmostEqual(ratio_10, ratio_12, places=6)
+        diff_ppm = abs(ratio_10 - KAPPA_3D) / KAPPA_3D * 1e6
+        self.assertLess(diff_ppm, 25.0)
+
     def test_nyquist_tick_identity(self):
         """At k=0, the cutoff perimeter must equal exactly 2 Planck lattice steps (Nyquist limit)."""
         r0 = nyquist_cutoff_radius(0)
